@@ -23,32 +23,60 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-5xl font-bold text-goldenrod mb-4">Laurent Arcos</h1>
-          <p className="text-lg text-yellow-300">Développeur Web Frontend</p>
+          <h1 className="text-5xl font-bold mb-4" style={{ color: "var(--text-primary)" }}>
+            Laurent Arcos
+          </h1>
+          <p className="text-lg" style={{ color: "var(--text-secondary)" }}>
+            Développeur Web Frontend
+          </p>
           <p className="text-sm text-gray-400">Disponible pour de nouvelles opportunités !</p>
         </motion.div>
       </section>
 
       {/* Expériences Professionnelles */}
       <section id="experiences" className="mb-16">
-        <h2 className="text-3xl font-semibold text-goldenrod mb-4 flex items-center">
-          <BriefcaseIcon className="w-6 h-6 mr-2 text-yellow-300" /> Expériences Professionnelles
+        <h2
+          className="text-3xl font-semibold mb-4 flex items-center"
+          style={{ color: "var(--text-primary)" }}
+        >
+          <BriefcaseIcon className="w-6 h-6 mr-2" style={{ color: "var(--text-secondary)" }} />
+          Expériences Professionnelles
         </h2>
         <ul className="space-y-8">
-          {experiences.map((exp: Experience, index) => (
+          {experiences.map((exp, index) => (
             <motion.li
               key={index}
-              className="relative border-l-4 border-goldenrod pl-6 bg-blue-900 bg-opacity-30 p-4 rounded-lg shadow-md hover:bg-yellow-900 transition-colors duration-300"
+              className="card"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
             >
-              <div className="absolute -left-2 top-0 w-4 h-4 bg-goldenrod rounded-full"></div>
-              <h3 className="text-xl font-bold text-white">{exp.title}</h3>
-              <p className="text-sm text-yellow-300">{exp.company}</p>
+              <h3 className="text-xl font-bold" style={{ color: "var(--text-primary)" }}>
+                {exp.title}
+              </h3>
+              <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
+                {exp.company}
+              </p>
               <p className="text-sm text-gray-400">{exp.date}</p>
-              <p className="text-white mt-2">{exp.description}</p>
+              <p className="mt-2" style={{ color: "var(--text-secondary)" }}>
+                {exp.description}
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {exp.tags.map((tag, i) => (
+                  <span
+                    key={i}
+                    className="inline-block px-3 py-1 text-sm font-medium rounded-lg shadow-md"
+                    style={{
+                      backgroundColor: "var(--card-bg)",
+                      color: "var(--text-primary)",
+                      border: "1px solid var(--card-border)",
+                    }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </motion.li>
           ))}
         </ul>
@@ -56,22 +84,37 @@ export default function Home() {
 
       {/* Formations Académiques */}
       <section id="formations" className="mb-16">
-        <h2 className="text-3xl font-semibold text-goldenrod mb-4 flex items-center">
-          <AcademicCapIcon className="w-6 h-6 mr-2 text-yellow-300" /> Formations Académiques
+        <h2
+          className="text-3xl font-semibold mb-4 flex items-center"
+          style={{ color: "var(--text-primary)" }}
+        >
+          <AcademicCapIcon className="w-6 h-6 mr-2" style={{ color: "var(--text-secondary)" }} />
+          Formations Académiques
         </h2>
         <ul className="space-y-8">
           {education.map((edu: Education, index) => (
             <motion.li
               key={index}
-              className="relative border-l-4 border-goldenrod pl-6 bg-blue-900 bg-opacity-30 p-4 rounded-lg shadow-md hover:bg-yellow-900 transition-colors duration-300"
+              className="relative border-l-4 pl-6 p-4 rounded-lg shadow-md transition-colors duration-300"
+              style={{
+                backgroundColor: "var(--card-bg)",
+                borderColor: "var(--card-border)",
+              }}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
             >
-              <div className="absolute -left-2 top-0 w-4 h-4 bg-goldenrod rounded-full"></div>
-              <h3 className="text-xl font-bold text-white">{edu.school}</h3>
-              <p className="text-sm text-yellow-300">{edu.degree}</p>
+              <div
+                className="absolute -left-2 top-0 w-4 h-4 rounded-full"
+                style={{ backgroundColor: "var(--card-border)" }}
+              ></div>
+              <h3 className="text-xl font-bold" style={{ color: "var(--text-primary)" }}>
+                {edu.school}
+              </h3>
+              <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
+                {edu.degree}
+              </p>
               <p className="text-sm text-gray-400">{edu.date}</p>
             </motion.li>
           ))}
@@ -80,20 +123,26 @@ export default function Home() {
 
       {/* Compétences Section */}
       <section id="competences" className="mb-16">
-        <h2 className="text-3xl font-semibold mb-4">Compétences Techniques</h2>
-        <p>Section à compléter avec un filtrage par technologie.</p>
+        <h2 className="text-3xl font-semibold mb-4" style={{ color: "var(--text-primary)" }}>
+          Compétences Techniques
+        </h2>
+        <p style={{ color: "var(--text-secondary)" }}>Section à compléter avec un filtrage par technologie.</p>
       </section>
 
       {/* Projets Section */}
       <section id="projets" className="mb-16">
-        <h2 className="text-3xl font-semibold mb-4">Projets</h2>
-        <p>Section à compléter avec des projets filtrables par technologie.</p>
+        <h2 className="text-3xl font-semibold mb-4" style={{ color: "var(--text-primary)" }}>
+          Projets
+        </h2>
+        <p style={{ color: "var(--text-secondary)" }}>Section à compléter avec des projets filtrables par technologie.</p>
       </section>
 
       {/* Formulaire de Contact */}
       <section id="contact" className="mb-16">
-        <h2 className="text-3xl font-semibold mb-4">Contact</h2>
-        <p>Section à compléter avec un formulaire de contact.</p>
+        <h2 className="text-3xl font-semibold mb-4" style={{ color: "var(--text-primary)" }}>
+          Contact
+        </h2>
+        <p style={{ color: "var(--text-secondary)" }}>Section à compléter avec un formulaire de contact.</p>
       </section>
     </main>
   );

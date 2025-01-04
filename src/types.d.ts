@@ -4,6 +4,7 @@ export type Experience = {
   location?: string;
   date: string;
   description: string;
+  tags: string[];
 };
 
 export type Education = {

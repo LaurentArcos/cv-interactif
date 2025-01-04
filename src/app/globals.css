@@ -2,24 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Couleurs par défaut (Mode Clair) */
+/* Couleurs par défaut (Mode Sombre) */
 :root {
-  --background: #0a0f29; /* Bleu nuit */
-  --foreground: #ffd700; /* Jaune chaud (goldenrod) */
-  --card-bg: #14213d; /* Couleur de fond des cartes */
-  --card-border: #eabe45; /* Bordure des cartes */
-  --text-primary: #ffd700; /* Texte principal */
-  --text-secondary: #f6f4e6; /* Texte secondaire */
+  --background: #0a0f29; 
+  --foreground: #ffd700; 
+  --card-bg: #14213d; 
+  --card-border: #eabe45; 
+  --text-primary: #ffd700; 
+  --text-secondary: #f6f4e6; 
 }
 
-/* Couleurs pour le Mode Sombre */
-.dark {
-  --background: #000b1a;
-  --foreground: #e5c07b;
-  --card-bg: #1b2735;
-  --card-border: #ffd700;
-  --text-primary: #e5c07b;
-  --text-secondary: #c9c9c9;
+/* Couleurs pour le Mode Clair */
+.light {
+  --background: rgb(251, 252, 252);
+  --foreground: #ff9671;
+  --card-bg: #f9f871;
+  --card-border: #845ec2;
+  --text-primary: #ff6f91;
+  --text-secondary: #1a1a1a;
 }
 
 body {
@@ -49,7 +49,7 @@ h3 {
 }
 
 .bg-gradient-to-r {
-  background-image: linear-gradient(to right, #1d3557, #457b9d, #a8dadc);
+  background-image: linear-gradient(to right, var(--foreground), var(--card-bg));
 }
 
 /* Style du bouton de toggle */

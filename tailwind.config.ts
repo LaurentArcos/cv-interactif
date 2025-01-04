@@ -11,6 +11,10 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        cardBg: "var(--card-bg)",
+        cardBorder: "var(--card-border)",
+        textPrimary: "var(--text-primary)",
+        textSecondary: "var(--text-secondary)",
       },
       fontFamily: {
         sans: ["Inter", "Arial", "sans-serif"],
