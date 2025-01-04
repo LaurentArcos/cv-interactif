@@ -5,10 +5,17 @@ import { BriefcaseIcon, AcademicCapIcon } from "@heroicons/react/24/solid";
 import { experiences } from "@/data/experiences";
 import { education } from "@/data/education";
 import type { Experience, Education } from "@/types";
+import DarkModeToggle from "@/components/DarkModeToggle";
 
 export default function Home() {
   return (
     <main className="bg-background text-foreground min-h-screen p-8 font-sans">
+
+      {/* Toggle Dark Mode */}
+      <div className="flex justify-end mb-8">
+        <DarkModeToggle />
+      </div>
+
       {/* Profil Section */}
       <section className="mb-16">
         <motion.div
