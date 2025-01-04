@@ -1,11 +1,19 @@
+import { motion } from "framer-motion";
+
 export default function Home() {
   return (
     <main className="bg-background text-foreground min-h-screen p-8">
       {/* Profil Section */}
       <section className="mb-16">
-        <h1 className="text-5xl font-bold mb-4">Laurent Arcos</h1>
-        <p className="text-lg">Développeur Web Frontend</p>
-        <p className="text-sm text-gray-500">Disponible pour de nouvelles opportunités !</p>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h1 className="text-5xl font-bold mb-4">Laurent Arcos</h1>
+          <p className="text-lg">Développeur Web Frontend</p>
+          <p className="text-sm text-gray-500">Disponible pour de nouvelles opportunités !</p>
+        </motion.div>
       </section>
 
       {/* Expériences Section */}
