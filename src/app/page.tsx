@@ -1,10 +1,56 @@
+// page.tsx
 "use client";
 
 import { motion } from "framer-motion";
+import { AcademicCapIcon, BriefcaseIcon } from "@heroicons/react/24/solid";
+
+const experiences = [
+  {
+    title: "Développeur Full Stack",
+    company: "SEAGALE",
+    location: "Toulon, France",
+    date: "Octobre 2023 - Présent",
+    description:
+      "Création du programme de parrainage sur boutique en ligne Prestashop. Création de plusieurs applications en React + Express. Gestion de routes API.",
+  },
+  {
+    title: "Développeur Web Fullstack",
+    company: "Freelance",
+    location: "Hyères, France",
+    date: "Octobre 2022 - Présent",
+    description: "Maintenance de sites Wordpress. Création d'applications en React.",
+  },
+  {
+    title: "Développeur Web Front-end",
+    company: "Tribu",
+    location: "Hyères, France",
+    date: "Août 2022 - Septembre 2022",
+    description: "Développement front-end pour un réseau social destiné aux expatriés français.",
+  },
+  {
+    title: "Concepteur Développeur d'Applications",
+    company: "Worduel",
+    date: "Octobre 2024 - Décembre 2024",
+    description: "Projet de fin de formation. Création d'un jeu en ligne multijoueur basé sur le principe de Wordle.",
+  },
+];
+
+const education = [
+  {
+    school: "Ecole O'clock",
+    degree: "Titre professionnel (TP) de niveau 6, Concepteur Développeur d'Applications",
+    date: "Octobre 2023 - Février 2025",
+  },
+  {
+    school: "Université Paris 8",
+    degree: "Licence Professionnelle, Logistique Export",
+    date: "2007 - 2008",
+  },
+];
 
 export default function Home() {
   return (
-    <main className="bg-background text-foreground min-h-screen p-8">
+    <main className="bg-background text-foreground min-h-screen p-8 font-sans">
       {/* Profil Section */}
       <section className="mb-16">
         <motion.div
@@ -12,28 +58,65 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-5xl font-bold mb-4">Laurent Arcos</h1>
-          <p className="text-lg">Développeur Web Frontend</p>
-          <p className="text-sm text-gray-500">Disponible pour de nouvelles opportunités !</p>
+          <h1 className="text-5xl font-bold text-goldenrod mb-4">Laurent Arcos</h1>
+          <p className="text-lg text-yellow-300">Développeur Web Frontend</p>
+          <p className="text-sm text-gray-400">Disponible pour de nouvelles opportunités !</p>
         </motion.div>
       </section>
 
-      {/* Expériences Section */}
+      {/* Expériences Professionnelles */}
       <section id="experiences" className="mb-16">
-        <h2 className="text-3xl font-semibold mb-4">Expériences Professionnelles</h2>
-        <p>Section à compléter avec une timeline interactive.</p>
+        <h2 className="text-3xl font-semibold text-goldenrod mb-4 flex items-center">
+          <BriefcaseIcon className="w-6 h-6 mr-2 text-yellow-300" /> Expériences Professionnelles
+        </h2>
+        <ul className="space-y-8">
+          {experiences.map((exp, index) => (
+            <motion.li
+              key={index}
+              className="relative border-l-4 border-goldenrod pl-6 bg-blue-900 bg-opacity-30 p-4 rounded-lg shadow-md hover:bg-yellow-900 transition-colors duration-300"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+            >
+              <div className="absolute -left-2 top-0 w-4 h-4 bg-goldenrod rounded-full"></div>
+              <h3 className="text-xl font-bold text-white">{exp.title}</h3>
+              <p className="text-sm text-yellow-300">{exp.company}</p>
+              <p className="text-sm text-gray-400">{exp.date}</p>
+              <p className="text-white mt-2">{exp.description}</p>
+            </motion.li>
+          ))}
+        </ul>
+      </section>
+
+      {/* Formations Académiques */}
+      <section id="formations" className="mb-16">
+        <h2 className="text-3xl font-semibold text-goldenrod mb-4 flex items-center">
+          <AcademicCapIcon className="w-6 h-6 mr-2 text-yellow-300" /> Formations Académiques
+        </h2>
+        <ul className="space-y-8">
+          {education.map((edu, index) => (
+            <motion.li
+              key={index}
+              className="relative border-l-4 border-goldenrod pl-6 bg-blue-900 bg-opacity-30 p-4 rounded-lg shadow-md hover:bg-yellow-900 transition-colors duration-300"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+            >
+              <div className="absolute -left-2 top-0 w-4 h-4 bg-goldenrod rounded-full"></div>
+              <h3 className="text-xl font-bold text-white">{edu.school}</h3>
+              <p className="text-sm text-yellow-300">{edu.degree}</p>
+              <p className="text-sm text-gray-400">{edu.date}</p>
+            </motion.li>
+          ))}
+        </ul>
       </section>
 
       {/* Compétences Section */}
       <section id="competences" className="mb-16">
         <h2 className="text-3xl font-semibold mb-4">Compétences Techniques</h2>
         <p>Section à compléter avec un filtrage par technologie.</p>
-      </section>
-
-      {/* Formations Section */}
-      <section id="formations" className="mb-16">
-        <h2 className="text-3xl font-semibold mb-4">Formations</h2>
-        <p>Section à compléter avec un affichage dynamique.</p>
       </section>
 
       {/* Projets Section */}
