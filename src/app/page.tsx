@@ -1,52 +1,10 @@
-// page.tsx
 "use client";
 
 import { motion } from "framer-motion";
-import { AcademicCapIcon, BriefcaseIcon } from "@heroicons/react/24/solid";
-
-const experiences = [
-  {
-    title: "Développeur Full Stack",
-    company: "SEAGALE",
-    location: "Toulon, France",
-    date: "Octobre 2023 - Présent",
-    description:
-      "Création du programme de parrainage sur boutique en ligne Prestashop. Création de plusieurs applications en React + Express. Gestion de routes API.",
-  },
-  {
-    title: "Développeur Web Fullstack",
-    company: "Freelance",
-    location: "Hyères, France",
-    date: "Octobre 2022 - Présent",
-    description: "Maintenance de sites Wordpress. Création d'applications en React.",
-  },
-  {
-    title: "Développeur Web Front-end",
-    company: "Tribu",
-    location: "Hyères, France",
-    date: "Août 2022 - Septembre 2022",
-    description: "Développement front-end pour un réseau social destiné aux expatriés français.",
-  },
-  {
-    title: "Concepteur Développeur d'Applications",
-    company: "Worduel",
-    date: "Octobre 2024 - Décembre 2024",
-    description: "Projet de fin de formation. Création d'un jeu en ligne multijoueur basé sur le principe de Wordle.",
-  },
-];
-
-const education = [
-  {
-    school: "Ecole O'clock",
-    degree: "Titre professionnel (TP) de niveau 6, Concepteur Développeur d'Applications",
-    date: "Octobre 2023 - Février 2025",
-  },
-  {
-    school: "Université Paris 8",
-    degree: "Licence Professionnelle, Logistique Export",
-    date: "2007 - 2008",
-  },
-];
+import { BriefcaseIcon, AcademicCapIcon } from "@heroicons/react/24/solid";
+import { experiences } from "@/data/experiences";
+import { education } from "@/data/education";
+import type { Experience, Education } from "@/types";
 
 export default function Home() {
   return (
@@ -70,7 +28,7 @@ export default function Home() {
           <BriefcaseIcon className="w-6 h-6 mr-2 text-yellow-300" /> Expériences Professionnelles
         </h2>
         <ul className="space-y-8">
-          {experiences.map((exp, index) => (
+          {experiences.map((exp: Experience, index) => (
             <motion.li
               key={index}
               className="relative border-l-4 border-goldenrod pl-6 bg-blue-900 bg-opacity-30 p-4 rounded-lg shadow-md hover:bg-yellow-900 transition-colors duration-300"
@@ -95,7 +53,7 @@ export default function Home() {
           <AcademicCapIcon className="w-6 h-6 mr-2 text-yellow-300" /> Formations Académiques
         </h2>
         <ul className="space-y-8">
-          {education.map((edu, index) => (
+          {education.map((edu: Education, index) => (
             <motion.li
               key={index}
               className="relative border-l-4 border-goldenrod pl-6 bg-blue-900 bg-opacity-30 p-4 rounded-lg shadow-md hover:bg-yellow-900 transition-colors duration-300"
