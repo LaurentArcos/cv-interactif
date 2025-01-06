@@ -30,8 +30,6 @@ export default function Home() {
 
       {/* Main Content */}
       <main className="p-8">
-
-
         {/* Expériences Professionnelles */}
         <section id="experiences" className="mb-16">
           <h2 className="text-3xl font-semibold mb-4 text-text-primary flex items-center">
@@ -49,14 +47,18 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
               >
                 <div className="flex items-center gap-4">
-                  <div className="logo-wrapper">
-                    <Image
-                      src={exp.logo}
-                      alt={`${exp.company} logo`}
-                      width={50}
-                      height={50}
-                      className="rounded-md"
-                    />
+                  <div className="logo-wrapper bg-white w-[60px] h-[60px] rounded-md flex items-center justify-center">
+                    {exp.logo ? (
+                      <Image
+                        src={exp.logo}
+                        alt={`${exp.company} logo`}
+                        width={60}
+                        height={60}
+                        className="rounded-md"
+                      />
+                    ) : (
+                      <div className="w-[60px] h-[60px] bg-white rounded-md"></div>
+                    )}
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-text-primary">{exp.title}</h3>
@@ -67,10 +69,7 @@ export default function Home() {
                 <p className="mt-2 text-text-secondary">{exp.description}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {exp.tags.map((tag, i) => (
-                    <span
-                      key={i}
-                      className="tag"
-                    >
+                    <span key={i} className="tag">
                       {tag}
                     </span>
                   ))}
@@ -109,14 +108,18 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
               >
                 <div className="flex items-center gap-4">
-                  <div className="logo-wrapper">
-                    <Image
-                      src={edu.logo}
-                      alt={`${edu.school} logo`}
-                      width={50}
-                      height={50}
-                      className="rounded-md"
-                    />
+                  <div className="logo-wrapper bg-white w-[60px] h-[60px] rounded-md flex items-center justify-center">
+                    {edu.logo ? (
+                      <Image
+                        src={edu.logo}
+                        alt={`${edu.school} logo`}
+                        width={60}
+                        height={60}
+                        className="rounded-md"
+                      />
+                    ) : (
+                      <div className="w-[60px] h-[60px] bg-white rounded-md"></div>
+                    )}
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-text-primary">{edu.school}</h3>
@@ -144,25 +147,19 @@ export default function Home() {
 
         {/* Compétences Section */}
         <section id="competences" className="mb-16">
-          <h2 className="text-3xl font-semibold mb-4 text-text-primary">
-            Compétences Techniques
-          </h2>
+          <h2 className="text-3xl font-semibold mb-4 text-text-primary">Compétences Techniques</h2>
           <p className="text-text-secondary">Section à compléter avec un filtrage par technologie.</p>
         </section>
 
         {/* Projets Section */}
         <section id="projets" className="mb-16">
-          <h2 className="text-3xl font-semibold mb-4 text-text-primary">
-            Projets
-          </h2>
+          <h2 className="text-3xl font-semibold mb-4 text-text-primary">Projets</h2>
           <p className="text-text-secondary">Section à compléter avec des projets filtrables par technologie.</p>
         </section>
 
         {/* Formulaire de Contact */}
         <section id="contact" className="mb-16">
-          <h2 className="text-3xl font-semibold mb-4 text-text-primary">
-            Contact
-          </h2>
+          <h2 className="text-3xl font-semibold mb-4 text-text-primary">Contact</h2>
           <p className="text-text-secondary">Section à compléter avec un formulaire de contact.</p>
         </section>
       </main>
