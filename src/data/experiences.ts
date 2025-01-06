@@ -30,7 +30,7 @@ export const experiences: Experience[] = [
     `,
     tags: ["WordPress", "React", "JavaScript", "TypeScript", "Express", "API"],
     website: "https://github.com/LaurentArcos",
-    logo: "",
+    logo: "/images/logos/logola.png",
   },
   {
     title: "Concepteur Développeur d'Applications",

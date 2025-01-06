@@ -9,27 +9,38 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="layout">
+    <div className="flex h-screen">
       {/* Sidebar */}
-      <aside className="sidebar fixed-nav">
+      <aside className="sidebar fixed-nav bg-background text-foreground w-[25%] flex flex-col justify-between h-full p-8">
         <div>
           <h1 className="text-4xl font-bold mb-2">Laurent Arcos</h1>
           <p className="text-text-secondary">Développeur Web Frontend</p>
+          <nav className="nav-links mt-8 space-y-4">
+            <a href="#experiences" className="hover:underline">
+              Expériences
+            </a>
+            <a href="#formations" className="hover:underline">
+              Formations
+            </a>
+            <a href="#competences" className="hover:underline">
+              Compétences
+            </a>
+            <a href="#projets" className="hover:underline">
+              Projets
+            </a>
+            <a href="#contact" className="hover:underline">
+              Contact
+            </a>
+          </nav>
         </div>
-        <nav className="nav-links mt-8">
-          <a href="#experiences">Expériences</a>
-          <a href="#formations">Formations</a>
-          <a href="#competences">Compétences</a>
-          <a href="#projets">Projets</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <div className="mt-8">
+        {/* Toggle Dark Mode Button */}
+        <div className="fixed bottom-12 left-8">
           <DarkModeToggle />
         </div>
       </aside>
 
       {/* Main Content */}
-      <main className="p-8">
+      <main className="flex-1 overflow-y-auto p-8">
         {/* Expériences Professionnelles */}
         <section id="experiences" className="mb-16">
           <h2 className="text-3xl font-semibold mb-4 text-text-primary flex items-center">
