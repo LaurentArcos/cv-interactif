@@ -43,8 +43,8 @@ export default function Home() {
         </div>
 
         {/* Social Links */}
-        <div className="social-links mt-8">
-          <div className="flex items-center gap-4">
+        <div className="social-links flex justify-center mt-16 mb-auto">
+        <div className="flex gap-5">
             <a
               href="https://www.linkedin.com/in/laurentarcos/"
               target="_blank"
