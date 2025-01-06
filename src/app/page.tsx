@@ -5,6 +5,7 @@ import { BriefcaseIcon, AcademicCapIcon } from "@heroicons/react/24/solid";
 import { experiences } from "@/data/experiences";
 import { education } from "@/data/education";
 import DarkModeToggle from "@/components/DarkModeToggle";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -29,18 +30,7 @@ export default function Home() {
 
       {/* Main Content */}
       <main className="p-8">
-        {/* Profil Section */}
-        <section className="mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-5xl font-bold mb-4 text-text-primary">Laurent Arcos</h1>
-            <p className="text-lg text-text-secondary">Développeur Web Frontend</p>
-            <p className="text-sm text-gray-400">Disponible pour de nouvelles opportunités !</p>
-          </motion.div>
-        </section>
+
 
         {/* Expériences Professionnelles */}
         <section id="experiences" className="mb-16">
@@ -58,9 +48,22 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
               >
-                <h3 className="text-xl font-bold text-text-primary">{exp.title}</h3>
-                <p className="text-sm text-text-secondary">{exp.company}</p>
-                <p className="text-sm text-gray-400">{exp.date}</p>
+                <div className="flex items-center gap-4">
+                  <div className="logo-wrapper">
+                    <Image
+                      src={exp.logo}
+                      alt={`${exp.company} logo`}
+                      width={50}
+                      height={50}
+                      className="rounded-md"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-text-primary">{exp.title}</h3>
+                    <p className="text-sm text-text-secondary">{exp.company}</p>
+                    <p className="text-sm text-gray-400">{exp.date}</p>
+                  </div>
+                </div>
                 <p className="mt-2 text-text-secondary">{exp.description}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {exp.tags.map((tag, i) => (
@@ -72,6 +75,18 @@ export default function Home() {
                     </span>
                   ))}
                 </div>
+                {exp.website && (
+                  <div className="mt-4">
+                    <a
+                      href={exp.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-blue-500 hover:underline"
+                    >
+                      Voir le site
+                    </a>
+                  </div>
+                )}
               </motion.li>
             ))}
           </ul>
@@ -93,9 +108,35 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
               >
-                <h3 className="text-xl font-bold text-text-primary">{edu.school}</h3>
-                <p className="text-sm text-text-secondary">{edu.degree}</p>
-                <p className="text-sm text-gray-400">{edu.date}</p>
+                <div className="flex items-center gap-4">
+                  <div className="logo-wrapper">
+                    <Image
+                      src={edu.logo}
+                      alt={`${edu.school} logo`}
+                      width={50}
+                      height={50}
+                      className="rounded-md"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-text-primary">{edu.school}</h3>
+                    <p className="text-sm text-text-secondary">{edu.degree}</p>
+                    <p className="text-sm text-gray-400">{edu.date}</p>
+                  </div>
+                </div>
+                <p className="mt-2 text-text-secondary">{edu.description}</p>
+                {edu.website && (
+                  <div className="mt-4">
+                    <a
+                      href={edu.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-blue-500 hover:underline"
+                    >
+                      Voir le site
+                    </a>
+                  </div>
+                )}
               </motion.li>
             ))}
           </ul>

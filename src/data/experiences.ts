@@ -10,7 +10,7 @@ export const experiences: Experience[] = [
       "Création du programme de parrainage sur boutique en ligne Prestashop. Création de plusieurs applications en React + Express. Gestion de routes API.",
     tags: ["Prestashop", "React", "Express", "API", "Git", "JavaScript", "CSS"],
     website: "https://seagale.fr",
-    icon: "💼",
+    logo: "/images/logos/seagale.png",
   },
   {
     title: "Développeur Web Fullstack",
@@ -20,7 +20,7 @@ export const experiences: Experience[] = [
     description: "Maintenance de sites Wordpress. Création d'applications en React.",
     tags: ["WordPress", "React", "JavaScript", "HTML", "CSS", "PHP"],
     website: null,
-    icon: "🧑‍💻",
+    logo: "/images/logos/freelance.png",
   },
   {
     title: "Développeur Web Front-end",
@@ -30,7 +30,7 @@ export const experiences: Experience[] = [
     description: "Développement front-end pour un réseau social destiné aux expatriés français.",
     tags: ["Vue.js", "JavaScript", "HTML", "CSS", "Git"],
     website: "https://tribu.com",
-    icon: "🌍",
+    logo: "/images/logos/tribu.png",
   },
   {
     title: "Concepteur Développeur d'Applications",
@@ -39,6 +39,6 @@ export const experiences: Experience[] = [
     description: "Projet de fin de formation. Création d'un jeu en ligne multijoueur basé sur le principe de Wordle.",
     tags: ["React", "Node.js", "GraphQL", "Apollo", "Prisma", "TypeScript", "CSS"],
     website: "https://worduel.com",
-    icon: "🎮",
+    logo: "/images/logos/worduel.png",
   },
 ];

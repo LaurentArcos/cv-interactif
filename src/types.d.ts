@@ -6,7 +6,7 @@ export interface Experience {
   description: string;
   tags: string[];
   website?: string | null;
-  icon?: string;
+  logo?: string;
 }
 
 export interface Education {
@@ -16,5 +16,5 @@ export interface Education {
   description: string;
   tags: string[];
   website?: string | null;
-  icon?: string;
+  logo?: string;
 }

@@ -8,7 +8,7 @@ export const education: Education[] = [
     description: "Formation intensive de développeur web full stack.",
     tags: ["JavaScript", "React", "Node.js", "SQL"],
     website: "https://oclock.io",
-    icon: "🎓",
+    logo: "/images/logos/oclock.png",
   },
   {
     school: "Université Paris 8",
@@ -17,6 +17,6 @@ export const education: Education[] = [
     description: "Études dans le domaine de la logistique et du commerce international.",
     tags: ["Commerce", "Logistique", "Gestion"],
     website: "https://univ-paris8.fr",
-    icon: "📚",
+    logo: "/images/logos/paris8.png",
   },
 ];
