@@ -5,9 +5,9 @@
 /* Palette de couleurs inspirée du site de Brittany Chiang */
 :root {
   --background: #0a192f; /* Bleu nuit profond */
-  --foreground: #64ffda; /* Vert menthe */
+  --foreground: goldenrod; /* Vert menthe */
   --card-bg: #112240; /* Bleu foncé pour les cartes */
-  --card-border: #64ffda; /* Bordure verte */
+  --card-border: goldenrod; /* Bordure verte */
   --text-primary: #ccd6f6; /* Texte principal clair */
   --text-secondary: #8892b0; /* Texte secondaire */
   --hover-bg: #233554; /* Couleur de fond au survol */
@@ -18,7 +18,7 @@
   --background: #ffffff;
   --foreground: #0a192f;
   --card-bg: #f3f4f6;
-  --card-border: #64ffda;
+  --card-border: goldenrod;
   --text-primary: #0a192f;
   --text-secondary: #6c757d;
 }

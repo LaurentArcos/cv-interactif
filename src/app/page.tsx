@@ -6,6 +6,14 @@ import { experiences } from "@/data/experiences";
 import { education } from "@/data/education";
 import DarkModeToggle from "@/components/DarkModeToggle";
 import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faGithub,
+  faLinkedin,
+  faSteam,
+  faBluesky,
+  faLetterboxd,
+} from "@fortawesome/free-brands-svg-icons";
 
 export default function Home() {
   return (
@@ -33,6 +41,53 @@ export default function Home() {
             </a>
           </nav>
         </div>
+
+        {/* Social Links */}
+        <div className="social-links mt-8">
+          <div className="flex items-center gap-4">
+            <a
+              href="https://www.linkedin.com/in/laurentarcos/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-text-secondary hover:text-blue-500"
+            >
+              <FontAwesomeIcon icon={faLinkedin} className="w-6 h-6" />
+            </a>
+            <a
+              href="https://github.com/LaurentArcos"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-text-secondary hover:text-gray-500"
+            >
+              <FontAwesomeIcon icon={faGithub} className="w-6 h-6" />
+            </a>
+            <a
+              href="https://bsky.app/profile/laurentarcos.bsky.social"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-text-secondary hover:text-blue-400"
+            >
+              <FontAwesomeIcon icon={faBluesky} className="w-6 h-6" />
+            </a>
+            <a
+              href="https://letterboxd.com/Laurent_A/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-text-secondary hover:text-green-500"
+            >
+              <FontAwesomeIcon icon={faLetterboxd} className="w-6 h-6" />
+            </a>
+            <a
+              href="https://steamcommunity.com/id/thryndil/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-text-secondary hover:text-gray-300"
+            >
+              <FontAwesomeIcon icon={faSteam} className="w-6 h-6" />
+            </a>
+          </div>
+        </div>
+
         {/* Toggle Dark Mode Button */}
         <div className="fixed bottom-12 left-8">
           <DarkModeToggle />
