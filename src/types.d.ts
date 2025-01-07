@@ -19,3 +19,8 @@ export interface Education {
   website?: string | null;
   logo: string;
 }
+
+export interface Skill {
+  name: string;
+  category: "Frontend" | "Backend" | "Languages" | "Tools";
+}

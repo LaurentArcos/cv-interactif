@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { BriefcaseIcon, AcademicCapIcon } from "@heroicons/react/24/solid";
+import { BriefcaseIcon, AcademicCapIcon, WrenchScrewdriverIcon } from "@heroicons/react/24/solid";
 import { experiences } from "@/data/experiences";
 import { education } from "@/data/education";
+import { skills } from "@/data/skills";
 import DarkModeToggle from "@/components/DarkModeToggle";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -42,7 +43,14 @@ export default function Home() {
 
   const [openExperiences, setOpenExperiences] = useState<number[]>([]);
   const [openEducations, setOpenEducations] = useState<number[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const toggleFilters = () => setIsFiltersOpen(!isFiltersOpen);
+
+    // Fonction pour filtrer les compétences
+  const filteredSkills =
+    selectedCategory === "All"
+      ? skills
+      : skills.filter((skill) => skill.category === selectedCategory);
 
   // Fonction de toggle pour les expériences
   const toggleExperience = (index: number) => {
@@ -219,7 +227,7 @@ export default function Home() {
                   transition={{ duration: 0.5 }}
                 >
                   <div className="flex items-center gap-4 justify-between">
-                    {/* Logo + titre */}
+
                     <div className="flex items-center gap-4">
                       <div className="logo-wrapper bg-white w-[60px] h-[60px] rounded-md flex items-center justify-center">
                         {exp.logo ? (
@@ -380,14 +388,42 @@ export default function Home() {
           </ul>
         </section>
 
-        {/* Compétences Section */}
+        {/* Section Compétences Techniques */}
         <section id="competences" className="mb-16">
-          <h2 className="text-3xl font-semibold mb-4 text-text-primary">
+          <h2 className="text-3xl font-semibold mb-4 text-text-primary flex items-center">
+            <WrenchScrewdriverIcon className="w-6 h-6 mr-2 text-foreground" />
             Compétences Techniques
           </h2>
-          <p className="text-text-secondary">
-            Section à compléter avec un filtrage par technologie.
-          </p>
+
+          {/* Filtres */}
+          <div className="flex gap-4 mb-8">
+            {["All", "Frontend", "Backend", "Tools", "Languages"].map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-4 py-2 rounded-md ${
+                  selectedCategory === category ? "bg-foreground text-background" : "bg-card-bg"
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+
+          {/* Liste des compétences */}
+          <ul id="skills" className="grid grid-cols-4 gap-2">
+            {filteredSkills.map((skill, index) => (
+              <motion.li
+                key={index}
+                className="p-4 bg-card-bg rounded-lg shadow-md border border-card-border hover:border-foreground transition-colors duration-300"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <h3 className="text-lg font-semibold text-text-primary">{skill.name}</h3>
+              </motion.li>
+            ))}
+          </ul>
         </section>
 
         {/* Projets Section */}
