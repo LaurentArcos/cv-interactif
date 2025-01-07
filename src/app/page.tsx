@@ -69,8 +69,8 @@ export default function Home() {
       {/* Sidebar */}
       <aside className="sidebar fixed-nav bg-background text-foreground w-[25%] flex flex-col justify-between h-full p-8">
         <div>
-          <h1 className="text-4xl font-bold mb-2">Laurent Arcos</h1>
-          <p className="text-text-secondary">Développeur Web Frontend</p>
+          <h1 className="text-4xl font-bold mb-2 text-foreground">Laurent Arcos</h1>
+          <p className="text-text-secondary">Développeur Web</p>
           <nav className="nav-links mt-8 space-y-4">
             <a href="#experiences" className="hover:underline">
               Expériences
@@ -250,6 +250,11 @@ export default function Home() {
               return (
                 <motion.li
                   key={index}
+                  onClick={() => {
+                    if (!isOpen) {
+                      toggleEducation(index);
+                    }
+                  }}
                   className="card p-4 border border-gray-200 rounded-lg"
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -290,6 +295,15 @@ export default function Home() {
                     >
                       <Chevron isOpen={isOpen} />
                     </button>
+                  </div>
+
+                  {/* Les tags sont toujours visibles */}
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {edu.tags.map((tag, i) => (
+                      <span key={i} className="tag">
+                        {tag}
+                      </span>
+                    ))}
                   </div>
 
                   {/* Affichage conditionnel */}

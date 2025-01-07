@@ -3,7 +3,7 @@ import { Education } from "@/types";
 export const education: Education[] = [
   {
     school: "Ecole O'clock",
-    degree: "Titre professionnel (TP) de niveau 6, Concepteur Développeur d'Applications",
+    degree: "Titre professionnel (TP) de niveau 6, Concepteur Développeur d'Applications, Promo Elfes",
     date: "Septembre 2023 - Avril 2025",
     description: `
       - Formation en alternance.
@@ -12,7 +12,7 @@ export const education: Education[] = [
       - Apprentissage des meilleures pratiques en développement et gestion de projet.
     `,
     tags: ["JavaScript", "TypeScript", "React", "Node.js", "Docker", "GraphQL"],
-    website: "https://oclock.io",
+    website: "https://oclock.io/formations/cda-alternance",
     logo: "/images/logos/oclock.png",
   },
   {
@@ -26,7 +26,7 @@ export const education: Education[] = [
       - **Apothéose (1 mois)** : Projet en groupe mettant en pratique les compétences acquises.
     `,
     tags: ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "React", "Git"],
-    website: "https://oclock.io",
+    website: "https://oclock.io/formations/developpeur-web-web-mobile",
     logo: "/images/logos/oclock.png",
   },
   {
