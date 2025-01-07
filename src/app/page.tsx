@@ -21,7 +21,7 @@ import {
 function Chevron({ isOpen }: { isOpen: boolean }) {
   return (
     <svg
-      className={`w-5 h-5 transform transition-transform duration-300 ${
+      className={`w-5 h-5 text-foreground transform transition-transform duration-300 ${
         isOpen ? "rotate-180" : "" 
       }`}
       fill="none"
@@ -38,10 +38,11 @@ export default function Home() {
 
   const [showDev, setShowDev] = useState(true);
   const [showSales, setShowSales] = useState(true);
-  // État pour les expériences : on stocke les indices de celles qui sont "ouvertes"
+  const [isFiltersOpen, setIsFiltersOpen] = useState(false);
+
   const [openExperiences, setOpenExperiences] = useState<number[]>([]);
-  // Même chose pour education
   const [openEducations, setOpenEducations] = useState<number[]>([]);
+  const toggleFilters = () => setIsFiltersOpen(!isFiltersOpen);
 
   // Fonction de toggle pour les expériences
   const toggleExperience = (index: number) => {
@@ -75,33 +76,49 @@ export default function Home() {
           <h1 className="text-4xl font-bold mb-2 text-foreground">Laurent Arcos</h1>
           <p className="text-text-secondary">Développeur Web</p>
           <nav className="nav-links mt-8 space-y-4">
-            <a href="#experiences" className="hover:underline">
-              Expériences
-            </a>
-            <div className="flex flex-col mt-2 ml-4 space-y-2">
-              <label className="flex items-center gap-2">
-                <input
-                  type="checkbox"
-                  checked={showDev}
-                  onChange={(e) => setShowDev(e.target.checked)}
-                  className="form-checkbox text-foreground"
-                />
-                <span className="text-sm text-text-secondary">
-                  Développement Web
-                </span>
-              </label>
-              <label className="flex items-center gap-2">
-                <input
-                  type="checkbox"
-                  checked={showSales}
-                  onChange={(e) => setShowSales(e.target.checked)}
-                  className="form-checkbox text-foreground"
-                />
-                <span className="text-sm text-text-secondary">
-                  Commerce / Logistique
-                </span>
-              </label>
+            {/* Expériences avec le chevron */}
+            <div className="flex items-center justify-between">
+              <a
+                href="#experiences"
+                className="hover:underline flex items-center gap-2"
+                onClick={(e) => {
+                  e.preventDefault();
+                  toggleFilters();
+                }}
+              >
+                <span>Expériences</span>
+                <Chevron isOpen={isFiltersOpen} />
+              </a>
             </div>
+
+            {/* Checkboxes conditionnelles */}
+            {isFiltersOpen && (
+              <div className="flex flex-col space-y-2">
+                <label className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    checked={showDev}
+                    onChange={(e) => setShowDev(e.target.checked)}
+                    className="form-checkbox text-foreground rounded-md h-5 w-5"
+                  />
+                  <span className="text-sm text-text-secondary">
+                    Développement Web
+                  </span>
+                </label>
+                <label className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    checked={showSales}
+                    onChange={(e) => setShowSales(e.target.checked)}
+                    className="form-checkbox text-foreground rounded-md h-5 w-5"
+                  />
+                  <span className="text-sm text-text-secondary">
+                    Commerce / Logistique
+                  </span>
+                </label>
+              </div>
+            )}
+
             <a href="#formations" className="hover:underline">
               Formations
             </a>
@@ -174,7 +191,7 @@ export default function Home() {
         {/* Expériences Professionnelles */}
         <section id="experiences" className="mb-16">
           <h2 className="text-3xl font-semibold mb-4 text-text-primary flex items-center">
-            <BriefcaseIcon className="w-6 h-6 mr-2 text-text-secondary" />
+            <BriefcaseIcon className="w-6 h-6 mr-2 text-foreground" />
             Expériences Professionnelles
           </h2>
           <ul className="space-y-8">
@@ -222,7 +239,7 @@ export default function Home() {
                           {exp.title}
                         </h3>
                         <p className="text-sm text-text-secondary">{exp.company}</p>
-                        <p className="text-sm text-gray-400">{exp.date}</p>
+                        <p className="text-sm text-gray-500">{exp.date}</p>
                       </div>
                     </div>
                     {/* Chevron */}
@@ -274,7 +291,7 @@ export default function Home() {
         {/* Formations Académiques */}
         <section id="formations" className="mb-16">
           <h2 className="text-3xl font-semibold mb-4 text-text-primary flex items-center">
-            <AcademicCapIcon className="w-6 h-6 mr-2 text-text-secondary" />
+            <AcademicCapIcon className="w-6 h-6 mr-2 text-foreground" />
             Formations Académiques
           </h2>
           <ul className="space-y-8">
