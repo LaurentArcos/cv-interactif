@@ -3,6 +3,7 @@ import { Experience } from "@/types";
 export const experiences: Experience[] = [
   {
     title: "Développeur Full Stack",
+    type: "dev",
     company: "SEAGALE",
     location: "Toulon, France",
     date: "Octobre 2023 - Présent",
@@ -19,6 +20,7 @@ export const experiences: Experience[] = [
   },
   {
     title: "Développeur Web Fullstack - Concepteur d'application",
+    type: "dev",
     company: "Freelance",
     location: "Hyères, France",
     date: "Octobre 2022 - Présent",
@@ -34,6 +36,7 @@ export const experiences: Experience[] = [
   },
   {
     title: "Concepteur Développeur d'Applications",
+    type: "dev",
     company: "Worduel",
     date: "Octobre 2024 - Décembre 2024",
     description: `
@@ -47,6 +50,7 @@ export const experiences: Experience[] = [
   },
   {
     title: "Développeur Web Front-end",
+    type: "dev",
     company: "Tribu",
     location: "Hyères, France",
     date: "Août 2022 - Septembre 2022",
@@ -62,6 +66,7 @@ export const experiences: Experience[] = [
   },
   {
     title: "Area Manager Prêt-à-Porter",
+    type: "sales",
     company: "Esprit",
     location: "Boulogne-Billancourt, France",
     date: "Juillet 2018 - Décembre 2021",
@@ -79,6 +84,7 @@ export const experiences: Experience[] = [
   },
   {
     title: "Area Manager Bodywear",
+    type: "sales",
     company: "Esprit",
     location: "Boulogne-Billancourt, France",
     date: "Avril 2017 - Juillet 2018",
@@ -93,6 +99,7 @@ export const experiences: Experience[] = [
   },
   {
     title: "Assistant Commercial et Logistique",
+    type: "sales",
     company: "Esprit",
     location: "Boulogne-Billancourt, France",
     date: "Juin 2012 - Avril 2017",
@@ -109,6 +116,7 @@ export const experiences: Experience[] = [
   },
   {
     title: "Office Manager - Chargé d'Opération et de Gestion",
+    type: "sales",
     company: "DERMEO",
     location: "Paris, France",
     date: "Février 2011 - Mai 2012",
@@ -126,6 +134,7 @@ export const experiences: Experience[] = [
   },
   {
     title: "Assistant Commercial Export",
+    type: "sales",
     company: "CRIOM",
     location: "Boulogne-Billancourt, France",
     date: "Mars 2008 - Janvier 2011",
