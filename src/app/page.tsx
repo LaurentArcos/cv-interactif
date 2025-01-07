@@ -44,12 +44,12 @@ export default function Home() {
 
         {/* Social Links */}
         <div className="social-links flex justify-center mt-16 mb-auto">
-        <div className="flex gap-5">
+          <div className="flex gap-5">
             <a
               href="https://www.linkedin.com/in/laurentarcos/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-text-secondary hover:text-blue-500"
+              className="text-text-secondary"
             >
               <FontAwesomeIcon icon={faLinkedin} className="w-6 h-6" />
             </a>
@@ -57,7 +57,7 @@ export default function Home() {
               href="https://github.com/LaurentArcos"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-text-secondary hover:text-gray-500"
+              className="text-text-secondary"
             >
               <FontAwesomeIcon icon={faGithub} className="w-6 h-6" />
             </a>
@@ -65,7 +65,7 @@ export default function Home() {
               href="https://bsky.app/profile/laurentarcos.bsky.social"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-text-secondary hover:text-blue-400"
+              className="text-text-secondary"
             >
               <FontAwesomeIcon icon={faBluesky} className="w-6 h-6" />
             </a>
@@ -73,7 +73,7 @@ export default function Home() {
               href="https://letterboxd.com/Laurent_A/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-text-secondary hover:text-green-500"
+              className="text-text-secondary"
             >
               <FontAwesomeIcon icon={faLetterboxd} className="w-6 h-6" />
             </a>
@@ -81,7 +81,7 @@ export default function Home() {
               href="https://steamcommunity.com/id/thryndil/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-text-secondary hover:text-gray-300"
+              className="text-text-secondary"
             >
               <FontAwesomeIcon icon={faSteam} className="w-6 h-6" />
             </a>

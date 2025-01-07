@@ -2,15 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Palette de couleurs inspirée du site de Brittany Chiang */
+/* Palette de couleurs */
 :root {
-  --background: #0a192f; /* Bleu nuit profond */
-  --foreground: goldenrod; /* Vert menthe */
-  --card-bg: #112240; /* Bleu foncé pour les cartes */
-  --card-border: goldenrod; /* Bordure verte */
-  --text-primary: #ccd6f6; /* Texte principal clair */
-  --text-secondary: #8892b0; /* Texte secondaire */
-  --hover-bg: #233554; /* Couleur de fond au survol */
+  --background: #0a192f;
+  --foreground: goldenrod;
+  --card-bg: #112240; 
+  --card-border: goldenrod; 
+  --text-primary: #ccd6f6; 
+  --text-secondary: #8892b0; 
+  --hover-bg: #233554; 
 }
 
 /* Mode clair alternatif */
@@ -21,6 +21,36 @@
   --card-border: goldenrod;
   --text-primary: #0a192f;
   --text-secondary: #6c757d;
+}
+
+/* Couleurs des réseaux sociaux */
+.social-links a:hover {
+  transition: color 0.3s ease;
+}
+
+/* Couleur LinkedIn */
+.social-links a[href*="linkedin"]:hover {
+  color: #0077b5;
+}
+
+/* Couleur GitHub */
+.social-links a[href*="github"]:hover {
+  color: #979797;
+}
+
+/* Couleur Bluesky */
+.social-links a[href*="bsky"]:hover {
+  color: #005BBB;
+}
+
+/* Couleur Letterboxd */
+.social-links a[href*="letterboxd"]:hover {
+  color: #00A300;
+}
+
+/* Couleur Steam */
+.social-links a[href*="steam"]:hover {
+  color: #4a5570;
 }
 
 body {
