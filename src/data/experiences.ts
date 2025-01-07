@@ -61,7 +61,7 @@ export const experiences: Experience[] = [
       - Participation à la mise en œuvre de l'UX design et des fonctionnalités interactives.
     `,
     tags: ["Vue.js", "SCSS", "UX Design", "JavaScript", "React"],
-    website: "https://www.tribu.com",
+    website: "https://tribu.surge.sh/",
     logo: "/images/logos/tribu.png",
   },
   {

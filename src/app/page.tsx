@@ -35,6 +35,9 @@ function Chevron({ isOpen }: { isOpen: boolean }) {
 }
 
 export default function Home() {
+
+  const [showDev, setShowDev] = useState(true);
+  const [showSales, setShowSales] = useState(true);
   // État pour les expériences : on stocke les indices de celles qui sont "ouvertes"
   const [openExperiences, setOpenExperiences] = useState<number[]>([]);
   // Même chose pour education
@@ -75,6 +78,30 @@ export default function Home() {
             <a href="#experiences" className="hover:underline">
               Expériences
             </a>
+            <div className="flex flex-col mt-2 ml-4 space-y-2">
+              <label className="flex items-center gap-2">
+                <input
+                  type="checkbox"
+                  checked={showDev}
+                  onChange={(e) => setShowDev(e.target.checked)}
+                  className="form-checkbox text-foreground"
+                />
+                <span className="text-sm text-text-secondary">
+                  Développement Web
+                </span>
+              </label>
+              <label className="flex items-center gap-2">
+                <input
+                  type="checkbox"
+                  checked={showSales}
+                  onChange={(e) => setShowSales(e.target.checked)}
+                  className="form-checkbox text-foreground"
+                />
+                <span className="text-sm text-text-secondary">
+                  Commerce / Logistique
+                </span>
+              </label>
+            </div>
             <a href="#formations" className="hover:underline">
               Formations
             </a>
@@ -91,7 +118,7 @@ export default function Home() {
         </div>
 
         {/* Social Links */}
-        <div className="social-links flex justify-center mt-16 mb-auto">
+        <div className="social-links flex justify-start mt-16 mb-auto">
           <div className="flex gap-5">
             <a
               href="https://www.linkedin.com/in/laurentarcos/"
@@ -151,7 +178,13 @@ export default function Home() {
             Expériences Professionnelles
           </h2>
           <ul className="space-y-8">
-            {experiences.map((exp, index) => {
+            {experiences
+              .filter((exp) => {
+              if (exp.type === "dev" && !showDev) return false;
+              if (exp.type === "sales" && !showSales) return false;
+              return true;
+            })
+              .map((exp, index) => {
               // booléen "cette card est-elle ouverte ?"
               const isOpen = openExperiences.includes(index);
               return (
