@@ -17,7 +17,7 @@
 .light {
   --background: #e7e7e7;
   --foreground: #0a192f;
-  --card-bg: #d6deec;
+  --card-bg: #c9d7f0;
   --card-border: goldenrod;
   --text-primary: #0a192f;
   --text-secondary: #6c757d;
@@ -157,7 +157,7 @@ button:hover {
   margin-bottom: 0.5rem;
 }
 
-#projets a{
+#projets div{
   background-color: var(--card-bg);
 }
 
@@ -193,6 +193,7 @@ button:hover {
   object-fit: cover;
   border-radius: 0.5rem; /* Pour les coins arrondis */
 }
+
 
 @media (max-width: 768px) {
   .layout {
