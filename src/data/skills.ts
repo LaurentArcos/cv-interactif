@@ -1,4 +1,6 @@
-export const skills = [
+import { Skill } from "@/types";
+
+export const skills: Skill[] = [
   // Frontend
   { name: "React", category: "Frontend" },
   { name: "Next.js", category: "Frontend" },
@@ -24,12 +26,12 @@ export const skills = [
   { name: "PHP", category: "Languages" },
   { name: "Python", category: "Languages" },
 
-  // Tools
-  { name: "Git", category: "Tools" },
-  { name: "Docker", category: "Tools" },
-  { name: "GitHub Actions", category: "Tools" },
-  { name: "Postman", category: "Tools" },
-  { name: "Visual Studio Code", category: "Tools" },
-  { name: "Nginx", category: "Tools" },
-  { name: "PM2", category: "Tools" },
+  // Divers
+  { name: "Git", category: "Divers" },
+  { name: "Docker", category: "Divers" },
+  { name: "GitHub Actions", category: "Divers" },
+  { name: "Postman", category: "Divers" },
+  { name: "Visual Studio Code", category: "Divers" },
+  { name: "Nginx", category: "Divers" },
+  { name: "PM2", category: "Divers" },
 ];

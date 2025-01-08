@@ -2,10 +2,12 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { BriefcaseIcon, AcademicCapIcon, WrenchScrewdriverIcon } from "@heroicons/react/24/solid";
+import { BriefcaseIcon, AcademicCapIcon, CommandLineIcon } from "@heroicons/react/24/solid";
 import { experiences } from "@/data/experiences";
 import { education } from "@/data/education";
 import { skills } from "@/data/skills";
+import { projects } from "@/data/projects";
+import ReCAPTCHA from "react-google-recaptcha";
 import DarkModeToggle from "@/components/DarkModeToggle";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -40,17 +42,18 @@ export default function Home() {
   const [showDev, setShowDev] = useState(true);
   const [showSales, setShowSales] = useState(true);
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
-
+  const [recaptchaToken, setRecaptchaToken] = useState("");
   const [openExperiences, setOpenExperiences] = useState<number[]>([]);
   const [openEducations, setOpenEducations] = useState<number[]>([]);
+  
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const toggleFilters = () => setIsFiltersOpen(!isFiltersOpen);
 
     // Fonction pour filtrer les compétences
-  const filteredSkills =
+    const filteredSkills =
     selectedCategory === "All"
       ? skills
-      : skills.filter((skill) => skill.category === selectedCategory);
+      : skills.filter((skill: Skill) => skill.category === selectedCategory);
 
   // Fonction de toggle pour les expériences
   const toggleExperience = (index: number) => {
@@ -75,6 +78,43 @@ export default function Home() {
       }
     });
   };
+
+    // Fonction appelée lorsque le reCAPTCHA est validé
+    const handleRecaptchaChange = (token: string | null) => {
+      if (token) {
+        setRecaptchaToken(token);
+      }
+    };
+  
+    // Fonction de soumission du formulaire
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+  
+      // Vérification du token reCAPTCHA avant soumission
+      if (!recaptchaToken) {
+        alert("Veuillez vérifier le reCAPTCHA.");
+        return;
+      }
+  
+      const formData = new FormData(event.currentTarget);
+      formData.append("recaptchaToken", recaptchaToken);
+  
+      fetch("/api/contact", {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => {
+          if (response.ok) {
+            alert("Message envoyé avec succès !");
+          } else {
+            alert("Erreur lors de l'envoi du message.");
+          }
+        })
+        .catch((error) => {
+          console.error("Erreur:", error);
+          alert("Erreur lors de l'envoi du message.");
+        });
+    };
 
   return (
     <div className="flex h-screen">
@@ -391,13 +431,13 @@ export default function Home() {
         {/* Section Compétences Techniques */}
         <section id="competences" className="mb-16">
           <h2 className="text-3xl font-semibold mb-4 text-text-primary flex items-center">
-            <WrenchScrewdriverIcon className="w-6 h-6 mr-2 text-foreground" />
+            <CommandLineIcon className="w-6 h-6 mr-2 text-foreground" />
             Compétences Techniques
           </h2>
 
           {/* Filtres */}
           <div className="flex gap-4 mb-8">
-            {["All", "Frontend", "Backend", "Tools", "Languages"].map((category) => (
+            {["Tout", "Frontend", "Backend", "Divers", "Languages"].map((category) => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
@@ -426,25 +466,146 @@ export default function Home() {
           </ul>
         </section>
 
-        {/* Projets Section */}
-        <section id="projets" className="mb-16">
-          <h2 className="text-3xl font-semibold mb-4 text-text-primary">
-            Projets
-          </h2>
-          <p className="text-text-secondary">
-            Section à compléter avec des projets filtrables par technologie.
-          </p>
-        </section>
+{/* Projets Section */}
+<section id="projets" className="mb-16">
+  <h2 className="text-3xl font-semibold mb-4 text-text-primary">Projets</h2>
+  <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    {projects.map((project, index) => (
+      <li key={index} className="p-4 bg-card-bg rounded-lg shadow-md border border-card-border hover:shadow-xl transition-shadow duration-300">
+        <Image
+          src={project.image}
+          alt={project.title}
+          width={400}
+          height={200}
+          className="rounded-md"
+        />
+        <h3 className="text-xl font-bold mt-4">{project.title}</h3>
+        <p className="text-sm text-text-secondary">{project.description}</p>
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4 inline-block bg-foreground text-background py-2 px-4 rounded-md hover:bg-text-primary transition"
+        >
+          Voir le projet
+        </a>
+      </li>
+    ))}
+  </ul>
+</section>
 
         {/* Formulaire de Contact */}
-        <section id="contact" className="mb-16">
-          <h2 className="text-3xl font-semibold mb-4 text-text-primary">
-            Contact
-          </h2>
-          <p className="text-text-secondary">
-            Section à compléter avec un formulaire de contact.
-          </p>
-        </section>
+        {/* <section id="contact" className="mb-16">
+  <h2 className="text-3xl font-semibold mb-4 text-text-primary">Contact</h2>
+
+  <form
+            onSubmit={handleSubmit}
+            className="space-y-4 bg-card-bg p-8 rounded-lg shadow-md border border-card-border"
+          >
+    <div className="grid grid-cols-2 gap-4">
+      <div>
+        <label htmlFor="firstName" className="block text-sm text-text-secondary">
+          Prénom
+        </label>
+        <input
+          type="text"
+          name="firstName"
+          id="firstName"
+          className="w-full p-2 rounded-md bg-background border border-card-border"
+        />
+      </div>
+      <div>
+        <label htmlFor="lastName" className="block text-sm text-text-secondary">
+          Nom
+        </label>
+        <input
+          type="text"
+          name="lastName"
+          id="lastName"
+          className="w-full p-2 rounded-md bg-background border border-card-border"
+        />
+      </div>
+    </div>
+
+    <div>
+      <label htmlFor="email" className="block text-sm text-text-secondary">
+        Email (obligatoire)
+      </label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        required
+        className="w-full p-2 rounded-md bg-background border border-card-border"
+      />
+    </div>
+
+    <div>
+      <label htmlFor="phone" className="block text-sm text-text-secondary">
+        Numéro de téléphone
+      </label>
+      <input
+        type="tel"
+        name="phone"
+        id="phone"
+        className="w-full p-2 rounded-md bg-background border border-card-border"
+      />
+    </div>
+
+    <div>
+      <label htmlFor="company" className="block text-sm text-text-secondary">
+        Entreprise
+      </label>
+      <input
+        type="text"
+        name="company"
+        id="company"
+        className="w-full p-2 rounded-md bg-background border border-card-border"
+      />
+    </div>
+
+    <div>
+      <label htmlFor="subject" className="block text-sm text-text-secondary">
+        Objet
+      </label>
+      <input
+        type="text"
+        name="subject"
+        id="subject"
+        className="w-full p-2 rounded-md bg-background border border-card-border"
+      />
+    </div>
+
+    <div>
+      <label htmlFor="message" className="block text-sm text-text-secondary">
+        Message (limité à 2000 caractères)
+      </label>
+      <textarea
+        name="message"
+        id="message"
+        rows="6"
+        maxLength="2000"
+        required
+        className="w-full p-2 rounded-md bg-background border border-card-border"
+      ></textarea>
+    </div>
+
+                // Composant reCAPTCHA 
+                <div className="mt-4">
+              <ReCAPTCHA
+                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+                onChange={handleRecaptchaChange}
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="w-full bg-foreground text-background py-2 px-4 rounded-md hover:bg-text-primary transition"
+            >
+              Envoyer
+            </button>
+  </form>
+</section> */}
       </main>
     </div>
   );

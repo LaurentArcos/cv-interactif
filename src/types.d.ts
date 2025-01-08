@@ -22,5 +22,12 @@ export interface Education {
 
 export interface Skill {
   name: string;
-  category: "Frontend" | "Backend" | "Languages" | "Tools";
+  category: "Frontend" | "Backend" | "Languages" | "Divers";
+}
+
+export interface Project {
+  title: string;
+  description: string;
+  image: string;
+  link: string;
 }
