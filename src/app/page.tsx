@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { BriefcaseIcon, AcademicCapIcon, CommandLineIcon, FolderIcon } from "@heroicons/react/24/solid";
 import { experiences } from "@/data/experiences";
@@ -44,6 +44,7 @@ export default function Home() {
   const [showDev, setShowDev] = useState(true);
   const [showSales, setShowSales] = useState(true);
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string | null>(null);
   // const [recaptchaToken, setRecaptchaToken] = useState("");
   const [openExperiences, setOpenExperiences] = useState<number[]>([]);
   const [openEducations, setOpenEducations] = useState<number[]>([]);
@@ -118,6 +119,46 @@ export default function Home() {
     //     });
     // };
 
+    const handleSectionClick = (sectionId: string, toggleFilters?: boolean) => {
+      const sectionElement = document.getElementById(sectionId);
+      if (sectionElement) {
+        sectionElement.scrollIntoView({ behavior: "smooth", block: "start" });
+        setActiveSection(sectionId);
+      }
+      if (toggleFilters) {
+        setIsFiltersOpen(!isFiltersOpen);
+      }
+    };
+
+    const sectionRefs = useRef<Record<string, HTMLElement | null>>({
+      experiences: null,
+      formations: null,
+      competences: null,
+      projets: null,
+    });
+  
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setActiveSection(entry.target.id);
+            }
+          });
+        },
+        { rootMargin: "-50% 0px -50% 0px" } 
+      );
+  
+      Object.values(sectionRefs.current).forEach((section) => {
+        if (section) observer.observe(section);
+      });
+  
+      return () => {
+        Object.values(sectionRefs.current).forEach((section) => {
+          if (section) observer.unobserve(section);
+        });
+      };
+    }, []);
   return (
 
     <div className="flex h-screen">
@@ -129,12 +170,14 @@ export default function Home() {
           <nav className="nav-links mt-8 space-y-4">
             {/* Expériences avec le chevron */}
             <div className="flex items-center justify-between">
-              <a
+            <a
                 href="#experiences"
-                className="hover:underline flex items-center gap-2"
+                className={`hover:underline flex items-center gap-2 ${
+                  activeSection === "experiences" ? "text-foreground font-bold" : "text-text-secondary"
+                }`}
                 onClick={(e) => {
                   e.preventDefault();
-                  toggleFilters();
+                  handleSectionClick("experiences", true);
                 }}
               >
                 <span>Expériences</span>
@@ -142,7 +185,6 @@ export default function Home() {
               </a>
             </div>
 
-            {/* Checkboxes conditionnelles */}
             {isFiltersOpen && (
               <div className="flex flex-col space-y-2">
                 <label className="flex items-center gap-2">
@@ -152,9 +194,7 @@ export default function Home() {
                     onChange={(e) => setShowDev(e.target.checked)}
                     className="form-checkbox text-foreground rounded-md h-5 w-5"
                   />
-                  <span className="text-sm text-text-secondary">
-                    Développement Web
-                  </span>
+                  <span className="text-sm text-text-secondary">Développement Web</span>
                 </label>
                 <label className="flex items-center gap-2">
                   <input
@@ -163,20 +203,25 @@ export default function Home() {
                     onChange={(e) => setShowSales(e.target.checked)}
                     className="form-checkbox text-foreground rounded-md h-5 w-5"
                   />
-                  <span className="text-sm text-text-secondary">
-                    Commerce / Logistique
-                  </span>
+                  <span className="text-sm text-text-secondary">Commerce / Logistique</span>
                 </label>
               </div>
             )}
 
-            <a href="#formations" className="hover:underline">
+
+            <a href="#formations" className={`hover:underline flex items-center gap-2 ${
+      activeSection === "formations" ? "text-foreground font-bold" : "text-text-secondary"
+    }`}>
               Formations
             </a>
-            <a href="#competences" className="hover:underline">
+            <a href="#competences" className={`hover:underline flex items-center gap-2 ${
+      activeSection === "competences" ? "text-foreground font-bold" : "text-text-secondary"
+    }`}>
               Compétences
             </a>
-            <a href="#projets" className="hover:underline">
+            <a href="#projets" className={`hover:underline flex items-center gap-2 ${
+      activeSection === "projets" ? "text-foreground font-bold" : "text-text-secondary"
+    }`}>
               Projets
             </a>
             <div className="flex items-center justify-between">
@@ -262,7 +307,11 @@ export default function Home() {
       {/* Main Content */}
       <main className="flex-1 overflow-y-auto p-8">
         {/* Expériences Professionnelles */}
-        <section id="experiences" className="mb-16">
+        <section
+  id="experiences"
+  ref={(el) => (sectionRefs.current.experiences = el)}
+  className="mb-16 pt-1"
+>
           <h2 className="text-3xl font-semibold mb-4 text-text-primary flex items-center">
             <BriefcaseIcon className="w-6 h-6 mr-2 text-foreground" />
             Expériences Professionnelles
@@ -362,7 +411,11 @@ export default function Home() {
         </section>
 
         {/* Formations Académiques */}
-        <section id="formations" className="mb-16">
+        <section
+    id="formations"
+    ref={(el) => (sectionRefs.current.formations = el)}
+    className="mb-16"
+  >
           <h2 className="text-3xl font-semibold mb-4 text-text-primary flex items-center">
             <AcademicCapIcon className="w-6 h-6 mr-2 text-foreground" />
             Formations Académiques
@@ -454,7 +507,11 @@ export default function Home() {
         </section>
 
         {/* Section Compétences Techniques */}
-        <section id="competences" className="mb-16">
+        <section
+    id="competences"
+    ref={(el) => (sectionRefs.current.competences = el)}
+    className="mb-16"
+  >
           <h2 className="text-3xl font-semibold mb-4 text-text-primary flex items-center">
             <CommandLineIcon className="w-6 h-6 mr-2 text-foreground" />
             Compétences Techniques
@@ -492,7 +549,11 @@ export default function Home() {
         </section>
 
 {/* Projets Section */}
-  <section id="projets" className="mb-16">
+<section
+    id="projets"
+    ref={(el) => (sectionRefs.current.projets = el)}
+    className="mb-16"
+  >
           <h2 className="text-3xl font-semibold mb-4 text-text-primary flex items-center">
             <FolderIcon className="w-6 h-6 mr-2 text-foreground" />
             Projets
@@ -509,8 +570,8 @@ export default function Home() {
         <Image
           src={project.image}
           alt={project.title}
-          width={400} // Optionnel si tu veux définir la largeur exacte
-          height={200} // Optionnel
+          width={400}
+          height={200}
           className="project-image"
         />
         <h3 className="text-xl font-bold mt-4">{project.title}</h3>

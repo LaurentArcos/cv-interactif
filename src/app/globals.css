@@ -61,6 +61,10 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 h1, h2, h3 {
   color: var(--text-primary);
 }
@@ -151,6 +155,10 @@ button:hover {
   font-weight: 500;
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
+}
+
+#projets a{
+  background-color: var(--card-bg);
 }
 
 #skills li{
