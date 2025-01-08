@@ -2,12 +2,13 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { BriefcaseIcon, AcademicCapIcon, CommandLineIcon } from "@heroicons/react/24/solid";
+import { BriefcaseIcon, AcademicCapIcon, CommandLineIcon, FolderIcon } from "@heroicons/react/24/solid";
 import { experiences } from "@/data/experiences";
 import { education } from "@/data/education";
 import { skills } from "@/data/skills";
 import { projects } from "@/data/projects";
-import ReCAPTCHA from "react-google-recaptcha";
+import { Skill } from "@/types";
+// import ReCAPTCHA from "react-google-recaptcha";
 import DarkModeToggle from "@/components/DarkModeToggle";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -18,6 +19,7 @@ import {
   faBluesky,
   faLetterboxd,
 } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 /** Exemple d’icône de chevron bas/haut. 
     Vous pouvez utiliser Heroicons, FontAwesome, etc. */
@@ -42,10 +44,10 @@ export default function Home() {
   const [showDev, setShowDev] = useState(true);
   const [showSales, setShowSales] = useState(true);
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
-  const [recaptchaToken, setRecaptchaToken] = useState("");
+  // const [recaptchaToken, setRecaptchaToken] = useState("");
   const [openExperiences, setOpenExperiences] = useState<number[]>([]);
   const [openEducations, setOpenEducations] = useState<number[]>([]);
-  
+  const [isEmailOpen, setIsEmailOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const toggleFilters = () => setIsFiltersOpen(!isFiltersOpen);
 
@@ -80,43 +82,44 @@ export default function Home() {
   };
 
     // Fonction appelée lorsque le reCAPTCHA est validé
-    const handleRecaptchaChange = (token: string | null) => {
-      if (token) {
-        setRecaptchaToken(token);
-      }
-    };
+    // const handleRecaptchaChange = (token: string | null) => {
+    //   if (token) {
+    //     setRecaptchaToken(token);
+    //   }
+    // };
   
-    // Fonction de soumission du formulaire
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-      event.preventDefault();
+    // // Fonction de soumission du formulaire
+    // const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    //   event.preventDefault();
   
-      // Vérification du token reCAPTCHA avant soumission
-      if (!recaptchaToken) {
-        alert("Veuillez vérifier le reCAPTCHA.");
-        return;
-      }
+    //   // Vérification du token reCAPTCHA avant soumission
+    //   if (!recaptchaToken) {
+    //     alert("Veuillez vérifier le reCAPTCHA.");
+    //     return;
+    //   }
   
-      const formData = new FormData(event.currentTarget);
-      formData.append("recaptchaToken", recaptchaToken);
+    //   const formData = new FormData(event.currentTarget);
+    //   formData.append("recaptchaToken", recaptchaToken);
   
-      fetch("/api/contact", {
-        method: "POST",
-        body: formData,
-      })
-        .then((response) => {
-          if (response.ok) {
-            alert("Message envoyé avec succès !");
-          } else {
-            alert("Erreur lors de l'envoi du message.");
-          }
-        })
-        .catch((error) => {
-          console.error("Erreur:", error);
-          alert("Erreur lors de l'envoi du message.");
-        });
-    };
+    //   fetch("/api/contact", {
+    //     method: "POST",
+    //     body: formData,
+    //   })
+    //     .then((response) => {
+    //       if (response.ok) {
+    //         alert("Message envoyé avec succès !");
+    //       } else {
+    //         alert("Erreur lors de l'envoi du message.");
+    //       }
+    //     })
+    //     .catch((error) => {
+    //       console.error("Erreur:", error);
+    //       alert("Erreur lors de l'envoi du message.");
+    //     });
+    // };
 
   return (
+
     <div className="flex h-screen">
       {/* Sidebar */}
       <aside className="sidebar fixed-nav bg-background text-foreground w-[25%] flex flex-col justify-between h-full p-8">
@@ -176,14 +179,36 @@ export default function Home() {
             <a href="#projets" className="hover:underline">
               Projets
             </a>
-            <a href="#contact" className="hover:underline">
-              Contact
-            </a>
+            <div className="flex items-center justify-between">
+  <a
+    href="#contact"
+    className="hover:underline flex items-center gap-2"
+    onClick={(e) => {
+      e.preventDefault();
+      setIsEmailOpen(!isEmailOpen);
+    }}
+  >
+    <span>Contact</span>
+    <Chevron isOpen={isEmailOpen} />
+  </a>
+</div>
+
+{isEmailOpen && (
+  <div className="flex items-center gap-2 mt-2 text-sm text-text-secondary">
+    <FontAwesomeIcon icon={faEnvelope} className="w-5 h-5" />
+    <a
+      href="mailto:laurent.arcos@gmail.com"
+      className="hover:underline"
+    >
+      laurent.arcos@gmail.com
+    </a>
+  </div>
+)}
           </nav>
         </div>
 
         {/* Social Links */}
-        <div className="social-links flex justify-start mt-16 mb-auto">
+        <div className="social-links flex justify-start mt-28 mb-auto">
           <div className="flex gap-5">
             <a
               href="https://www.linkedin.com/in/laurentarcos/"
@@ -467,29 +492,30 @@ export default function Home() {
         </section>
 
 {/* Projets Section */}
-<section id="projets" className="mb-16">
-  <h2 className="text-3xl font-semibold mb-4 text-text-primary">Projets</h2>
+  <section id="projets" className="mb-16">
+          <h2 className="text-3xl font-semibold mb-4 text-text-primary flex items-center">
+            <FolderIcon className="w-6 h-6 mr-2 text-foreground" />
+            Projets
+          </h2>
   <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
     {projects.map((project, index) => (
-      <li key={index} className="p-4 bg-card-bg rounded-lg shadow-md border border-card-border hover:shadow-xl transition-shadow duration-300">
+      <a
+        key={index}
+        href={project.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block p-4 bg-card-bg rounded-lg shadow-md border border-card-border hover:shadow-xl transition-shadow duration-300"
+      >
         <Image
           src={project.image}
           alt={project.title}
-          width={400}
-          height={200}
-          className="rounded-md"
+          width={400} // Optionnel si tu veux définir la largeur exacte
+          height={200} // Optionnel
+          className="project-image"
         />
         <h3 className="text-xl font-bold mt-4">{project.title}</h3>
         <p className="text-sm text-text-secondary">{project.description}</p>
-        <a
-          href={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-4 inline-block bg-foreground text-background py-2 px-4 rounded-md hover:bg-text-primary transition"
-        >
-          Voir le projet
-        </a>
-      </li>
+      </a>
     ))}
   </ul>
 </section>
@@ -607,6 +633,6 @@ export default function Home() {
   </form>
 </section> */}
       </main>
-    </div>
+      </div>
   );
 }

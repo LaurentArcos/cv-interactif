@@ -44,9 +44,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     // Configuration de Nodemailer
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: process.env.SMTP_PORT,
-      secure: true,
+      service: "Gmail", // Ou un autre service email
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,

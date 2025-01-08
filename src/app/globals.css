@@ -179,6 +179,13 @@ button:hover {
   top: 2rem;
 }
 
+.project-image {
+  width: 100%;
+  height: 250px; /* Ajuste la hauteur selon tes besoins */
+  object-fit: cover;
+  border-radius: 0.5rem; /* Pour les coins arrondis */
+}
+
 @media (max-width: 768px) {
   .layout {
     grid-template-columns: 1fr;
