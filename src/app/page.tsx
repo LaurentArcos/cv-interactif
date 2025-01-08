@@ -309,8 +309,10 @@ export default function Home() {
         {/* Expériences Professionnelles */}
         <section
   id="experiences"
-  ref={(el) => (sectionRefs.current.experiences = el)}
-  className="mb-16 pt-1"
+  ref={(el) => {
+    sectionRefs.current.experiences = el;
+  }}
+  className="mb-16"
 >
           <h2 className="text-3xl font-semibold mb-4 text-text-primary flex items-center">
             <BriefcaseIcon className="w-6 h-6 mr-2 text-foreground" />
@@ -412,10 +414,12 @@ export default function Home() {
 
         {/* Formations Académiques */}
         <section
-    id="formations"
-    ref={(el) => (sectionRefs.current.formations = el)}
-    className="mb-16"
-  >
+  id="formations"
+  ref={(el) => {
+    sectionRefs.current.formations = el;
+  }}
+  className="mb-16"
+>
           <h2 className="text-3xl font-semibold mb-4 text-text-primary flex items-center">
             <AcademicCapIcon className="w-6 h-6 mr-2 text-foreground" />
             Formations Académiques
@@ -508,10 +512,12 @@ export default function Home() {
 
         {/* Section Compétences Techniques */}
         <section
-    id="competences"
-    ref={(el) => (sectionRefs.current.competences = el)}
-    className="mb-16"
-  >
+  id="competences"
+  ref={(el) => {
+    sectionRefs.current.competences = el;
+  }}
+  className="mb-16"
+>
           <h2 className="text-3xl font-semibold mb-4 text-text-primary flex items-center">
             <CommandLineIcon className="w-6 h-6 mr-2 text-foreground" />
             Compétences Techniques
@@ -519,18 +525,23 @@ export default function Home() {
 
           {/* Filtres */}
           <div className="flex gap-4 mb-8">
-            {["Tout", "Frontend", "Backend", "Divers", "Languages"].map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-md ${
-                  selectedCategory === category ? "bg-foreground text-background" : "bg-card-bg"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
+  {["Tout", "Frontend", "Backend", "Divers", "Languages"].map((category) => {
+    const isSelected =
+      selectedCategory === "All" && category === "Tout" ? true : selectedCategory === category;
+
+    return (
+      <button
+        key={category}
+        onClick={() => setSelectedCategory(category === "Tout" ? "All" : category)}
+        className={`px-4 py-2 rounded-md ${
+          isSelected ? "bg-foreground text-background" : "bg-card-bg"
+        }`}
+      >
+        {category}
+      </button>
+    );
+  })}
+</div>
 
           {/* Liste des compétences */}
           <ul id="skills" className="grid grid-cols-4 gap-2">
@@ -550,10 +561,12 @@ export default function Home() {
 
 {/* Projets Section */}
 <section
-    id="projets"
-    ref={(el) => (sectionRefs.current.projets = el)}
-    className="mb-16"
-  >
+  id="projets"
+  ref={(el) => {
+    sectionRefs.current.projets = el;
+  }}
+  className="mb-16"
+>
           <h2 className="text-3xl font-semibold mb-4 text-text-primary flex items-center">
             <FolderIcon className="w-6 h-6 mr-2 text-foreground" />
             Projets

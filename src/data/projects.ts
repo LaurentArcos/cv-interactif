@@ -34,7 +34,7 @@ export const projects: Project[] = [
   {
     title: "Weather App",
     description: "Application météo",
-    image: "/images/projects/meteo.jpg",
+    image: "/images/projects/weather.jpg",
     link: "http://laurentarcosweatherapp.surge.sh/",
   },
   {
