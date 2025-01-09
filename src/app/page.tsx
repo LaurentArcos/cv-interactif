@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import en from "@/app/translations/en";
+import fr from "@/app/translations/fr";
 import {
   BriefcaseIcon,
   AcademicCapIcon,
@@ -45,6 +47,8 @@ function Chevron({ isOpen }: { isOpen: boolean }) {
 }
 
 export default function Home() {
+  const [language, setLanguage] = useState<"en" | "fr">("fr");
+  const t = language === "fr" ? fr : en;
   const [showDev, setShowDev] = useState(true);
   const [showSales, setShowSales] = useState(true);
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
@@ -203,7 +207,7 @@ export default function Home() {
     </div>
   </div>
   <div className={`${isSidebarOpen ? "block" : "hidden"} md:block`}>
-        <p className="text-text-secondary">Développeur Web</p>
+        <p className="text-text-secondary">{t.developerWeb}</p>
 
         {/* Social Links Mobile */}
         <div className="social-links flex gap-5 mt-4 md:hidden">
@@ -249,6 +253,27 @@ export default function Home() {
               <FontAwesomeIcon icon={faSteam} className="w-4 h-4" />
             </a>
           </div>
+          <div className="flex items-center mt-0 ml-16">
+            <div className="relative">
+              <select
+                id="languageSelect"
+                value={language}
+                onChange={(e) => setLanguage(e.target.value as "fr" | "en")}
+                className="
+                  p-0
+                  pr-8
+                  border-none
+                  focus:outline-none
+                  bg-background
+                  text-foreground
+                  appearance-none
+                "
+              >
+                <option value="fr">FR</option>
+                <option value="en">EN</option>
+              </select>
+            </div>
+          </div>
         </div>
 
         <nav className="nav-links mt-4 md:mt-10 lg:mt-12 space-y-4">
@@ -266,7 +291,7 @@ export default function Home() {
                 handleSectionClick("experiences", true);
               }}
             >
-              <span>Expériences</span>
+              <span>{t.experiences}</span>
               <Chevron isOpen={isFiltersOpen} />
             </a>
           </div>
@@ -281,7 +306,7 @@ export default function Home() {
                   className="form-checkbox text-foreground rounded-md h-5 w-5"
                 />
                 <span className="text-sm text-text-secondary">
-                  Développement Web
+                  {t.dev}
                 </span>
               </label>
               <label className="flex items-center gap-2">
@@ -292,7 +317,7 @@ export default function Home() {
                   className="form-checkbox text-foreground rounded-md h-5 w-5"
                 />
                 <span className="text-sm text-text-secondary">
-                  Commerce / Logistique
+                {t.sales}
                 </span>
               </label>
             </div>
@@ -306,7 +331,7 @@ export default function Home() {
                 : "text-text-secondary"
             }`}
           >
-            Formations
+            {t.formations}
           </a>
           <a
             href="#competences"
@@ -316,7 +341,7 @@ export default function Home() {
                 : "text-text-secondary"
             }`}
           >
-            Compétences
+            {t.competences}
           </a>
           <a
             href="#projets"
@@ -326,7 +351,7 @@ export default function Home() {
                 : "text-text-secondary"
             }`}
           >
-            Projets
+            {t.projets}
           </a>
           <div className="flex items-center justify-between">
             <a
@@ -337,7 +362,7 @@ export default function Home() {
                 setIsEmailOpen(!isEmailOpen);
               }}
             >
-              <span>Contact</span>
+              <span>{t.contact}</span>
               <Chevron isOpen={isEmailOpen} />
             </a>
           </div>
@@ -356,7 +381,7 @@ export default function Home() {
         </nav>
         </div>
         {/* Social Links Desktop*/}
-        <div className="social-links hidden md:flex justify-start mt-28 mb-auto">
+        <div className="social-links hidden md:flex flex-col justify-start mt-28 mb-auto">
           <div className="flex gap-5">
             <a
               href="https://www.linkedin.com/in/laurentarcos/"
@@ -399,6 +424,29 @@ export default function Home() {
               <FontAwesomeIcon icon={faSteam} className="w-6 h-6" />
             </a>
           </div>
+        
+
+          <div className="flex items-center mt-8">
+            <div className="relative">
+              <select
+                id="languageSelect"
+                value={language}
+                onChange={(e) => setLanguage(e.target.value as "fr" | "en")}
+                className="
+                  p-1
+                  pr-8
+                  border-none
+                  focus:outline-none
+                  bg-background
+                  text-foreground
+                  appearance-none
+                "
+              >
+                <option value="fr">FR</option>
+                <option value="en">EN</option>
+              </select>
+            </div>
+          </div>
         </div>
 
         {/* Toggle Dark Mode Button - DESKTOP ONLY */}
@@ -419,7 +467,7 @@ export default function Home() {
         >
           <h2 className="text-xl md:text-3xl lg:text-3xl font-semibold mb-4 text-text-primary flex items-center">
             <BriefcaseIcon className="w-6 h-6 mr-2 text-foreground" />
-            Expériences Professionnelles
+            {t.experiencesTitle}
           </h2>
           <ul className="space-y-8">
             {experiences
@@ -528,7 +576,7 @@ export default function Home() {
         >
           <h2 className="text-xl md:text-3xl lg:text-3xl font-semibold mb-4 text-text-primary flex items-center">
             <AcademicCapIcon className="w-6 h-6 mr-2 text-foreground" />
-            Formations Académiques
+            {t.formationsTitle}
           </h2>
           <ul className="space-y-8">
             {education.map((edu, index) => {
@@ -628,7 +676,7 @@ export default function Home() {
         >
           <h2 className="text-xl md:text-3xl lg:text-3xl font-semibold mb-4 text-text-primary flex items-center">
             <CommandLineIcon className="w-6 h-6 mr-2 text-foreground" />
-            Compétences Techniques
+            {t.competencesTitle}
           </h2>
 
           {/* Filtres */}
@@ -689,7 +737,7 @@ export default function Home() {
         >
           <h2 className="text-xl md:text-3xl lg:text-3xl font-semibold mb-4 text-text-primary flex items-center">
             <FolderIcon className="w-6 h-6 mr-2 text-foreground" />
-            Projets
+            {t.projetsTitle}
           </h2>
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => {
@@ -841,7 +889,7 @@ export default function Home() {
   </form>
 </section> */}
       <footer className="text-center text-sm text-text-secondary mt-8 pb-4">
-        © 2025 Laurent Arcos. Tous droits réservés.
+        {t.copyright}
       </footer>
       </main>
     </div>
