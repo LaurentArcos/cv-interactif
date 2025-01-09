@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 
 // Métadonnées de la page
 export const metadata: Metadata = {
+  metadataBase: new URL("https://laurentarcos.fr"), 
   title: "Laurent Arcos - Développeur Web",
   description: "Portfolio interactif de Laurent Arcos, spécialisé en développement web et applications modernes.",
   keywords: [
@@ -46,7 +47,10 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
-  themeColor: "#1a202c", 
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+  },
 };
 
 export default function RootLayout({
@@ -61,6 +65,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#1a202c" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}

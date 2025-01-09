@@ -200,11 +200,28 @@ button:hover {
     grid-template-columns: 1fr;
   }
   .sidebar {
-    flex-direction: row;
-    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 50;
+
   }
   .nav-links {
-    flex-direction: row;
-    gap: 1rem;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+  }
+  
+  .dark-mode-toggle {
+    transform: scale(0.8);
+  }
+  
+  main {
+    margin-top: 120px;
   }
 }

@@ -2,7 +2,12 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { BriefcaseIcon, AcademicCapIcon, CommandLineIcon, FolderIcon } from "@heroicons/react/24/solid";
+import {
+  BriefcaseIcon,
+  AcademicCapIcon,
+  CommandLineIcon,
+  FolderIcon,
+} from "@heroicons/react/24/solid";
 import { experiences } from "@/data/experiences";
 import { education } from "@/data/education";
 import { skills } from "@/data/skills";
@@ -27,7 +32,7 @@ function Chevron({ isOpen }: { isOpen: boolean }) {
   return (
     <svg
       className={`w-5 h-5 text-foreground transform transition-transform duration-300 ${
-        isOpen ? "rotate-180" : "" 
+        isOpen ? "rotate-180" : ""
       }`}
       fill="none"
       stroke="currentColor"
@@ -40,7 +45,6 @@ function Chevron({ isOpen }: { isOpen: boolean }) {
 }
 
 export default function Home() {
-
   const [showDev, setShowDev] = useState(true);
   const [showSales, setShowSales] = useState(true);
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
@@ -51,9 +55,9 @@ export default function Home() {
   const [isEmailOpen, setIsEmailOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const toggleFilters = () => setIsFiltersOpen(!isFiltersOpen);
-
-    // Fonction pour filtrer les compétences
-    const filteredSkills =
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  // Fonction pour filtrer les compétences
+  const filteredSkills =
     selectedCategory === "All"
       ? skills
       : skills.filter((skill: Skill) => skill.category === selectedCategory);
@@ -82,178 +86,277 @@ export default function Home() {
     });
   };
 
-    // Fonction appelée lorsque le reCAPTCHA est validé
-    // const handleRecaptchaChange = (token: string | null) => {
-    //   if (token) {
-    //     setRecaptchaToken(token);
-    //   }
-    // };
-  
-    // // Fonction de soumission du formulaire
-    // const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    //   event.preventDefault();
-  
-    //   // Vérification du token reCAPTCHA avant soumission
-    //   if (!recaptchaToken) {
-    //     alert("Veuillez vérifier le reCAPTCHA.");
-    //     return;
-    //   }
-  
-    //   const formData = new FormData(event.currentTarget);
-    //   formData.append("recaptchaToken", recaptchaToken);
-  
-    //   fetch("/api/contact", {
-    //     method: "POST",
-    //     body: formData,
-    //   })
-    //     .then((response) => {
-    //       if (response.ok) {
-    //         alert("Message envoyé avec succès !");
-    //       } else {
-    //         alert("Erreur lors de l'envoi du message.");
-    //       }
-    //     })
-    //     .catch((error) => {
-    //       console.error("Erreur:", error);
-    //       alert("Erreur lors de l'envoi du message.");
-    //     });
-    // };
+  // Fonction appelée lorsque le reCAPTCHA est validé
+  // const handleRecaptchaChange = (token: string | null) => {
+  //   if (token) {
+  //     setRecaptchaToken(token);
+  //   }
+  // };
 
-    const handleSectionClick = (sectionId: string, toggleFilters?: boolean) => {
-      const sectionElement = document.getElementById(sectionId);
-      if (sectionElement) {
-        sectionElement.scrollIntoView({ behavior: "smooth", block: "start" });
-        setActiveSection(sectionId);
-      }
-      if (toggleFilters) {
-        setIsFiltersOpen(!isFiltersOpen);
-      }
-    };
+  // // Fonction de soumission du formulaire
+  // const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  //   event.preventDefault();
 
-    const sectionRefs = useRef<Record<string, HTMLElement | null>>({
-      experiences: null,
-      formations: null,
-      competences: null,
-      projets: null,
-    });
-  
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              setActiveSection(entry.target.id);
-            }
-          });
-        },
-        { rootMargin: "-50% 0px -50% 0px" } 
-      );
-  
-      Object.values(sectionRefs.current).forEach((section) => {
-        if (section) observer.observe(section);
-      });
-  
-      return () => {
-        Object.values(sectionRefs.current).forEach((section) => {
-          if (section) observer.unobserve(section);
+  //   // Vérification du token reCAPTCHA avant soumission
+  //   if (!recaptchaToken) {
+  //     alert("Veuillez vérifier le reCAPTCHA.");
+  //     return;
+  //   }
+
+  //   const formData = new FormData(event.currentTarget);
+  //   formData.append("recaptchaToken", recaptchaToken);
+
+  //   fetch("/api/contact", {
+  //     method: "POST",
+  //     body: formData,
+  //   })
+  //     .then((response) => {
+  //       if (response.ok) {
+  //         alert("Message envoyé avec succès !");
+  //       } else {
+  //         alert("Erreur lors de l'envoi du message.");
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.error("Erreur:", error);
+  //       alert("Erreur lors de l'envoi du message.");
+  //     });
+  // };
+
+  const handleSectionClick = (sectionId: string, toggleFilters?: boolean) => {
+    const sectionElement = document.getElementById(sectionId);
+    if (sectionElement) {
+      sectionElement.scrollIntoView({ behavior: "smooth", block: "start" });
+      setActiveSection(sectionId);
+    }
+    if (toggleFilters) {
+      setIsFiltersOpen(!isFiltersOpen);
+    }
+  };
+
+  const sectionRefs = useRef<Record<string, HTMLElement | null>>({
+    experiences: null,
+    formations: null,
+    competences: null,
+    projets: null,
+  });
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
         });
-      };
-    }, []);
+      },
+      { rootMargin: "-50% 0px -50% 0px" }
+    );
+
+    Object.values(sectionRefs.current).forEach((section) => {
+      if (section) observer.observe(section);
+    });
+
+    return () => {
+      Object.values(sectionRefs.current).forEach((section) => {
+        if (section) observer.unobserve(section);
+      });
+    };
+  }, []);
   return (
+    <div className="flex flex-col md:flex-row h-screen">
+      {/* Menu */}
+      <aside className="sidebar fixed-nav bg-background text-foreground w-[25%] flex-col justify-between h-full p-8">
+        <div className="flex items-center justify-between ">
+          {/* Titre */}
+          <h1 className="text-4xl font-bold mb-2 text-foreground">
+            Laurent Arcos
+          </h1>
 
-    <div className="flex h-screen">
-      {/* Sidebar */}
-      <aside className="sidebar fixed-nav bg-background text-foreground w-[25%] flex flex-col justify-between h-full p-8">
-        <div>
-          <h1 className="text-4xl font-bold mb-2 text-foreground">Laurent Arcos</h1>
-          <p className="text-text-secondary">Développeur Web</p>
-          <nav className="nav-links mt-8 space-y-4">
-            {/* Expériences avec le chevron */}
-            <div className="flex items-center justify-between">
-            <a
-                href="#experiences"
-                className={`hover:underline flex items-center gap-2 ${
-                  activeSection === "experiences" ? "text-foreground font-bold" : "text-text-secondary"
-                }`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleSectionClick("experiences", true);
-                }}
-              >
-                <span>Expériences</span>
-                <Chevron isOpen={isFiltersOpen} />
-              </a>
-            </div>
+          <div className="flex gap-3">
+      {/* Bouton hamburger pour mobile */}
+      <button 
+        onClick={() => setIsSidebarOpen(!isSidebarOpen)} 
+        className="md:hidden"
+        aria-label="Toggle Sidebar"
+      >
+        <svg 
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path 
+            strokeLinecap="round" 
+            strokeLinejoin="round" 
+            strokeWidth={2} 
+            d="M4 6h16M4 12h16M4 18h16" 
+          />
+        </svg>
+      </button>
 
-            {isFiltersOpen && (
-              <div className="flex flex-col space-y-2">
-                <label className="flex items-center gap-2">
-                  <input
-                    type="checkbox"
-                    checked={showDev}
-                    onChange={(e) => setShowDev(e.target.checked)}
-                    className="form-checkbox text-foreground rounded-md h-5 w-5"
-                  />
-                  <span className="text-sm text-text-secondary">Développement Web</span>
-                </label>
-                <label className="flex items-center gap-2">
-                  <input
-                    type="checkbox"
-                    checked={showSales}
-                    onChange={(e) => setShowSales(e.target.checked)}
-                    className="form-checkbox text-foreground rounded-md h-5 w-5"
-                  />
-                  <span className="text-sm text-text-secondary">Commerce / Logistique</span>
-                </label>
-              </div>
-            )}
-
-
-            <a href="#formations" className={`hover:underline flex items-center gap-2 ${
-      activeSection === "formations" ? "text-foreground font-bold" : "text-text-secondary"
-    }`}>
-              Formations
-            </a>
-            <a href="#competences" className={`hover:underline flex items-center gap-2 ${
-      activeSection === "competences" ? "text-foreground font-bold" : "text-text-secondary"
-    }`}>
-              Compétences
-            </a>
-            <a href="#projets" className={`hover:underline flex items-center gap-2 ${
-      activeSection === "projets" ? "text-foreground font-bold" : "text-text-secondary"
-    }`}>
-              Projets
-            </a>
-            <div className="flex items-center justify-between">
-  <a
-    href="#contact"
-    className="hover:underline flex items-center gap-2"
-    onClick={(e) => {
-      e.preventDefault();
-      setIsEmailOpen(!isEmailOpen);
-    }}
-  >
-    <span>Contact</span>
-    <Chevron isOpen={isEmailOpen} />
-  </a>
-</div>
-
-{isEmailOpen && (
-  <div className="flex items-center gap-2 mt-2 text-sm text-text-secondary">
-    <FontAwesomeIcon icon={faEnvelope} className="w-5 h-5" />
-    <a
-      href="mailto:laurent.arcos@gmail.com"
-      className="hover:underline"
-    >
-      laurent.arcos@gmail.com
-    </a>
+      {/* Toggle Dark Mode - MOBILE ONLY */}
+      <div className="md:hidden ml-2">
+        <DarkModeToggle />
+      </div>
+    </div>
   </div>
-)}
-          </nav>
+  <div className={`${isSidebarOpen ? "block" : "hidden"} md:block`}>
+        <p className="text-text-secondary">Développeur Web</p>
+
+        {/* Social Links Mobile */}
+        <div className="social-links flex gap-5 mt-4 md:hidden">
+          <div className="flex gap-5">
+            <a
+              href="https://www.linkedin.com/in/laurentarcos/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-text-secondary"
+            >
+              <FontAwesomeIcon icon={faLinkedin} className="w-4 h-4" />
+            </a>
+            <a
+              href="https://github.com/LaurentArcos"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-text-secondary"
+            >
+              <FontAwesomeIcon icon={faGithub} className="w-4 h-4" />
+            </a>
+            <a
+              href="https://bsky.app/profile/laurentarcos.bsky.social"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-text-secondary"
+            >
+              <FontAwesomeIcon icon={faBluesky} className="w-4 h-4" />
+            </a>
+            <a
+              href="https://letterboxd.com/Laurent_A/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-text-secondary"
+            >
+              <FontAwesomeIcon icon={faLetterboxd} className="w-4 h-4" />
+            </a>
+            <a
+              href="https://steamcommunity.com/id/thryndil/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-text-secondary"
+            >
+              <FontAwesomeIcon icon={faSteam} className="w-4 h-4" />
+            </a>
+          </div>
         </div>
 
-        {/* Social Links */}
-        <div className="social-links flex justify-start mt-28 mb-auto">
+        <nav className="nav-links mt-4 md:mt-10 lg:mt-12 space-y-4">
+          {/* Expériences avec le chevron */}
+          <div className="flex items-center justify-between">
+            <a
+              href="#experiences"
+              className={`hover:underline flex items-center gap-2 ${
+                activeSection === "experiences"
+                  ? "text-foreground font-bold"
+                  : "text-text-secondary"
+              }`}
+              onClick={(e) => {
+                e.preventDefault();
+                handleSectionClick("experiences", true);
+              }}
+            >
+              <span>Expériences</span>
+              <Chevron isOpen={isFiltersOpen} />
+            </a>
+          </div>
+
+          {isFiltersOpen && (
+            <div className="flex flex-col space-y-2">
+              <label className="flex items-center gap-2">
+                <input
+                  type="checkbox"
+                  checked={showDev}
+                  onChange={(e) => setShowDev(e.target.checked)}
+                  className="form-checkbox text-foreground rounded-md h-5 w-5"
+                />
+                <span className="text-sm text-text-secondary">
+                  Développement Web
+                </span>
+              </label>
+              <label className="flex items-center gap-2">
+                <input
+                  type="checkbox"
+                  checked={showSales}
+                  onChange={(e) => setShowSales(e.target.checked)}
+                  className="form-checkbox text-foreground rounded-md h-5 w-5"
+                />
+                <span className="text-sm text-text-secondary">
+                  Commerce / Logistique
+                </span>
+              </label>
+            </div>
+          )}
+
+          <a
+            href="#formations"
+            className={`hover:underline flex items-center gap-2 ${
+              activeSection === "formations"
+                ? "text-foreground font-bold"
+                : "text-text-secondary"
+            }`}
+          >
+            Formations
+          </a>
+          <a
+            href="#competences"
+            className={`hover:underline flex items-center gap-2 ${
+              activeSection === "competences"
+                ? "text-foreground font-bold"
+                : "text-text-secondary"
+            }`}
+          >
+            Compétences
+          </a>
+          <a
+            href="#projets"
+            className={`hover:underline flex items-center gap-2 ${
+              activeSection === "projets"
+                ? "text-foreground font-bold"
+                : "text-text-secondary"
+            }`}
+          >
+            Projets
+          </a>
+          <div className="flex items-center justify-between">
+            <a
+              href="#contact"
+              className="hover:underline flex items-center gap-2"
+              onClick={(e) => {
+                e.preventDefault();
+                setIsEmailOpen(!isEmailOpen);
+              }}
+            >
+              <span>Contact</span>
+              <Chevron isOpen={isEmailOpen} />
+            </a>
+          </div>
+
+          {isEmailOpen && (
+            <div className="flex items-center gap-2 mt-2 text-sm text-text-secondary">
+              <FontAwesomeIcon icon={faEnvelope} className="w-5 h-5" />
+              <a
+                href="mailto:laurent.arcos@gmail.com"
+                className="hover:underline"
+              >
+                laurent.arcos@gmail.com
+              </a>
+            </div>
+          )}
+        </nav>
+        </div>
+        {/* Social Links Desktop*/}
+        <div className="social-links hidden md:flex justify-start mt-28 mb-auto">
           <div className="flex gap-5">
             <a
               href="https://www.linkedin.com/in/laurentarcos/"
@@ -298,8 +401,8 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Toggle Dark Mode Button */}
-        <div className="fixed bottom-12 left-8">
+        {/* Toggle Dark Mode Button - DESKTOP ONLY */}
+        <div className="fixed bottom-12 left-8 hidden md:block">
           <DarkModeToggle />
         </div>
       </aside>
@@ -308,12 +411,12 @@ export default function Home() {
       <main className="flex-1 overflow-y-auto p-8">
         {/* Expériences Professionnelles */}
         <section
-  id="experiences"
-  ref={(el) => {
-    sectionRefs.current.experiences = el;
-  }}
-  className="mb-16"
->
+          id="experiences"
+          ref={(el) => {
+            sectionRefs.current.experiences = el;
+          }}
+          className="mb-16"
+        >
           <h2 className="text-3xl font-semibold mb-4 text-text-primary flex items-center">
             <BriefcaseIcon className="w-6 h-6 mr-2 text-foreground" />
             Expériences Professionnelles
@@ -321,105 +424,108 @@ export default function Home() {
           <ul className="space-y-8">
             {experiences
               .filter((exp) => {
-              if (exp.type === "dev" && !showDev) return false;
-              if (exp.type === "sales" && !showSales) return false;
-              return true;
-            })
+                if (exp.type === "dev" && !showDev) return false;
+                if (exp.type === "sales" && !showSales) return false;
+                return true;
+              })
               .map((exp, index) => {
-              // booléen "cette card est-elle ouverte ?"
-              const isOpen = openExperiences.includes(index);
-              return (
-                <motion.li
-                  key={index}
-                  onClick={() => {
-                    if (!isOpen) {
-                      toggleExperience(index);
-                    }
-                  }}
-                  className="card p-4 border border-gray-200 rounded-lg"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <div className="flex items-center gap-4 justify-between">
-
-                    <div className="flex items-center gap-4">
-                      <div className="logo-wrapper bg-white w-[60px] h-[60px] rounded-md flex items-center justify-center">
-                        {exp.logo ? (
-                          <Image
-                            src={exp.logo}
-                            alt={`${exp.company} logo`}
-                            width={60}
-                            height={60}
-                            className="rounded-md"
-                          />
-                        ) : (
-                          <div className="w-[60px] h-[60px] bg-white rounded-md"></div>
-                        )}
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold text-text-primary">
-                          {exp.title}
-                        </h3>
-                        <p className="text-sm text-text-secondary">{exp.company}</p>
-                        <p className="text-sm text-gray-500">{exp.date}</p>
-                      </div>
-                    </div>
-                    {/* Chevron */}
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
+                // booléen "cette card est-elle ouverte ?"
+                const isOpen = openExperiences.includes(index);
+                return (
+                  <motion.li
+                    key={index}
+                    onClick={() => {
+                      if (!isOpen) {
                         toggleExperience(index);
-                      }}
-                      className="text-text-secondary hover:text-text-primary"
-                      aria-label="Toggle Card"
-                    >
-                      <Chevron isOpen={isOpen} />
-                    </button>
-                  </div>
-
-                  {/* Les tags sont toujours visibles */}
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {exp.tags.map((tag, i) => (
-                      <span key={i} className="tag">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Description + site => affichés seulement si isOpen */}
-                  {isOpen && (
-                    <>
-                      <p className="mt-2 text-text-secondary">{exp.description}</p>
-                      {exp.website && (
-                        <div className="mt-4">
-                          <a
-                            href={exp.website}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-sm text-blue-500 hover:underline"
-                          >
-                            Voir le site
-                          </a>
+                      }
+                    }}
+                    className="card p-4 border border-gray-200 rounded-lg"
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <div className="flex items-center gap-4 justify-between">
+                      <div className="flex items-center gap-4">
+                        <div className="logo-wrapper bg-white w-[60px] h-[60px] rounded-md flex items-center justify-center">
+                          {exp.logo ? (
+                            <Image
+                              src={exp.logo}
+                              alt={`${exp.company} logo`}
+                              width={60}
+                              height={60}
+                              className="rounded-md"
+                            />
+                          ) : (
+                            <div className="w-[60px] h-[60px] bg-white rounded-md"></div>
+                          )}
                         </div>
-                      )}
-                    </>
-                  )}
-                </motion.li>
-              );
-            })}
+                        <div>
+                          <h3 className="text-xl font-bold text-text-primary">
+                            {exp.title}
+                          </h3>
+                          <p className="text-sm text-text-secondary">
+                            {exp.company}
+                          </p>
+                          <p className="text-sm text-gray-500">{exp.date}</p>
+                        </div>
+                      </div>
+                      {/* Chevron */}
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          toggleExperience(index);
+                        }}
+                        className="text-text-secondary hover:text-text-primary"
+                        aria-label="Toggle Card"
+                      >
+                        <Chevron isOpen={isOpen} />
+                      </button>
+                    </div>
+
+                    {/* Les tags sont toujours visibles */}
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {exp.tags.map((tag, i) => (
+                        <span key={i} className="tag">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Description + site => affichés seulement si isOpen */}
+                    {isOpen && (
+                      <>
+                        <p className="mt-2 text-text-secondary">
+                          {exp.description}
+                        </p>
+                        {exp.website && (
+                          <div className="mt-4">
+                            <a
+                              href={exp.website}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-sm text-blue-500 hover:underline"
+                            >
+                              Voir le site
+                            </a>
+                          </div>
+                        )}
+                      </>
+                    )}
+                  </motion.li>
+                );
+              })}
           </ul>
         </section>
 
         {/* Formations Académiques */}
         <section
-  id="formations"
-  ref={(el) => {
-    sectionRefs.current.formations = el;
-  }}
-  className="mb-16"
->
+          id="formations"
+          ref={(el) => {
+            sectionRefs.current.formations = el;
+          }}
+          className="mb-16"
+        >
           <h2 className="text-3xl font-semibold mb-4 text-text-primary flex items-center">
             <AcademicCapIcon className="w-6 h-6 mr-2 text-foreground" />
             Formations Académiques
@@ -489,7 +595,9 @@ export default function Home() {
                   {/* Affichage conditionnel */}
                   {isOpen && (
                     <>
-                      <p className="mt-2 text-text-secondary">{edu.description}</p>
+                      <p className="mt-2 text-text-secondary">
+                        {edu.description}
+                      </p>
                       {edu.website && (
                         <div className="mt-4">
                           <a
@@ -512,12 +620,12 @@ export default function Home() {
 
         {/* Section Compétences Techniques */}
         <section
-  id="competences"
-  ref={(el) => {
-    sectionRefs.current.competences = el;
-  }}
-  className="mb-16"
->
+          id="competences"
+          ref={(el) => {
+            sectionRefs.current.competences = el;
+          }}
+          className="mb-16"
+        >
           <h2 className="text-3xl font-semibold mb-4 text-text-primary flex items-center">
             <CommandLineIcon className="w-6 h-6 mr-2 text-foreground" />
             Compétences Techniques
@@ -525,23 +633,33 @@ export default function Home() {
 
           {/* Filtres */}
           <div className="flex gap-4 mb-8">
-  {["Tout", "Frontend", "Backend", "Divers", "Languages"].map((category) => {
-    const isSelected =
-      selectedCategory === "All" && category === "Tout" ? true : selectedCategory === category;
+            {["Tout", "Frontend", "Backend", "Divers", "Languages"].map(
+              (category) => {
+                const isSelected =
+                  selectedCategory === "All" && category === "Tout"
+                    ? true
+                    : selectedCategory === category;
 
-    return (
-      <button
-        key={category}
-        onClick={() => setSelectedCategory(category === "Tout" ? "All" : category)}
-        className={`px-4 py-2 rounded-md ${
-          isSelected ? "bg-foreground text-background" : "bg-card-bg"
-        }`}
-      >
-        {category}
-      </button>
-    );
-  })}
-</div>
+                return (
+                  <button
+                    key={category}
+                    onClick={() =>
+                      setSelectedCategory(
+                        category === "Tout" ? "All" : category
+                      )
+                    }
+                    className={`px-4 py-2 rounded-md ${
+                      isSelected
+                        ? "bg-foreground text-background"
+                        : "bg-card-bg"
+                    }`}
+                  >
+                    {category}
+                  </button>
+                );
+              }
+            )}
+          </div>
 
           {/* Liste des compétences */}
           <ul id="skills" className="grid grid-cols-4 gap-2">
@@ -553,58 +671,62 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <h3 className="text-lg font-semibold text-text-primary">{skill.name}</h3>
+                <h3 className="text-lg font-semibold text-text-primary">
+                  {skill.name}
+                </h3>
               </motion.li>
             ))}
           </ul>
         </section>
 
-{/* Projets Section */}
-<section
-  id="projets"
-  ref={(el) => {
-    sectionRefs.current.projets = el;
-  }}
-  className="mb-16"
->
+        {/* Projets Section */}
+        <section
+          id="projets"
+          ref={(el) => {
+            sectionRefs.current.projets = el;
+          }}
+          className="mb-16"
+        >
           <h2 className="text-3xl font-semibold mb-4 text-text-primary flex items-center">
             <FolderIcon className="w-6 h-6 mr-2 text-foreground" />
             Projets
           </h2>
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-  {projects.map((project, index) => {
-    const cardContent = (
-      <div className="block p-4 bg-card-bg rounded-lg shadow-md border border-card-border hover:shadow-xl transition-shadow duration-300">
-        <Image
-          src={project.image}
-          alt={project.title}
-          width={400}
-          height={200}
-          className="project-image rounded-md"
-        />
-        <h3 className="text-xl font-bold mt-4">{project.title}</h3>
-        <p className="text-sm text-text-secondary">{project.description}</p>
-      </div>
-    );
+            {projects.map((project, index) => {
+              const cardContent = (
+                <div className="block p-4 bg-card-bg rounded-lg shadow-md border border-card-border hover:shadow-xl transition-shadow duration-300">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={400}
+                    height={200}
+                    className="project-image rounded-md"
+                  />
+                  <h3 className="text-xl font-bold mt-4">{project.title}</h3>
+                  <p className="text-sm text-text-secondary">
+                    {project.description}
+                  </p>
+                </div>
+              );
 
-    return project.link ? (
-      <a
-        key={index}
-        href={project.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block"
-      >
-        {cardContent}
-      </a>
-    ) : (
-      <div key={index} className="opacity-80 cursor-not-allowed">
-        {cardContent}
-      </div>
-    );
-  })}
-</ul>
-</section>
+              return project.link ? (
+                <a
+                  key={index}
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  {cardContent}
+                </a>
+              ) : (
+                <div key={index} className="opacity-80 cursor-not-allowed">
+                  {cardContent}
+                </div>
+              );
+            })}
+          </ul>
+        </section>
 
         {/* Formulaire de Contact */}
         {/* <section id="contact" className="mb-16">
@@ -719,6 +841,6 @@ export default function Home() {
   </form>
 </section> */}
       </main>
-      </div>
+    </div>
   );
 }
