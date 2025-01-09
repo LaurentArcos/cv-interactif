@@ -26,8 +26,10 @@ export interface Skill {
 }
 
 export interface Project {
-  title: string;
-  description: string;
+  titleFr: string;
+  titleEn: string;
+  descriptionFr: string;
+  descriptionEn: string;
   image: string;
   link: string;
 }

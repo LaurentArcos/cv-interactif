@@ -2,85 +2,124 @@ import { Project } from "@/types";
 
 export const projects: Project[] = [
   {
-    title: "Worduel",
-    description: "Jeu de type Wordle en solo ou en duel, projet de fin de formation",
+    titleFr: "Worduel",
+    titleEn: "Worduel",
+    descriptionFr:
+      "Jeu de type Wordle en solo ou en duel, projet de fin de formation",
+    descriptionEn:
+      "A Wordle-like game with solo or duel mode, capstone project",
     image: "/images/projects/worduel.jpg",
     link: "https://worduel.fr/",
   },
   {
-    title: "Seagale - POS App",
-    description: "Application utilisée par les vendeurs en boutique",
+    titleFr: "Seagale - POS App",
+    titleEn: "Seagale - POS App",
+    descriptionFr: "Application utilisée par les vendeurs en boutique",
+    descriptionEn: "POS Application used by in-store employees",
     image: "/images/projects/posapp.png",
     link: "https://github.com/LaurentArcos/Cigale-POS-App",
   },
   {
-    title: "Assurancedespros.fr",
-    description: "Maintenance d'un site Wordpress pour une agence Allianz",
+    titleFr: "Assurancedespros.fr",
+    titleEn: "Assurancedespros.fr",
+    descriptionFr: "Maintenance d'un site Wordpress pour une agence Allianz",
+    descriptionEn: "Maintenance of a WordPress site for an Allianz agency",
     image: "/images/projects/allianz.jpg",
     link: "https://www.assurancedespros.fr/",
   },
   {
-    title: "ISS Tracker App",
-    description: "Suivi en temps réel de la Station Spatiale Internationale avec la version gratuite de l'API Google Maps",
+    titleFr: "ISS Tracker App",
+    titleEn: "ISS Tracker App",
+    descriptionFr:
+      "Suivi en temps réel de la Station Spatiale Internationale avec la version gratuite de l'API Google Maps",
+    descriptionEn:
+      "Real-time tracking of the International Space Station using the free Google Maps API",
     image: "/images/projects/iss.png",
     link: "https://laurentarcosisstracker.surge.sh/",
   },
   {
-    title: "L.A. Coffeedential",
-    description: "Site vitrine pour un Coffee Shop",
+    titleFr: "L.A. Coffeedential",
+    titleEn: "L.A. Coffeedential",
+    descriptionFr: "Site vitrine pour un Coffee Shop",
+    descriptionEn: "A simple showcase site for a Coffee Shop",
     image: "/images/projects/coffee.jpg",
     link: "https://lacoffeedential.surge.sh/",
   },
   {
-    title: "Seagale - Divers Prestashop",
-    description: `Création de divers outils pour Seagale sur Prestashop, notamment : 
+    titleFr: "Seagale - Divers Prestashop",
+    titleEn: "Seagale - Various Prestashop Features",
+    descriptionFr: `Création de divers outils pour Seagale sur Prestashop, notamment : 
     - Module de programme de parrainage
     - Page FAQ
     - Pages de sélection de Noël
     - Refonte du design du site`,
+    descriptionEn: `Creation of various Prestashop tools for Seagale, including:
+    - Referral program module
+    - FAQ page
+    - Christmas gift selection pages
+    - Site design overhaul`,
     image: "/images/projects/seagalepresta.jpg",
     link: "",
   },
   {
-    title: "Seagale - Hub WMS avec Shopify",
-    description: `Développement d'un hub logistique en prévision d'une migration vers Shopify. Avec les API Shopify, Chronopost, Colissimo et DHL. 
+    titleFr: "Seagale - Hub WMS avec Shopify",
+    titleEn: "Seagale - WMS Hub with Shopify",
+    descriptionFr: `Développement d'un hub logistique en prévision d'une migration vers Shopify. 
+    Intégration des API Shopify, Chronopost, Colissimo et DHL. 
     Gestion automatisée des expéditions, génération des étiquettes et suivi des colis.`,
+    descriptionEn: `Development of a logistics hub in preparation for a Shopify migration.
+    Integration of Shopify, Chronopost, Colissimo, and DHL APIs.
+    Automated shipments, label generation, and parcel tracking.`,
     image: "/images/projects/seagaleshopi.jpg",
     link: "",
   },
   {
-    title: "Moodboard Graphiste",
-    description: "Site vitrine démo pour un portfolio de graphiste",
+    titleFr: "Moodboard Graphiste",
+    titleEn: "Moodboard for a Graphic Designer",
+    descriptionFr: "Site vitrine démo pour un portfolio de graphiste",
+    descriptionEn: "A demo site showcasing a graphic designer's portfolio",
     image: "/images/projects/margot.jpg",
     link: "https://margotjollyportfolio.surge.sh/",
   },
   {
-    title: "Weather App",
-    description: "Application météo en temps réel",
+    titleFr: "Weather App",
+    titleEn: "Weather App",
+    descriptionFr: "Application météo en temps réel",
+    descriptionEn: "Real-time weather application",
     image: "/images/projects/weather.jpg",
     link: "http://laurentarcosweatherapp.surge.sh/",
   },
   {
-    title: "Trivia Quizz",
-    description: "Jeu de quizz de culture générale intéractif",
+    titleFr: "Trivia Quizz",
+    titleEn: "Trivia Quiz",
+    descriptionFr: "Jeu de quizz de culture générale intéractif",
+    descriptionEn: "Interactive general-knowledge quiz game",
     image: "/images/projects/trivia.jpg",
     link: "https://laurentarcostriviaquizz.surge.sh/",
   },
   {
-    title: "Tribu",
-    description: "Réseau social pour expatriés, projet de fin de formation (backend hors service)",
+    titleFr: "Tribu",
+    titleEn: "Tribu",
+    descriptionFr:
+      "Réseau social pour expatriés, projet de fin de formation (backend hors service)",
+    descriptionEn:
+      "A social network for expats, capstone project (backend currently offline)",
     image: "/images/projects/tribu.jpg",
     link: "https://tribu.surge.sh/",
   },
   {
-    title: "Calculatrice",
-    description: "Application calculatrice en ligne",
+    titleFr: "Calculatrice",
+    titleEn: "Calculator",
+    descriptionFr: "Application calculatrice en ligne",
+    descriptionEn: "Online calculator app",
     image: "/images/projects/calculatrice.jpg",
     link: "https://laurentarcoscalculatrice.surge.sh/",
   },
   {
-    title: "Flags of the World",
-    description: "Application interactive sur les drapeaux du monde",
+    titleFr: "Drapeaux du monde",
+    titleEn: "Flags of the World",
+    descriptionFr: "Application interactive sur les drapeaux du monde",
+    descriptionEn: "Interactive application about world flags",
     image: "/images/projects/flags.jpg",
     link: "https://laurentarcosflagsoftheworld.surge.sh/",
   },

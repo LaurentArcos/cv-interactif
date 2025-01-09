@@ -740,39 +740,43 @@ export default function Home() {
             {t.projetsTitle}
           </h2>
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => {
-              const cardContent = (
-                <div className="block p-4 bg-card-bg rounded-lg shadow-md border border-card-border hover:shadow-xl transition-shadow duration-300">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    width={400}
-                    height={200}
-                    className="project-image rounded-md"
-                  />
-                  <h3 className="text-l md:text-xl lg:text-xl font-bold mt-4">{project.title}</h3>
-                  <p className="text-sm text-text-secondary">
-                    {project.description}
-                  </p>
-                </div>
-              );
+          {projects.map((project, index) => {
+            const cardContent = (
+              <div className="block p-4 bg-card-bg rounded-lg shadow-md border border-card-border hover:shadow-xl transition-shadow duration-300">
+                <Image
+                  src={project.image}
+                  alt={language === "fr" ? project.titleFr : project.titleEn}
+                  width={400}
+                  height={200}
+                  className="project-image rounded-md"
+                />
+                <h3 className="text-l md:text-xl lg:text-xl font-bold mt-4">
+                  {language === "fr" ? project.titleFr : project.titleEn}
+                </h3>
+                <p className="text-sm text-text-secondary">
+                  {language === "fr"
+                    ? project.descriptionFr
+                    : project.descriptionEn}
+                </p>
+              </div>
+            );
 
-              return project.link ? (
-                <a
-                  key={index}
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block"
-                >
-                  {cardContent}
-                </a>
-              ) : (
-                <div key={index} className="opacity-80 cursor-not-allowed">
-                  {cardContent}
-                </div>
-              );
-            })}
+            return project.link ? (
+              <a
+                key={index}
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                {cardContent}
+              </a>
+            ) : (
+              <div key={index} className="opacity-80 cursor-not-allowed">
+                {cardContent}
+              </div>
+            );
+          })}
           </ul>
         </section>
 
