@@ -1,6 +1,7 @@
 const fr = {
   // Barre latérale, navigation
   developerWeb: "Développeur Web",
+  me: "À propos",
   experiences: "Expériences",
   formations: "Formations",
   competences: "Compétences",

@@ -25,9 +25,9 @@ export const experiences: Experience[] = [
     location: "Hyères, France",
     date: "Octobre 2022 - Présent",
     description: `
-      - Maintenance de sites WordPress pour des clients divers.
+      - Maintenance de site WordPress.
       - Création d'applications web sur mesure en React.
-      - Développement de projets divers, notamment des outils internes et des API personnalisées.
+      -  Développement de projets divers,notamment des outils internes et des API personnalisées.
       - Veille technologique constante et apprentissage de nouvelles technologies.
     `,
     tags: ["WordPress", "React", "JavaScript", "TypeScript", "Express", "API"],
@@ -52,7 +52,7 @@ export const experiences: Experience[] = [
     title: "Développeur Web Front-end",
     type: "dev",
     company: "Tribu",
-    location: "Hyères, France",
+    location: "Paris, France",
     date: "Août 2022 - Septembre 2022",
     description: `
       - Développement front-end pour un réseau social destiné aux expatriés français.

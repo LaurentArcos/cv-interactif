@@ -15,6 +15,7 @@ import { education } from "@/data/education";
 import { skills } from "@/data/skills";
 import { projects } from "@/data/projects";
 import { Skill } from "@/types";
+import { aboutMe } from "@/data/aboutme";
 // import ReCAPTCHA from "react-google-recaptcha";
 import DarkModeToggle from "@/components/DarkModeToggle";
 import Image from "next/image";
@@ -52,7 +53,7 @@ export default function Home() {
   const [showDev, setShowDev] = useState(true);
   const [showSales, setShowSales] = useState(true);
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [activeSection, setActiveSection] = useState<string | null>("aboutme");
   // const [recaptchaToken, setRecaptchaToken] = useState("");
   const [openExperiences, setOpenExperiences] = useState<number[]>([]);
   const [openEducations, setOpenEducations] = useState<number[]>([]);
@@ -277,6 +278,19 @@ export default function Home() {
         </div>
 
         <nav className="nav-links mt-4 md:mt-10 lg:mt-12 space-y-4">
+        <a
+              href="#aboutme"
+              className={`hover:underline flex items-center gap-2 ${
+                activeSection === "aboutme" ? "text-foreground font-bold" : "text-text-secondary"
+              }`}
+              onClick={(e) => {
+                e.preventDefault();
+                handleSectionClick("aboutme");
+              }}
+            >
+              {/* Le texte du lien, selon la langue */}
+              {t.me}
+            </a> 
           {/* Expériences avec le chevron */}
           <div className="flex items-center justify-between">
             <a
@@ -322,7 +336,7 @@ export default function Home() {
               </label>
             </div>
           )}
-
+ 
           <a
             href="#formations"
             className={`hover:underline flex items-center gap-2 ${
@@ -457,6 +471,16 @@ export default function Home() {
 
       {/* Main Content */}
       <main className="flex-1 overflow-y-auto p-8">
+
+      <section id="aboutme" className="mb-16">
+        <h2 className="text-xl md:text-3xl lg:text-3xl font-semibold mb-4 text-text-primary flex items-center">
+          {language === "fr" ? aboutMe.titleFr : aboutMe.titleEn}
+        </h2>
+        <p className="text-sm md:text-base text-text-secondary whitespace-pre-line">
+          {language === "fr" ? aboutMe.textFr : aboutMe.textEn}
+        </p>
+      </section>
+
         {/* Expériences Professionnelles */}
         <section
           id="experiences"
@@ -554,7 +578,7 @@ export default function Home() {
                               rel="noopener noreferrer"
                               className="text-sm text-blue-500 hover:underline"
                             >
-                              Voir le site
+                              {language === "fr" ? "Voir le site" : "visit the website"}
                             </a>
                           </div>
                         )}
@@ -654,7 +678,7 @@ export default function Home() {
                             rel="noopener noreferrer"
                             className="text-sm text-blue-500 hover:underline"
                           >
-                            Voir le site
+                            {language === "fr" ? "Voir le site" : "visit the website"}
                           </a>
                         </div>
                       )}

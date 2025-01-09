@@ -1,8 +1,9 @@
 const en = {
   // Barre latérale, navigation
   developerWeb: "Web Developer",
+  me: "About Me",
   experiences: "Experiences",
-  formations: "Formations",
+  formations: "Education",
   competences: "Skills",
   projets: "Projects",
   contact: "Contact",

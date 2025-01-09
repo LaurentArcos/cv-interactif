@@ -33,3 +33,10 @@ export interface Project {
   image: string;
   link: string;
 }
+
+export interface AboutMe {
+  titleFr: string;
+  titleEn: string;
+  textFr: string;
+  textEn: string;
+}

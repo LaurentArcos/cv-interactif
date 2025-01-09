@@ -42,14 +42,14 @@ export const education: Education[] = [
     logo: "/images/logos/opquast.jpg",
   },
   {
-    school: "Université Paris 8",
+    school: "Institut d'Etudes Européennes - Université Paris 8",
     degree: "Licence Professionnelle, Commerce et Logistique international",
     date: "2007 - 2008",
     description: `
       - Formation spécialisée en commerce international et logistique.
     `,
     tags: ["Commerce", "Logistique"],
-    website: "https://univ-paris8.fr",
+    website: "https://iee.univ-paris8.fr/",
     logo: "/images/logos/paris8.svg",
   },
   {
@@ -60,7 +60,7 @@ export const education: Education[] = [
       - Études en langues étrangères appliquées à la communication et au commerce.
     `,
     tags: ["Langues", "Communication"],
-    website: "https://www.univ-tln.fr",
+    website: "https://formations.univ-tln.fr/fr/offre-de-formation/licence-XA/licence-langues-etrangeres-appliquees-LOY3H2X5.html",
     logo: "/images/logos/toulon.jpg",
   },
 ];
