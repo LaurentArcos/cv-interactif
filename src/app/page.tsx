@@ -9,6 +9,7 @@ import {
   AcademicCapIcon,
   CommandLineIcon,
   FolderIcon,
+  UserCircleIcon,
 } from "@heroicons/react/24/solid";
 import { experiences } from "@/data/experiences";
 import { education } from "@/data/education";
@@ -61,6 +62,7 @@ export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const toggleFilters = () => setIsFiltersOpen(!isFiltersOpen);
+  const [isAboutMeOpen, setIsAboutMeOpen] = useState(false);
   // Fonction pour filtrer les compétences
   const filteredSkills =
     selectedCategory === "All"
@@ -472,14 +474,30 @@ export default function Home() {
       {/* Main Content */}
       <main className="flex-1 overflow-y-auto p-8">
 
-      <section id="aboutme" className="mb-16">
-        <h2 className="text-xl md:text-3xl lg:text-3xl font-semibold mb-4 text-text-primary flex items-center">
-          {language === "fr" ? aboutMe.titleFr : aboutMe.titleEn}
-        </h2>
-        <p className="text-sm md:text-base text-text-secondary whitespace-pre-line">
-          {language === "fr" ? aboutMe.textFr : aboutMe.textEn}
-        </p>
-      </section>
+        {/* SECTION À PROPOS */}
+        <section id="aboutme" className="mb-8 md:mb-16 lg:mb-16">
+          <div className="flex items-center justify-between">
+            <h2 className="text-xl md:text-3xl lg:text-3xl font-semibold mb-4 text-text-primary flex items-center">
+              <UserCircleIcon className="w-6 h-6 mr-2 text-foreground" />
+              {language === "fr" ? aboutMe.titleFr : aboutMe.titleEn}
+            {/* BOUTON TOGGLE */}
+            <button
+              onClick={() => setIsAboutMeOpen(!isAboutMeOpen)}
+              className="text-text-secondary hover:text-text-primary pl-4"
+              aria-label="Toggle About Me"
+            >
+              <Chevron isOpen={isAboutMeOpen} />
+            </button>
+            </h2>
+          </div>
+
+          {/* AFFICHAGE CONDITIONNEL */}
+          {isAboutMeOpen ? (
+            <p className="aboutme text-sm md:text-base text-justify whitespace-pre-line">
+              {language === "fr" ? aboutMe.textFr : aboutMe.textEn}
+            </p>
+          ) : null}
+        </section>
 
         {/* Expériences Professionnelles */}
         <section
@@ -494,201 +512,230 @@ export default function Home() {
             {t.experiencesTitle}
           </h2>
           <ul className="space-y-8">
-            {experiences
-              .filter((exp) => {
-                if (exp.type === "dev" && !showDev) return false;
-                if (exp.type === "sales" && !showSales) return false;
-                return true;
-              })
-              .map((exp, index) => {
-                // booléen "cette card est-elle ouverte ?"
-                const isOpen = openExperiences.includes(index);
-                return (
-                  <motion.li
-                    key={index}
-                    onClick={() => {
-                      if (!isOpen) {
-                        toggleExperience(index);
-                      }
-                    }}
-                    className="card p-4 border border-gray-200 rounded-lg"
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    <div className="flex items-center gap-4 justify-between">
-                      <div className="flex items-center gap-4">
-                        <div className="logo-wrapper bg-white w-[60px] h-[60px] rounded-md flex items-center justify-center">
-                          {exp.logo ? (
-                            <Image
-                              src={exp.logo}
-                              alt={`${exp.company} logo`}
-                              width={60}
-                              height={60}
-                              className="rounded-md"
-                            />
-                          ) : (
-                            <div className="w-[60px] h-[60px] bg-white rounded-md"></div>
-                          )}
-                        </div>
-                        <div>
-                          <h3 className="text-l md:text-xl lg:text-xl font-bold text-text-primary">
-                            {exp.title}
-                          </h3>
-                          <p className="text-sm text-text-secondary">
-                            {exp.company}
-                          </p>
-                          <p className="text-sm text-gray-500">{exp.date}</p>
-                        </div>
-                      </div>
-                      {/* Chevron */}
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          toggleExperience(index);
-                        }}
-                        className="text-text-secondary hover:text-text-primary"
-                        aria-label="Toggle Card"
-                      >
-                        <Chevron isOpen={isOpen} />
-                      </button>
-                    </div>
+  {experiences
+    .filter((exp) => {
+      if (exp.type === "dev" && !showDev) return false;
+      if (exp.type === "sales" && !showSales) return false;
+      return true;
+    })
+    .map((exp, index) => {
+      const isOpen = openExperiences.includes(index);
+      return (
+        <motion.li
+          key={index}
+          onClick={() => {
+            if (!isOpen) {
+              toggleExperience(index);
+            }
+          }}
+          className="card p-4 border border-gray-200 rounded-lg"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="flex items-center gap-4 justify-between">
+            <div className="flex items-center gap-4">
+              <div className="logo-wrapper bg-white w-[60px] h-[60px] rounded-md flex items-center justify-center">
+                {exp.logo ? (
+                  <Image
+                    src={exp.logo}
+                    alt={`${exp.company} logo`}
+                    width={60}
+                    height={60}
+                    className="rounded-md"
+                  />
+                ) : (
+                  <div className="w-[60px] h-[60px] bg-white rounded-md"></div>
+                )}
+              </div>
+              <div>
+                <h3 className="text-l md:text-xl lg:text-xl font-bold text-text-primary">
+                  {language === "fr" ? exp.titleFr : exp.titleEn}
+                </h3>
+                <p className="text-sm text-text-secondary">{exp.company}</p>
+                <p className="text-sm text-gray-500">
+                  {language === "fr" ? exp.dateFr : exp.dateEn}
+                </p>
+              </div>
+            </div>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                toggleExperience(index);
+              }}
+              className="text-text-secondary hover:text-text-primary"
+              aria-label="Toggle Card"
+            >
+              <Chevron isOpen={isOpen} />
+            </button>
+          </div>                   
 
-                    {/* Les tags sont toujours visibles */}
-                    <div className="mt-4 flex flex-wrap gap-2">
+
+          {isOpen && (
+            <>
+              <ul className="description list-disc list-inside text-text-secondary space-y-2 mt-4">
+                {(language === "fr" ? exp.descriptionFr : exp.descriptionEn)
+                  .split("\n")
+                  .filter((line) => line.trim().startsWith("-"))
+                  .map((line, i) => (
+                    <li key={i}>{line.replace("-", "").trim()}</li>
+                  ))}
+              </ul>
+
+              {exp.website && (
+                <div className="mt-4">
+                  <a
+                    href={exp.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-blue-500 hover:underline"
+                  >
+                    {language === "fr" ? "Voir le site" : "Visit the website"}
+                  </a>
+                </div>
+              )}
+                                  <div className="mt-4 flex flex-wrap gap-2">
                       {exp.tags.map((tag, i) => (
                         <span key={i} className="sm:text-sm tag">
                           {tag}
                         </span>
                       ))}
                     </div>
-
-                    {/* Description + site => affichés seulement si isOpen */}
-                    {isOpen && (
-                      <>
-                        <p className="mt-2 text-text-secondary">
-                          {exp.description}
-                        </p>
-                        {exp.website && (
-                          <div className="mt-4">
-                            <a
-                              href={exp.website}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-sm text-blue-500 hover:underline"
-                            >
-                              {language === "fr" ? "Voir le site" : "visit the website"}
-                            </a>
-                          </div>
-                        )}
-                      </>
-                    )}
-                  </motion.li>
-                );
-              })}
-          </ul>
+            </>
+          )}
+        </motion.li>
+      );
+    })}
+</ul>
         </section>
 
-        {/* Formations Académiques */}
-        <section
-          id="formations"
-          ref={(el) => {
-            sectionRefs.current.formations = el;
+{/* Formations Académiques */}
+<section
+  id="formations"
+  ref={(el) => {
+    sectionRefs.current.formations = el;
+  }}
+  className="mb-16"
+>
+  <h2 className="text-xl md:text-3xl lg:text-3xl font-semibold mb-4 text-text-primary flex items-center">
+    <AcademicCapIcon className="w-6 h-6 mr-2 text-foreground" />
+    {t.formationsTitle}
+  </h2>
+  <ul className="space-y-8">
+    {education.map((edu, index) => {
+      const isOpen = openEducations.includes(index);
+      return (
+        <motion.li
+          key={index}
+          onClick={() => {
+            if (!isOpen) {
+              toggleEducation(index);
+            }
           }}
-          className="mb-16"
+          className="card p-4 border border-gray-200 rounded-lg"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: index * 0.2 }}
         >
-          <h2 className="text-xl md:text-3xl lg:text-3xl font-semibold mb-4 text-text-primary flex items-center">
-            <AcademicCapIcon className="w-6 h-6 mr-2 text-foreground" />
-            {t.formationsTitle}
-          </h2>
-          <ul className="space-y-8">
-            {education.map((edu, index) => {
-              const isOpen = openEducations.includes(index);
-              return (
-                <motion.li
-                  key={index}
-                  onClick={() => {
-                    if (!isOpen) {
-                      toggleEducation(index);
-                    }
-                  }}
-                  className="card p-4 border border-gray-200 rounded-lg"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                >
-                  <div className="flex items-center gap-4 justify-between">
-                    {/* Logo + titre */}
-                    <div className="flex items-center gap-4">
-                      <div className="logo-wrapper bg-white w-[60px] h-[60px] rounded-md flex items-center justify-center">
-                        {edu.logo ? (
-                          <Image
-                            src={edu.logo}
-                            alt={`${edu.school} logo`}
-                            width={60}
-                            height={60}
-                            className="rounded-md"
-                          />
-                        ) : (
-                          <div className="w-[60px] h-[60px] bg-white rounded-md"></div>
-                        )}
-                      </div>
-                      <div>
-                        <h3 className="text-l md:text-xl lg:text-xl font-bold text-text-primary">
-                          {edu.school}
-                        </h3>
-                        <p className="text-sm text-text-secondary">
-                          {edu.degree}
-                        </p>
-                        <p className="text-sm text-gray-400">{edu.date}</p>
-                      </div>
-                    </div>
-                    {/* Chevron */}
-                    <button
-                      onClick={() => toggleEducation(index)}
-                      className="text-text-secondary hover:text-text-primary"
-                      aria-label="Toggle Card"
-                    >
-                      <Chevron isOpen={isOpen} />
-                    </button>
-                  </div>
+          <div className="flex items-center gap-4 justify-between">
+            {/* Logo + titre */}
+            <div className="flex items-center gap-4">
+              <div className="logo-wrapper bg-white w-[60px] h-[60px] rounded-md flex items-center justify-center">
+                {edu.logo ? (
+                  <Image
+                    src={edu.logo}
+                    alt={`${edu.school} logo`}
+                    width={60}
+                    height={60}
+                    className="rounded-md"
+                  />
+                ) : (
+                  <div className="w-[60px] h-[60px] bg-white rounded-md"></div>
+                )}
+              </div>
+              <div>
+                <h3 className="text-l md:text-xl lg:text-xl font-bold text-text-primary">
+                  {edu.school}
+                </h3>
+                <p className="text-sm text-text-secondary">
+                  {language === "fr" ? edu.degreeFr : edu.degreeEn}
+                </p>
+                <p className="text-sm text-gray-400">
+                  {language === "fr" ? edu.dateFr : edu.dateEn}
+                </p>
+              </div>
+            </div>
+            {/* Chevron */}
+            <button
+              onClick={() => toggleEducation(index)}
+              className="text-text-secondary hover:text-text-primary"
+              aria-label="Toggle Card"
+            >
+              <Chevron isOpen={isOpen} />
+            </button>
+          </div>
 
-                  {/* Les tags sont toujours visibles */}
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {edu.tags.map((tag, i) => (
-                      <span key={i} className="tag">
-                        {tag}
-                      </span>
+          {/* Description */}
+          {isOpen && (
+            <>
+              {language === "fr" ? (
+                edu.descriptionFr.includes("-") ? (
+                  <ul className="description list-disc list-inside space-y-2 mt-4">
+                    {edu.descriptionFr
+                      .split("\n")
+                      .filter((line) => line.trim().startsWith("-"))
+                      .map((line, i) => (
+                        <li key={i}>{line.replace("-", "").trim()}</li>
+                      ))}
+                  </ul>
+                ) : (
+                  <p className="description mt-2 text-text-secondy">
+                    {edu.descriptionFr}
+                  </p>
+                )
+              ) : edu.descriptionEn.includes("-") ? (
+                <ul className="description list-disc list-inside  space-y-2 mt-4">
+                  {edu.descriptionEn
+                    .split("\n")
+                    .filter((line) => line.trim().startsWith("-"))
+                    .map((line, i) => (
+                      <li key={i}>{line.replace("-", "").trim()}</li>
                     ))}
-                  </div>
+                </ul>
+              ) : (
+                <p className="description mt-2 ">
+                  {edu.descriptionEn}
+                </p>
+              )}
 
-                  {/* Affichage conditionnel */}
-                  {isOpen && (
-                    <>
-                      <p className="mt-2 text-text-secondary">
-                        {edu.description}
-                      </p>
-                      {edu.website && (
-                        <div className="mt-4">
-                          <a
-                            href={edu.website}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-sm text-blue-500 hover:underline"
-                          >
-                            {language === "fr" ? "Voir le site" : "visit the website"}
-                          </a>
-                        </div>
-                      )}
-                    </>
-                  )}
-                </motion.li>
-              );
-            })}
-          </ul>
-        </section>
+              {edu.website && (
+                <div className="mt-4">
+                  <a
+                    href={edu.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-blue-500 hover:underline"
+                  >
+                    {language === "fr" ? "Voir le site" : "Visit the website"}
+                  </a>
+                </div>
+              )}
+              <div className="mt-4 flex flex-wrap gap-2">
+                {edu.tags.map((tag, i) => (
+                  <span key={i} className="tag">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </>
+          )}
+        </motion.li>
+      );
+    })}
+  </ul>
+</section>
 
         {/* Section Compétences Techniques */}
         <section

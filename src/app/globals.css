@@ -24,6 +24,14 @@
   --hover-bg: #b7ccf0;
 }
 
+.description {
+  color: var(--text-primary);
+}
+
+.aboutme {
+  color: rgb(201, 201, 201);
+}
+
 /* Couleurs des réseaux sociaux */
 .social-links a:hover {
   transition: color 0.3s ease;
