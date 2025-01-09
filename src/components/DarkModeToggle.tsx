@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 export default function DarkModeToggle() {
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
 
   useEffect(() => {
     const storedPreference = localStorage.getItem("theme");

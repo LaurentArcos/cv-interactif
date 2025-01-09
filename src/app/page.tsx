@@ -54,8 +54,8 @@ export default function Home() {
   const [openEducations, setOpenEducations] = useState<number[]>([]);
   const [isEmailOpen, setIsEmailOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
-  const toggleFilters = () => setIsFiltersOpen(!isFiltersOpen);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const toggleFilters = () => setIsFiltersOpen(!isFiltersOpen);
   // Fonction pour filtrer les compétences
   const filteredSkills =
     selectedCategory === "All"
@@ -169,12 +169,6 @@ export default function Home() {
       <aside className="sidebar fixed-nav bg-background text-foreground w-[25%] flex-col justify-between h-full p-8">
         <div className="flex items-center justify-between ">
           {/* Titre */}
-          <h1 className="text-4xl font-bold mb-2 text-foreground">
-            Laurent Arcos
-          </h1>
-
-          <div className="flex gap-3">
-      {/* Bouton hamburger pour mobile */}
       <button 
         onClick={() => setIsSidebarOpen(!isSidebarOpen)} 
         className="md:hidden"
@@ -195,9 +189,15 @@ export default function Home() {
           />
         </svg>
       </button>
+          <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold text-foreground">
+            Laurent Arcos
+          </h1>
+
+          <div className="flex gap-3">
+
 
       {/* Toggle Dark Mode - MOBILE ONLY */}
-      <div className="md:hidden ml-2">
+      <div className="md:hidden">
         <DarkModeToggle />
       </div>
     </div>
@@ -417,7 +417,7 @@ export default function Home() {
           }}
           className="mb-16"
         >
-          <h2 className="text-3xl font-semibold mb-4 text-text-primary flex items-center">
+          <h2 className="text-xl md:text-3xl lg:text-3xl font-semibold mb-4 text-text-primary flex items-center">
             <BriefcaseIcon className="w-6 h-6 mr-2 text-foreground" />
             Expériences Professionnelles
           </h2>
@@ -461,7 +461,7 @@ export default function Home() {
                           )}
                         </div>
                         <div>
-                          <h3 className="text-xl font-bold text-text-primary">
+                          <h3 className="text-l md:text-xl lg:text-xl font-bold text-text-primary">
                             {exp.title}
                           </h3>
                           <p className="text-sm text-text-secondary">
@@ -486,7 +486,7 @@ export default function Home() {
                     {/* Les tags sont toujours visibles */}
                     <div className="mt-4 flex flex-wrap gap-2">
                       {exp.tags.map((tag, i) => (
-                        <span key={i} className="tag">
+                        <span key={i} className="sm:text-sm tag">
                           {tag}
                         </span>
                       ))}
@@ -526,7 +526,7 @@ export default function Home() {
           }}
           className="mb-16"
         >
-          <h2 className="text-3xl font-semibold mb-4 text-text-primary flex items-center">
+          <h2 className="text-xl md:text-3xl lg:text-3xl font-semibold mb-4 text-text-primary flex items-center">
             <AcademicCapIcon className="w-6 h-6 mr-2 text-foreground" />
             Formations Académiques
           </h2>
@@ -564,7 +564,7 @@ export default function Home() {
                         )}
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-text-primary">
+                        <h3 className="text-l md:text-xl lg:text-xl font-bold text-text-primary">
                           {edu.school}
                         </h3>
                         <p className="text-sm text-text-secondary">
@@ -626,7 +626,7 @@ export default function Home() {
           }}
           className="mb-16"
         >
-          <h2 className="text-3xl font-semibold mb-4 text-text-primary flex items-center">
+          <h2 className="text-xl md:text-3xl lg:text-3xl font-semibold mb-4 text-text-primary flex items-center">
             <CommandLineIcon className="w-6 h-6 mr-2 text-foreground" />
             Compétences Techniques
           </h2>
@@ -662,7 +662,7 @@ export default function Home() {
           </div>
 
           {/* Liste des compétences */}
-          <ul id="skills" className="grid grid-cols-4 gap-2">
+          <ul id="skills" className="grid grid-cols-3 gap-1 md:grid-cols-6 md:gap-2 lg:grid-cols-6 lg:gap-2">
             {filteredSkills.map((skill, index) => (
               <motion.li
                 key={index}
@@ -671,7 +671,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <h3 className="text-lg font-semibold text-text-primary">
+                <h3 className="text-l md:text-xl lg:text-xl font-semibold text-text-primary">
                   {skill.name}
                 </h3>
               </motion.li>
@@ -687,7 +687,7 @@ export default function Home() {
           }}
           className="mb-16"
         >
-          <h2 className="text-3xl font-semibold mb-4 text-text-primary flex items-center">
+          <h2 className="text-xl md:text-3xl lg:text-3xl font-semibold mb-4 text-text-primary flex items-center">
             <FolderIcon className="w-6 h-6 mr-2 text-foreground" />
             Projets
           </h2>
@@ -702,7 +702,7 @@ export default function Home() {
                     height={200}
                     className="project-image rounded-md"
                   />
-                  <h3 className="text-xl font-bold mt-4">{project.title}</h3>
+                  <h3 className="text-l md:text-xl lg:text-xl font-bold mt-4">{project.title}</h3>
                   <p className="text-sm text-text-secondary">
                     {project.description}
                   </p>
@@ -840,6 +840,9 @@ export default function Home() {
             </button>
   </form>
 </section> */}
+      <footer className="text-center text-sm text-text-secondary mt-8 pb-4">
+        © 2025 Laurent Arcos. Tous droits réservés.
+      </footer>
       </main>
     </div>
   );
