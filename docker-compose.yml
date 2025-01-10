@@ -4,4 +4,6 @@ services:
     image: laurentarcos/cv-interactif:latest
     ports:
       - "3017:3000"
+    environment:
+      - PORT=3000
     restart: always
