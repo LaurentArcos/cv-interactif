@@ -27,8 +27,8 @@ export interface Education {
 }
 
 export interface Skill {
-  name: string;
-  category: "Frontend" | "Backend" | "Languages" | "Divers" | "SoftSkills";
+  name: { fr: string; en: string };
+  category: { fr: string; en: string };
 }
 
 export interface Project {

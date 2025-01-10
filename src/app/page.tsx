@@ -63,11 +63,23 @@ export default function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const toggleFilters = () => setIsFiltersOpen(!isFiltersOpen);
   const [isAboutMeOpen, setIsAboutMeOpen] = useState(false);
+ 
   // Fonction pour filtrer les compétences
+
+  const getTranslatedSkill = (skill: Skill, language: "en" | "fr") => ({
+    name: skill.name[language],
+    category: skill.category[language],
+  });
+
+
   const filteredSkills =
-    selectedCategory === "All"
-      ? skills
-      : skills.filter((skill: Skill) => skill.category === selectedCategory);
+  selectedCategory === "All"
+    ? skills.map((skill) => getTranslatedSkill(skill, language))
+    : skills
+        .filter(
+          (skill) => skill.category[language] === selectedCategory
+        )
+        .map((skill) => getTranslatedSkill(skill, language));
 
   // Fonction de toggle pour les expériences
   const toggleExperience = (index: number) => {
@@ -147,6 +159,7 @@ export default function Home() {
     competences: null,
     projets: null,
   });
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -752,28 +765,20 @@ export default function Home() {
 
           {/* Filtres */}
           <div className="flex gap-4 mb-8">
-            {["Tout", "Frontend", "Backend", "Divers", "Languages"].map(
+            {["All", ...new Set(skills.map((skill) => skill.category[language]))].map(
               (category) => {
-                const isSelected =
-                  selectedCategory === "All" && category === "Tout"
-                    ? true
-                    : selectedCategory === category;
+                const isSelected = selectedCategory === category || (selectedCategory === "All" && category === "All");
+                const translatedCategory = category === "All" ? (language === "fr" ? "Tout" : "All") : category;
 
                 return (
                   <button
                     key={category}
-                    onClick={() =>
-                      setSelectedCategory(
-                        category === "Tout" ? "All" : category
-                      )
-                    }
-                    className={`px-4 py-2 rounded-md ${
-                      isSelected
-                        ? "bg-foreground text-background"
-                        : "bg-card-bg"
+                    onClick={() => setSelectedCategory(category)}
+                    className={`px-4 py-2 text-sm rounded-md ${
+                      isSelected ? "bg-foreground text-background" : "bg-card-bg"
                     }`}
                   >
-                    {category}
+                    {translatedCategory}
                   </button>
                 );
               }
@@ -781,7 +786,7 @@ export default function Home() {
           </div>
 
           {/* Liste des compétences */}
-          <ul id="skills" className="grid grid-cols-3 gap-1 md:grid-cols-6 md:gap-2 lg:grid-cols-6 lg:gap-2">
+          <ul id="skills" className="grid grid-cols-3 gap-1 md:grid-cols-8 md:gap-2 lg:grid-cols-8 lg:gap-2">
             {filteredSkills.map((skill, index) => (
               <motion.li
                 key={index}
@@ -790,7 +795,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <h3 className="text-l md:text-xl lg:text-xl font-semibold text-text-primary">
+                <h3 className="text-xs md:text-sm lg:text-sm font-semibold text-text-primary">
                   {skill.name}
                 </h3>
               </motion.li>

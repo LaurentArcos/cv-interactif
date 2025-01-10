@@ -2,85 +2,286 @@ import { Skill } from "@/types";
 
 export const skills: Skill[] = [
   // 💻 Développement Frontend / Frontend Development
-  { name: "React", category: "Développement Frontend" },
-  { name: "Next.js", category: "Développement Frontend" },
-  { name: "Svelte", category: "Développement Frontend" },
-  { name: "Redux", category: "Développement Frontend" },
-  { name: "Tailwind CSS", category: "Développement Frontend" },
-  { name: "SCSS", category: "Développement Frontend" },
-  { name: "Sass", category: "Développement Frontend" },
-  { name: "Bootstrap", category: "Développement Frontend" },
-  { name: "HTML5", category: "Développement Frontend" },
-  { name: "CSS3", category: "Développement Frontend" },
-  { name: "JavaScript", category: "Développement Frontend" },
-  { name: "TypeScript", category: "Développement Frontend" },
-  { name: "Framer Motion", category: "Développement Frontend" },
+  {
+    name: { en: "React", fr: "React" },
+    category: { en: "Frontend Development", fr: "Développement Frontend" },
+  },
+  {
+    name: { en: "Next.js", fr: "Next.js" },
+    category: { en: "Frontend Development", fr: "Développement Frontend" },
+  },
+  {
+    name: { en: "Svelte", fr: "Svelte" },
+    category: { en: "Frontend Development", fr: "Développement Frontend" },
+  },
+  {
+    name: { en: "Redux", fr: "Redux" },
+    category: { en: "Frontend Development", fr: "Développement Frontend" },
+  },
+  {
+    name: { en: "Tailwind CSS", fr: "Tailwind CSS" },
+    category: { en: "Frontend Development", fr: "Développement Frontend" },
+  },
+  {
+    name: { en: "SCSS", fr: "SCSS" },
+    category: { en: "Frontend Development", fr: "Développement Frontend" },
+  },
+  {
+    name: { en: "Sass", fr: "Sass" },
+    category: { en: "Frontend Development", fr: "Développement Frontend" },
+  },
+  {
+    name: { en: "Bootstrap", fr: "Bootstrap" },
+    category: { en: "Frontend Development", fr: "Développement Frontend" },
+  },
+  {
+    name: { en: "HTML5", fr: "HTML5" },
+    category: { en: "Frontend Development", fr: "Développement Frontend" },
+  },
+  {
+    name: { en: "CSS3", fr: "CSS3" },
+    category: { en: "Frontend Development", fr: "Développement Frontend" },
+  },
+  {
+    name: { en: "JavaScript", fr: "JavaScript" },
+    category: { en: "Frontend Development", fr: "Développement Frontend" },
+  },
+  {
+    name: { en: "TypeScript", fr: "TypeScript" },
+    category: { en: "Frontend Development", fr: "Développement Frontend" },
+  },
+  {
+    name: { en: "Framer Motion", fr: "Framer Motion" },
+    category: { en: "Frontend Development", fr: "Développement Frontend" },
+  },
 
   // 🧑‍💻 Développement Backend / Backend Development
-  { name: "Node.js", category: "Développement Backend" },
-  { name: "Express.js", category: "Développement Backend" },
-  { name: "NestJS", category: "Développement Backend" },
-  { name: "GraphQL", category: "Développement Backend" },
-  { name: "Apollo", category: "Développement Backend" },
-  { name: "Prisma", category: "Développement Backend" },
-  { name: "MySQL", category: "Développement Backend" },
-  { name: "PostgreSQL", category: "Développement Backend" },
-  { name: "MongoDB", category: "Développement Backend" },
-  { name: "Sequelize", category: "Développement Backend" },
-  { name: "MariaDB", category: "Développement Backend" },
-  { name: "PHP", category: "Développement Backend" },
+  {
+    name: { en: "Node.js", fr: "Node.js" },
+    category: { en: "Backend Development", fr: "Développement Backend" },
+  },
+  {
+    name: { en: "Express.js", fr: "Express.js" },
+    category: { en: "Backend Development", fr: "Développement Backend" },
+  },
+  {
+    name: { en: "NestJS", fr: "NestJS" },
+    category: { en: "Backend Development", fr: "Développement Backend" },
+  },
+  {
+    name: { en: "GraphQL", fr: "GraphQL" },
+    category: { en: "Backend Development", fr: "Développement Backend" },
+  },
+  {
+    name: { en: "Apollo", fr: "Apollo" },
+    category: { en: "Backend Development", fr: "Développement Backend" },
+  },
+  {
+    name: { en: "Prisma", fr: "Prisma" },
+    category: { en: "Backend Development", fr: "Développement Backend" },
+  },
+  {
+    name: { en: "MySQL", fr: "MySQL" },
+    category: { en: "Backend Development", fr: "Développement Backend" },
+  },
+  {
+    name: { en: "PostgreSQL", fr: "PostgreSQL" },
+    category: { en: "Backend Development", fr: "Développement Backend" },
+  },
+  {
+    name: { en: "MongoDB", fr: "MongoDB" },
+    category: { en: "Backend Development", fr: "Développement Backend" },
+  },
+  {
+    name: { en: "Sequelize", fr: "Sequelize" },
+    category: { en: "Backend Development", fr: "Développement Backend" },
+  },
+  {
+    name: { en: "MariaDB", fr: "MariaDB" },
+    category: { en: "Backend Development", fr: "Développement Backend" },
+  },
+  {
+    name: { en: "PHP", fr: "PHP" },
+    category: { en: "Backend Development", fr: "Développement Backend" },
+  },
 
   // ⚙️ DevOps & Outils / DevOps & Tools
-  { name: "Docker", category: "DevOps & Outils" },
-  { name: "Git", category: "DevOps & Outils" },
-  { name: "GitHub", category: "DevOps & Outils" },
-  { name: "GitHub Actions", category: "DevOps & Outils" },
-  { name: "CI/CD", category: "DevOps & Outils" },
-  { name: "PM2", category: "DevOps & Outils" },
-  { name: "Nginx", category: "DevOps & Outils" },
-  { name: "Postman", category: "DevOps & Outils" },
-  { name: "Swagger", category: "DevOps & Outils" },
-  { name: "Linux", category: "DevOps & Outils" },
-  { name: "Ubuntu", category: "DevOps & Outils" },
-  { name: "Yarn", category: "DevOps & Outils" },
+  {
+    name: { en: "Docker", fr: "Docker" },
+    category: { en: "DevOps & Tools", fr: "Outils & DevOps" },
+  },
+  {
+    name: { en: "Git", fr: "Git" },
+    category: { en: "DevOps & Tools", fr: "Outils & DevOps" },
+  },
+  {
+    name: { en: "GitHub", fr: "GitHub" },
+    category: { en: "DevOps & Tools", fr: "Outils & DevOps" },
+  },
+  {
+    name: { en: "GitHub Actions", fr: "GitHub Actions" },
+    category: { en: "DevOps & Tools", fr: "Outils & DevOps" },
+  },
+  {
+    name: { en: "CI/CD", fr: "CI/CD" },
+    category: { en: "DevOps & Tools", fr: "Outils & DevOps" },
+  },
+  {
+    name: { en: "PM2", fr: "PM2" },
+    category: { en: "DevOps & Tools", fr: "Outils & DevOps" },
+  },
+  {
+    name: { en: "Nginx", fr: "Nginx" },
+    category: { en: "DevOps & Tools", fr: "Outils & DevOps" },
+  },
+  {
+    name: { en: "Postman", fr: "Postman" },
+    category: { en: "DevOps & Tools", fr: "Outils & DevOps" },
+  },
+  {
+    name: { en: "Swagger", fr: "Swagger" },
+    category: { en: "DevOps & Tools", fr: "Outils & DevOps" },
+  },
+  {
+    name: { en: "Linux", fr: "Linux" },
+    category: { en: "DevOps & Tools", fr: "Outils & DevOps" },
+  },
+  {
+    name: { en: "Ubuntu", fr: "Ubuntu" },
+    category: { en: "DevOps & Tools", fr: "Outils & DevOps" },
+  },
+  {
+    name: { en: "Yarn", fr: "Yarn" },
+    category: { en: "DevOps & Tools", fr: "Outils & DevOps" },
+  },
 
   // 📊 Données & APIs / Data & APIs
-  { name: "API REST", category: "Données & APIs" },
-  { name: "API GraphQL", category: "Données & APIs" },
-  { name: "OAuth", category: "Données & APIs" },
-  { name: "WebSocket", category: "Données & APIs" },
-  { name: "Apollo Server", category: "Données & APIs" },
+  {
+    name: { en: "API REST", fr: "API REST" },
+    category: { en: "Data & APIs", fr: "Données & APIs" },
+  },
+  {
+    name: { en: "API GraphQL", fr: "API GraphQL" },
+    category: { en: "Data & APIs", fr: "Données & APIs" },
+  },
+  {
+    name: { en: "OAuth", fr: "OAuth" },
+    category: { en: "Data & APIs", fr: "Données & APIs" },
+  },
+  {
+    name: { en: "WebSocket", fr: "WebSocket" },
+    category: { en: "Data & APIs", fr: "Données & APIs" },
+  },
+  {
+    name: { en: "Apollo Server", fr: "Apollo Server" },
+    category: { en: "Data & APIs", fr: "Données & APIs" },
+  },
 
   // 🧩 Tests & Assurance Qualité / Testing & Quality Assurance
-  { name: "Jest", category: "Tests & Assurance Qualité" },
-  { name: "Cypress", category: "Tests & Assurance Qualité" },
-  { name: "BDD", category: "Tests & Assurance Qualité" },
-  { name: "TDD", category: "Tests & Assurance Qualité" },
-  { name: "ESLint", category: "Tests & Assurance Qualité" },
+  {
+    name: { en: "Jest", fr: "Jest" },
+    category: { en: "Testing & Quality Assurance", fr: "Tests & Assurance Qualité" },
+  },
+  {
+    name: { en: "Cypress", fr: "Cypress" },
+    category: { en: "Testing & Quality Assurance", fr: "Tests & Assurance Qualité" },
+  },
+  {
+    name: { en: "BDD", fr: "BDD" },
+    category: { en: "Testing & Quality Assurance", fr: "Tests & Assurance Qualité" },
+  },
+  {
+    name: { en: "TDD", fr: "TDD" },
+    category: { en: "Testing & Quality Assurance", fr: "Tests & Assurance Qualité" },
+  },
+  {
+    name: { en: "ESLint", fr: "ESLint" },
+    category: { en: "Testing & Quality Assurance", fr: "Tests & Assurance Qualité" },
+  },
 
   // 🎨 Design & Expérience Utilisateur / Design & UX
-  { name: "UI/UX", category: "Design & Expérience Utilisateur" },
-  { name: "Responsive Design", category: "Design & Expérience Utilisateur" },
-  { name: "Figma", category: "Design & Expérience Utilisateur" },
-  { name: "Accessibility", category: "Design & Expérience Utilisateur" },
+  {
+    name: { en: "UI/UX", fr: "UI/UX" },
+    category: { en: "Design & UX", fr: "Design & Expérience Utilisateur" },
+  },
+  {
+    name: { en: "Responsive Design", fr: "Responsive Design" },
+    category: { en: "Design & UX", fr: "Design & Expérience Utilisateur" },
+  },
+  {
+    name: { en: "Figma", fr: "Figma" },
+    category: { en: "Design & UX", fr: "Design & Expérience Utilisateur" },
+  },
+  {
+    name: { en: "Accessibility", fr: "Accessibilité" },
+    category: { en: "Design & UX", fr: "Design & Expérience Utilisateur" },
+  },
 
   // 📈 Gestion de Projets & Méthodes Agiles / Project Management & Agile
-  { name: "Agile", category: "Gestion de Projets & Méthodes Agiles" },
-  { name: "Travail en Équipe", category: "Gestion de Projets & Méthodes Agiles" },
-  { name: "Gestion de Projet", category: "Gestion de Projets & Méthodes Agiles" },
-  { name: "Résolution de Problèmes", category: "Gestion de Projets & Méthodes Agiles" },
-  { name: "Débogage", category: "Gestion de Projets & Méthodes Agiles" },
-  { name: "Clean Code", category: "Gestion de Projets & Méthodes Agiles" },
+  {
+    name: { en: "Agile", fr: "Agile" },
+    category: { en: "Project Management", fr: "Gestion de Projets & Méthodes Agiles" },
+  },
+  {
+    name: { en: "Teamwork", fr: "Travail en Équipe" },
+    category: { en: "Project Management", fr: "Gestion de Projets & Méthodes Agiles" },
+  },
+  {
+    name: { en: "Project Management", fr: "Gestion de Projet" },
+    category: { en: "Project Management", fr: "Gestion de Projets & Méthodes Agiles" },
+  },
+  {
+    name: { en: "Problem Solving", fr: "Résolution de Problèmes" },
+    category: { en: "Project Management", fr: "Gestion de Projets & Méthodes Agiles" },
+  },
+  {
+    name: { en: "Debugging", fr: "Débogage" },
+    category: { en: "Project Management", fr: "Gestion de Projets & Méthodes Agiles" },
+  },
+  {
+    name: { en: "Clean Code", fr: "Clean Code" },
+    category: { en: "Project Management", fr: "Gestion de Projets & Méthodes Agiles" },
+  },
 
   // 🛠 Divers / Miscellaneous
-  { name: "WordPress", category: "Divers" },
-  { name: "Prestashop", category: "Divers" },
-  { name: "Shopify", category: "Divers" },
-  { name: "shadcn/ui", category: "Divers" },
-  { name: "Python", category: "Divers" },
-  { name: "PHP", category: "Divers" },
-  { name: "Apache", category: "Divers" },
-  { name: "Ajax", category: "Divers" },
-  { name: "Commerce International", category: "Divers" },
-  { name: "Incoterms", category: "Divers" },
+  {
+    name: { en: "WordPress", fr: "WordPress" },
+    category: { en: "Miscellaneous", fr: "Divers" },
+  },
+  {
+    name: { en: "Prestashop", fr: "Prestashop" },
+    category: { en: "Miscellaneous", fr: "Divers" },
+  },
+  {
+    name: { en: "Shopify", fr: "Shopify" },
+    category: { en: "Miscellaneous", fr: "Divers" },
+  },
+  {
+    name: { en: "shadcn/ui", fr: "shadcn/ui" },
+    category: { en: "Miscellaneous", fr: "Divers" },
+  },
+  {
+    name: { en: "Python", fr: "Python" },
+    category: { en: "Miscellaneous", fr: "Divers" },
+  },
+  {
+    name: { en: "PHP", fr: "PHP" },
+    category: { en: "Miscellaneous", fr: "Divers" },
+  },
+  {
+    name: { en: "Apache", fr: "Apache" },
+    category: { en: "Miscellaneous", fr: "Divers" },
+  },
+  {
+    name: { en: "Ajax", fr: "Ajax" },
+    category: { en: "Miscellaneous", fr: "Divers" },
+  },
+  {
+    name: { en: "International Trade", fr: "Commerce International" },
+    category: { en: "Miscellaneous", fr: "Divers" },
+  },
+  {
+    name: { en: "Incoterms", fr: "Incoterms" },
+    category: { en: "Miscellaneous", fr: "Divers" },
+  },
 ];
