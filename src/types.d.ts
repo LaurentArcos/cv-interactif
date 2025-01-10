@@ -38,7 +38,6 @@ export interface Project {
   descriptionEn: string;
   image: string;
   link: string | null;
-  tags: string[];
 }
 
 export interface AboutMe {

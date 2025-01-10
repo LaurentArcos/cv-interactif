@@ -129,3 +129,5 @@ Le projet sera **déployé sur mon Raspberry Pi** et accessible via un sous-doma
 - Ajouter une **page de blog** simple pour partager des articles.
 - Intégrer une **section "Testimonials"** avec des animations.
 - Ajouter des **tests unitaires** avec **Jest** pour sécuriser le code.
+
+```

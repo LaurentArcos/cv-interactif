@@ -35,9 +35,8 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 function Chevron({ isOpen }: { isOpen: boolean }) {
   return (
     <svg
-      className={`w-5 h-5 text-foreground transform transition-transform duration-300 ${
-        isOpen ? "rotate-180" : ""
-      }`}
+      className={`w-5 h-5 text-foreground transform transition-transform duration-300 ${isOpen ? "rotate-180" : ""
+        }`}
       fill="none"
       stroke="currentColor"
       strokeWidth={2}
@@ -63,7 +62,7 @@ export default function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const toggleFilters = () => setIsFiltersOpen(!isFiltersOpen);
   const [isAboutMeOpen, setIsAboutMeOpen] = useState(false);
- 
+
   // Fonction pour filtrer les compétences
 
   const getTranslatedSkill = (skill: Skill, language: "en" | "fr") => ({
@@ -73,9 +72,9 @@ export default function Home() {
 
 
   const filteredSkills =
-  selectedCategory === "All"
-    ? skills.map((skill) => getTranslatedSkill(skill, language))
-    : skills
+    selectedCategory === "All"
+      ? skills.map((skill) => getTranslatedSkill(skill, language))
+      : skills
         .filter(
           (skill) => skill.category[language] === selectedCategory
         )
@@ -189,26 +188,26 @@ export default function Home() {
       <aside className="sidebar fixed-nav bg-background text-foreground w-[25%] flex-col justify-between h-full p-8">
         <div className="flex items-center justify-between ">
           {/* Titre */}
-      <button 
-        onClick={() => setIsSidebarOpen(!isSidebarOpen)} 
-        className="md:hidden"
-        aria-label="Toggle Sidebar"
-      >
-        <svg 
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path 
-            strokeLinecap="round" 
-            strokeLinejoin="round" 
-            strokeWidth={2} 
-            d="M4 6h16M4 12h16M4 18h16" 
-          />
-        </svg>
-      </button>
+          <button
+            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+            className="md:hidden"
+            aria-label="Toggle Sidebar"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
           <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold text-foreground">
             Laurent Arcos
           </h1>
@@ -216,66 +215,66 @@ export default function Home() {
           <div className="flex gap-3">
 
 
-      {/* Toggle Dark Mode - MOBILE ONLY */}
-      <div className="md:hidden">
-        <DarkModeToggle />
-      </div>
-    </div>
-  </div>
-  <div className={`${isSidebarOpen ? "block" : "hidden"} md:block`}>
-        <p className="text-text-secondary">{t.developerWeb}</p>
-
-        {/* Social Links Mobile */}
-        <div className="social-links flex gap-5 mt-4 md:hidden">
-          <div className="flex gap-5">
-            <a
-              href="https://www.linkedin.com/in/laurentarcos/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-text-secondary"
-            >
-              <FontAwesomeIcon icon={faLinkedin} className="w-4 h-4" />
-            </a>
-            <a
-              href="https://github.com/LaurentArcos"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-text-secondary"
-            >
-              <FontAwesomeIcon icon={faGithub} className="w-4 h-4" />
-            </a>
-            <a
-              href="https://bsky.app/profile/laurentarcos.bsky.social"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-text-secondary"
-            >
-              <FontAwesomeIcon icon={faBluesky} className="w-4 h-4" />
-            </a>
-            <a
-              href="https://letterboxd.com/Laurent_A/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-text-secondary"
-            >
-              <FontAwesomeIcon icon={faLetterboxd} className="w-4 h-4" />
-            </a>
-            <a
-              href="https://steamcommunity.com/id/thryndil/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-text-secondary"
-            >
-              <FontAwesomeIcon icon={faSteam} className="w-4 h-4" />
-            </a>
+            {/* Toggle Dark Mode - MOBILE ONLY */}
+            <div className="md:hidden">
+              <DarkModeToggle />
+            </div>
           </div>
-          <div className="flex items-center mt-0 ml-16">
-            <div className="relative">
-              <select
-                id="languageSelect"
-                value={language}
-                onChange={(e) => setLanguage(e.target.value as "fr" | "en")}
-                className="
+        </div>
+        <div className={`${isSidebarOpen ? "block" : "hidden"} md:block`}>
+          <p className="text-text-secondary">{t.developerWeb}</p>
+
+          {/* Social Links Mobile */}
+          <div className="social-links flex gap-5 mt-4 md:hidden">
+            <div className="flex gap-5">
+              <a
+                href="https://www.linkedin.com/in/laurentarcos/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-text-secondary"
+              >
+                <FontAwesomeIcon icon={faLinkedin} className="w-4 h-4" />
+              </a>
+              <a
+                href="https://github.com/LaurentArcos"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-text-secondary"
+              >
+                <FontAwesomeIcon icon={faGithub} className="w-4 h-4" />
+              </a>
+              <a
+                href="https://bsky.app/profile/laurentarcos.bsky.social"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-text-secondary"
+              >
+                <FontAwesomeIcon icon={faBluesky} className="w-4 h-4" />
+              </a>
+              <a
+                href="https://letterboxd.com/Laurent_A/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-text-secondary"
+              >
+                <FontAwesomeIcon icon={faLetterboxd} className="w-4 h-4" />
+              </a>
+              <a
+                href="https://steamcommunity.com/id/thryndil/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-text-secondary"
+              >
+                <FontAwesomeIcon icon={faSteam} className="w-4 h-4" />
+              </a>
+            </div>
+            <div className="flex items-center mt-0 ml-16">
+              <div className="relative">
+                <select
+                  id="languageSelect"
+                  value={language}
+                  onChange={(e) => setLanguage(e.target.value as "fr" | "en")}
+                  className="
                   p-0
                   pr-8
                   border-none
@@ -284,20 +283,19 @@ export default function Home() {
                   text-foreground
                   appearance-none
                 "
-              >
-                <option value="fr">FR</option>
-                <option value="en">EN</option>
-              </select>
+                >
+                  <option value="fr">FR</option>
+                  <option value="en">EN</option>
+                </select>
+              </div>
             </div>
           </div>
-        </div>
 
-        <nav className="nav-links mt-4 md:mt-10 lg:mt-12 space-y-4">
-        <a
+          <nav className="nav-links mt-4 md:mt-10 lg:mt-12 space-y-4">
+            <a
               href="#aboutme"
-              className={`hover:underline flex items-center gap-2 ${
-                activeSection === "aboutme" ? "text-foreground font-bold" : "text-text-secondary"
-              }`}
+              className={`hover:underline flex items-center gap-2 ${activeSection === "aboutme" ? "text-foreground font-bold" : "text-text-secondary"
+                }`}
               onClick={(e) => {
                 e.preventDefault();
                 handleSectionClick("aboutme");
@@ -305,109 +303,105 @@ export default function Home() {
             >
               {/* Le texte du lien, selon la langue */}
               {t.me}
-            </a> 
-          {/* Expériences avec le chevron */}
-          <div className="flex items-center justify-between">
-            <a
-              href="#experiences"
-              className={`hover:underline flex items-center gap-2 ${
-                activeSection === "experiences"
-                  ? "text-foreground font-bold"
-                  : "text-text-secondary"
-              }`}
-              onClick={(e) => {
-                e.preventDefault();
-                handleSectionClick("experiences", true);
-              }}
-            >
-              <span>{t.experiences}</span>
-              <Chevron isOpen={isFiltersOpen} />
             </a>
-          </div>
-
-          {isFiltersOpen && (
-            <div className="flex flex-col space-y-2">
-              <label className="flex items-center gap-2">
-                <input
-                  type="checkbox"
-                  checked={showDev}
-                  onChange={(e) => setShowDev(e.target.checked)}
-                  className="form-checkbox text-foreground rounded-md h-5 w-5"
-                />
-                <span className="text-sm text-text-secondary">
-                  {t.dev}
-                </span>
-              </label>
-              <label className="flex items-center gap-2">
-                <input
-                  type="checkbox"
-                  checked={showSales}
-                  onChange={(e) => setShowSales(e.target.checked)}
-                  className="form-checkbox text-foreground rounded-md h-5 w-5"
-                />
-                <span className="text-sm text-text-secondary">
-                {t.sales}
-                </span>
-              </label>
-            </div>
-          )}
- 
-          <a
-            href="#formations"
-            className={`hover:underline flex items-center gap-2 ${
-              activeSection === "formations"
-                ? "text-foreground font-bold"
-                : "text-text-secondary"
-            }`}
-          >
-            {t.formations}
-          </a>
-          <a
-            href="#competences"
-            className={`hover:underline flex items-center gap-2 ${
-              activeSection === "competences"
-                ? "text-foreground font-bold"
-                : "text-text-secondary"
-            }`}
-          >
-            {t.competences}
-          </a>
-          <a
-            href="#projets"
-            className={`hover:underline flex items-center gap-2 ${
-              activeSection === "projets"
-                ? "text-foreground font-bold"
-                : "text-text-secondary"
-            }`}
-          >
-            {t.projets}
-          </a>
-          <div className="flex items-center justify-between">
-            <a
-              href="#contact"
-              className="hover:underline flex items-center gap-2"
-              onClick={(e) => {
-                e.preventDefault();
-                setIsEmailOpen(!isEmailOpen);
-              }}
-            >
-              <span>{t.contact}</span>
-              <Chevron isOpen={isEmailOpen} />
-            </a>
-          </div>
-
-          {isEmailOpen && (
-            <div className="flex items-center gap-2 mt-2 text-sm text-text-secondary">
-              <FontAwesomeIcon icon={faEnvelope} className="w-5 h-5" />
+            {/* Expériences avec le chevron */}
+            <div className="flex items-center justify-between">
               <a
-                href="mailto:laurent.arcos@gmail.com"
-                className="hover:underline"
+                href="#experiences"
+                className={`hover:underline flex items-center gap-2 ${activeSection === "experiences"
+                    ? "text-foreground font-bold"
+                    : "text-text-secondary"
+                  }`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleSectionClick("experiences", true);
+                }}
               >
-                laurent.arcos@gmail.com
+                <span>{t.experiences}</span>
+                <Chevron isOpen={isFiltersOpen} />
               </a>
             </div>
-          )}
-        </nav>
+
+            {isFiltersOpen && (
+              <div className="flex flex-col space-y-2">
+                <label className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    checked={showDev}
+                    onChange={(e) => setShowDev(e.target.checked)}
+                    className="form-checkbox text-foreground rounded-md h-5 w-5"
+                  />
+                  <span className="text-sm text-text-secondary">
+                    {t.dev}
+                  </span>
+                </label>
+                <label className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    checked={showSales}
+                    onChange={(e) => setShowSales(e.target.checked)}
+                    className="form-checkbox text-foreground rounded-md h-5 w-5"
+                  />
+                  <span className="text-sm text-text-secondary">
+                    {t.sales}
+                  </span>
+                </label>
+              </div>
+            )}
+
+            <a
+              href="#formations"
+              className={`hover:underline flex items-center gap-2 ${activeSection === "formations"
+                  ? "text-foreground font-bold"
+                  : "text-text-secondary"
+                }`}
+            >
+              {t.formations}
+            </a>
+            <a
+              href="#competences"
+              className={`hover:underline flex items-center gap-2 ${activeSection === "competences"
+                  ? "text-foreground font-bold"
+                  : "text-text-secondary"
+                }`}
+            >
+              {t.competences}
+            </a>
+            <a
+              href="#projets"
+              className={`hover:underline flex items-center gap-2 ${activeSection === "projets"
+                  ? "text-foreground font-bold"
+                  : "text-text-secondary"
+                }`}
+            >
+              {t.projets}
+            </a>
+            <div className="flex items-center justify-between">
+              <a
+                href="#contact"
+                className="hover:underline flex items-center gap-2"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsEmailOpen(!isEmailOpen);
+                }}
+              >
+                <span>{t.contact}</span>
+                <Chevron isOpen={isEmailOpen} />
+              </a>
+            </div>
+
+            {isEmailOpen && (
+              <div className="flex items-center gap-2 mt-2 text-sm text-text-secondary">
+                <FontAwesomeIcon icon={faEnvelope} className="w-5 h-5" />
+                <a
+                  href="mailto:laurent.arcos@gmail.com"
+                  className="hover:underline"
+                >
+                  laurent.arcos@gmail.com
+                </a>
+              </div>
+            )}
+          </nav>
         </div>
         {/* Social Links Desktop*/}
         <div className="social-links hidden md:flex flex-col justify-start mt-28 mb-auto">
@@ -453,7 +447,7 @@ export default function Home() {
               <FontAwesomeIcon icon={faSteam} className="w-6 h-6" />
             </a>
           </div>
-        
+
 
           <div className="flex items-center mt-8">
             <div className="relative">
@@ -493,14 +487,14 @@ export default function Home() {
             <h2 className="text-xl md:text-3xl lg:text-3xl font-semibold mb-4 text-text-primary flex items-center">
               <UserCircleIcon className="w-6 h-6 mr-2 text-foreground" />
               {language === "fr" ? aboutMe.titleFr : aboutMe.titleEn}
-            {/* BOUTON TOGGLE */}
-            <button
-              onClick={() => setIsAboutMeOpen(!isAboutMeOpen)}
-              className="text-text-secondary hover:text-text-primary pl-4"
-              aria-label="Toggle About Me"
-            >
-              <Chevron isOpen={isAboutMeOpen} />
-            </button>
+              {/* BOUTON TOGGLE */}
+              <button
+                onClick={() => setIsAboutMeOpen(!isAboutMeOpen)}
+                className="text-text-secondary hover:text-text-primary pl-4"
+                aria-label="Toggle About Me"
+              >
+                <Chevron isOpen={isAboutMeOpen} />
+              </button>
             </h2>
           </div>
 
@@ -525,230 +519,230 @@ export default function Home() {
             {t.experiencesTitle}
           </h2>
           <ul className="space-y-8">
-  {experiences
-    .filter((exp) => {
-      if (exp.type === "dev" && !showDev) return false;
-      if (exp.type === "sales" && !showSales) return false;
-      return true;
-    })
-    .map((exp, index) => {
-      const isOpen = openExperiences.includes(index);
-      return (
-        <motion.li
-          key={index}
-          onClick={() => {
-            if (!isOpen) {
-              toggleExperience(index);
-            }
-          }}
-          className="card p-4 border border-gray-200 rounded-lg"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="flex items-center gap-4 justify-between">
-            <div className="flex items-center gap-4">
-              <div className="logo-wrapper bg-white w-[60px] h-[60px] rounded-md flex items-center justify-center">
-                {exp.logo ? (
-                  <Image
-                    src={exp.logo}
-                    alt={`${exp.company} logo`}
-                    width={60}
-                    height={60}
-                    className="rounded-md"
-                  />
-                ) : (
-                  <div className="w-[60px] h-[60px] bg-white rounded-md"></div>
-                )}
-              </div>
-              <div>
-                <h3 className="text-l md:text-xl lg:text-xl font-bold text-text-primary">
-                  {language === "fr" ? exp.titleFr : exp.titleEn}
-                </h3>
-                <p className="text-sm text-text-secondary">{exp.company}</p>
-                <p className="text-sm text-gray-500">
-                  {language === "fr" ? exp.dateFr : exp.dateEn}
-                </p>
-              </div>
-            </div>
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                toggleExperience(index);
-              }}
-              className="text-text-secondary hover:text-text-primary"
-              aria-label="Toggle Card"
-            >
-              <Chevron isOpen={isOpen} />
-            </button>
-          </div>                   
-
-
-          {isOpen && (
-            <>
-              <ul className="description list-disc list-inside text-text-secondary space-y-2 mt-4">
-                {(language === "fr" ? exp.descriptionFr : exp.descriptionEn)
-                  .split("\n")
-                  .filter((line) => line.trim().startsWith("-"))
-                  .map((line, i) => (
-                    <li key={i}>{line.replace("-", "").trim()}</li>
-                  ))}
-              </ul>
-
-              {exp.website && (
-                <div className="mt-4">
-                  <a
-                    href={exp.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-blue-500 hover:underline"
+            {experiences
+              .filter((exp) => {
+                if (exp.type === "dev" && !showDev) return false;
+                if (exp.type === "sales" && !showSales) return false;
+                return true;
+              })
+              .map((exp, index) => {
+                const isOpen = openExperiences.includes(index);
+                return (
+                  <motion.li
+                    key={index}
+                    onClick={() => {
+                      if (!isOpen) {
+                        toggleExperience(index);
+                      }
+                    }}
+                    className="card p-4 border border-gray-200 rounded-lg"
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
                   >
-                    {language === "fr" ? "Voir le site" : "Visit the website"}
-                  </a>
-                </div>
-              )}
-                                  <div className="mt-4 flex flex-wrap gap-2">
-                      {exp.tags.map((tag, i) => (
-                        <span key={i} className="sm:text-sm tag">
-                          {tag}
-                        </span>
-                      ))}
+                    <div className="flex items-center gap-4 justify-between">
+                      <div className="flex items-center gap-4">
+                        <div className="logo-wrapper bg-white w-[60px] h-[60px] rounded-md flex items-center justify-center">
+                          {exp.logo ? (
+                            <Image
+                              src={exp.logo}
+                              alt={`${exp.company} logo`}
+                              width={60}
+                              height={60}
+                              className="rounded-md"
+                            />
+                          ) : (
+                            <div className="w-[60px] h-[60px] bg-white rounded-md"></div>
+                          )}
+                        </div>
+                        <div>
+                          <h3 className="text-l md:text-xl lg:text-xl font-bold text-text-primary">
+                            {language === "fr" ? exp.titleFr : exp.titleEn}
+                          </h3>
+                          <p className="text-sm text-text-secondary">{exp.company}</p>
+                          <p className="text-sm text-gray-500">
+                            {language === "fr" ? exp.dateFr : exp.dateEn}
+                          </p>
+                        </div>
+                      </div>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          toggleExperience(index);
+                        }}
+                        className="text-text-secondary hover:text-text-primary"
+                        aria-label="Toggle Card"
+                      >
+                        <Chevron isOpen={isOpen} />
+                      </button>
                     </div>
-            </>
-          )}
-        </motion.li>
-      );
-    })}
-</ul>
+
+
+                    {isOpen && (
+                      <>
+                        <ul className="description list-disc list-inside text-text-secondary space-y-2 mt-4">
+                          {(language === "fr" ? exp.descriptionFr : exp.descriptionEn)
+                            .split("\n")
+                            .filter((line) => line.trim().startsWith("-"))
+                            .map((line, i) => (
+                              <li key={i}>{line.replace("-", "").trim()}</li>
+                            ))}
+                        </ul>
+
+                        {exp.website && (
+                          <div className="mt-4">
+                            <a
+                              href={exp.website}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-sm text-blue-500 hover:underline"
+                            >
+                              {language === "fr" ? "Voir le site" : "Visit the website"}
+                            </a>
+                          </div>
+                        )}
+                        <div className="mt-4 flex flex-wrap gap-2">
+                          {exp.tags.map((tag, i) => (
+                            <span key={i} className="sm:text-sm tag">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </>
+                    )}
+                  </motion.li>
+                );
+              })}
+          </ul>
         </section>
 
-{/* Formations Académiques */}
-<section
-  id="formations"
-  ref={(el) => {
-    sectionRefs.current.formations = el;
-  }}
-  className="mb-16"
->
-  <h2 className="text-xl md:text-3xl lg:text-3xl font-semibold mb-4 text-text-primary flex items-center">
-    <AcademicCapIcon className="w-6 h-6 mr-2 text-foreground" />
-    {t.formationsTitle}
-  </h2>
-  <ul className="space-y-8">
-    {education.map((edu, index) => {
-      const isOpen = openEducations.includes(index);
-      return (
-        <motion.li
-          key={index}
-          onClick={() => {
-            if (!isOpen) {
-              toggleEducation(index);
-            }
+        {/* Formations Académiques */}
+        <section
+          id="formations"
+          ref={(el) => {
+            sectionRefs.current.formations = el;
           }}
-          className="card p-4 border border-gray-200 rounded-lg"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: index * 0.2 }}
+          className="mb-16"
         >
-          <div className="flex items-center gap-4 justify-between">
-            {/* Logo + titre */}
-            <div className="flex items-center gap-4">
-              <div className="logo-wrapper bg-white w-[60px] h-[60px] rounded-md flex items-center justify-center">
-                {edu.logo ? (
-                  <Image
-                    src={edu.logo}
-                    alt={`${edu.school} logo`}
-                    width={60}
-                    height={60}
-                    className="rounded-md"
-                  />
-                ) : (
-                  <div className="w-[60px] h-[60px] bg-white rounded-md"></div>
-                )}
-              </div>
-              <div>
-                <h3 className="text-l md:text-xl lg:text-xl font-bold text-text-primary">
-                  {edu.school}
-                </h3>
-                <p className="text-sm text-text-secondary">
-                  {language === "fr" ? edu.degreeFr : edu.degreeEn}
-                </p>
-                <p className="text-sm text-gray-400">
-                  {language === "fr" ? edu.dateFr : edu.dateEn}
-                </p>
-              </div>
-            </div>
-            {/* Chevron */}
-            <button
-              onClick={() => toggleEducation(index)}
-              className="text-text-secondary hover:text-text-primary"
-              aria-label="Toggle Card"
-            >
-              <Chevron isOpen={isOpen} />
-            </button>
-          </div>
+          <h2 className="text-xl md:text-3xl lg:text-3xl font-semibold mb-4 text-text-primary flex items-center">
+            <AcademicCapIcon className="w-6 h-6 mr-2 text-foreground" />
+            {t.formationsTitle}
+          </h2>
+          <ul className="space-y-8">
+            {education.map((edu, index) => {
+              const isOpen = openEducations.includes(index);
+              return (
+                <motion.li
+                  key={index}
+                  onClick={() => {
+                    if (!isOpen) {
+                      toggleEducation(index);
+                    }
+                  }}
+                  className="card p-4 border border-gray-200 rounded-lg"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                >
+                  <div className="flex items-center gap-4 justify-between">
+                    {/* Logo + titre */}
+                    <div className="flex items-center gap-4">
+                      <div className="logo-wrapper bg-white w-[60px] h-[60px] rounded-md flex items-center justify-center">
+                        {edu.logo ? (
+                          <Image
+                            src={edu.logo}
+                            alt={`${edu.school} logo`}
+                            width={60}
+                            height={60}
+                            className="rounded-md"
+                          />
+                        ) : (
+                          <div className="w-[60px] h-[60px] bg-white rounded-md"></div>
+                        )}
+                      </div>
+                      <div>
+                        <h3 className="text-l md:text-xl lg:text-xl font-bold text-text-primary">
+                          {edu.school}
+                        </h3>
+                        <p className="text-sm text-text-secondary">
+                          {language === "fr" ? edu.degreeFr : edu.degreeEn}
+                        </p>
+                        <p className="text-sm text-gray-400">
+                          {language === "fr" ? edu.dateFr : edu.dateEn}
+                        </p>
+                      </div>
+                    </div>
+                    {/* Chevron */}
+                    <button
+                      onClick={() => toggleEducation(index)}
+                      className="text-text-secondary hover:text-text-primary"
+                      aria-label="Toggle Card"
+                    >
+                      <Chevron isOpen={isOpen} />
+                    </button>
+                  </div>
 
-          {/* Description */}
-          {isOpen && (
-            <>
-              {language === "fr" ? (
-                edu.descriptionFr.includes("-") ? (
-                  <ul className="description list-disc list-inside space-y-2 mt-4">
-                    {edu.descriptionFr
-                      .split("\n")
-                      .filter((line) => line.trim().startsWith("-"))
-                      .map((line, i) => (
-                        <li key={i}>{line.replace("-", "").trim()}</li>
-                      ))}
-                  </ul>
-                ) : (
-                  <p className="description mt-2 text-text-secondy">
-                    {edu.descriptionFr}
-                  </p>
-                )
-              ) : edu.descriptionEn.includes("-") ? (
-                <ul className="description list-disc list-inside  space-y-2 mt-4">
-                  {edu.descriptionEn
-                    .split("\n")
-                    .filter((line) => line.trim().startsWith("-"))
-                    .map((line, i) => (
-                      <li key={i}>{line.replace("-", "").trim()}</li>
-                    ))}
-                </ul>
-              ) : (
-                <p className="description mt-2 ">
-                  {edu.descriptionEn}
-                </p>
-              )}
+                  {/* Description */}
+                  {isOpen && (
+                    <>
+                      {language === "fr" ? (
+                        edu.descriptionFr.includes("-") ? (
+                          <ul className="description list-disc list-inside space-y-2 mt-4">
+                            {edu.descriptionFr
+                              .split("\n")
+                              .filter((line) => line.trim().startsWith("-"))
+                              .map((line, i) => (
+                                <li key={i}>{line.replace("-", "").trim()}</li>
+                              ))}
+                          </ul>
+                        ) : (
+                          <p className="description mt-2 text-text-secondy">
+                            {edu.descriptionFr}
+                          </p>
+                        )
+                      ) : edu.descriptionEn.includes("-") ? (
+                        <ul className="description list-disc list-inside  space-y-2 mt-4">
+                          {edu.descriptionEn
+                            .split("\n")
+                            .filter((line) => line.trim().startsWith("-"))
+                            .map((line, i) => (
+                              <li key={i}>{line.replace("-", "").trim()}</li>
+                            ))}
+                        </ul>
+                      ) : (
+                        <p className="description mt-2 ">
+                          {edu.descriptionEn}
+                        </p>
+                      )}
 
-              {edu.website && (
-                <div className="mt-4">
-                  <a
-                    href={edu.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-blue-500 hover:underline"
-                  >
-                    {language === "fr" ? "Voir le site" : "Visit the website"}
-                  </a>
-                </div>
-              )}
-              <div className="mt-4 flex flex-wrap gap-2">
-                {edu.tags.map((tag, i) => (
-                  <span key={i} className="tag">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </>
-          )}
-        </motion.li>
-      );
-    })}
-  </ul>
-</section>
+                      {edu.website && (
+                        <div className="mt-4">
+                          <a
+                            href={edu.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm text-blue-500 hover:underline"
+                          >
+                            {language === "fr" ? "Voir le site" : "Visit the website"}
+                          </a>
+                        </div>
+                      )}
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {edu.tags.map((tag, i) => (
+                          <span key={i} className="tag">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </>
+                  )}
+                </motion.li>
+              );
+            })}
+          </ul>
+        </section>
 
         {/* Section Compétences Techniques */}
         <section
@@ -774,9 +768,8 @@ export default function Home() {
                   <button
                     key={category}
                     onClick={() => setSelectedCategory(category)}
-                    className={`px-4 py-2 text-sm rounded-md ${
-                      isSelected ? "bg-foreground text-background" : "bg-card-bg"
-                    }`}
+                    className={`px-4 py-2 text-sm rounded-md ${isSelected ? "bg-foreground text-background" : "bg-card-bg"
+                      }`}
                   >
                     {translatedCategory}
                   </button>
@@ -816,43 +809,43 @@ export default function Home() {
             {t.projetsTitle}
           </h2>
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => {
-            const cardContent = (
-              <div className="block p-4 bg-card-bg rounded-lg shadow-md border border-card-border hover:shadow-xl transition-shadow duration-300">
-                <Image
-                  src={project.image}
-                  alt={language === "fr" ? project.titleFr : project.titleEn}
-                  width={400}
-                  height={200}
-                  className="project-image rounded-md"
-                />
-                <h3 className="text-l md:text-xl lg:text-xl font-bold mt-4">
-                  {language === "fr" ? project.titleFr : project.titleEn}
-                </h3>
-                <p className="text-sm text-text-secondary">
-                  {language === "fr"
-                    ? project.descriptionFr
-                    : project.descriptionEn}
-                </p>
-              </div>
-            );
+            {projects.map((project, index) => {
+              const cardContent = (
+                <div className="block p-4 bg-card-bg rounded-lg shadow-md border border-card-border hover:shadow-xl transition-shadow duration-300">
+                  <Image
+                    src={project.image}
+                    alt={language === "fr" ? project.titleFr : project.titleEn}
+                    width={400}
+                    height={200}
+                    className="project-image rounded-md"
+                  />
+                  <h3 className="text-l md:text-xl lg:text-xl font-bold mt-4">
+                    {language === "fr" ? project.titleFr : project.titleEn}
+                  </h3>
+                  <p className="text-sm text-text-secondary">
+                    {language === "fr"
+                      ? project.descriptionFr
+                      : project.descriptionEn}
+                  </p>
+                </div>
+              );
 
-            return project.link ? (
-              <a
-                key={index}
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
-              >
-                {cardContent}
-              </a>
-            ) : (
-              <div key={index} className="opacity-80 cursor-not-allowed">
-                {cardContent}
-              </div>
-            );
-          })}
+              return project.link ? (
+                <a
+                  key={index}
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  {cardContent}
+                </a>
+              ) : (
+                <div key={index} className="opacity-80 cursor-not-allowed">
+                  {cardContent}
+                </div>
+              );
+            })}
           </ul>
         </section>
 
@@ -968,9 +961,9 @@ export default function Home() {
             </button>
   </form>
 </section> */}
-      <footer className="text-center text-sm text-text-secondary mt-8 pb-4">
-        {t.copyright}
-      </footer>
+        <footer className="text-center text-sm text-text-secondary mt-8 pb-4">
+          {t.copyright}
+        </footer>
       </main>
     </div>
   );
