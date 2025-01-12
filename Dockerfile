@@ -1,26 +1,18 @@
-# Utilise une image Node.js comme base
-FROM node:18-alpine
+# Dockerfile
 
-# Définit le répertoire de travail
+# Étape 1 : Construire l'application
+FROM node:18 AS build
 WORKDIR /app
-
-# Copie les fichiers package.json et pnpm-lock.yaml
-COPY package.json pnpm-lock.yaml ./
-
-# Installe pnpm
-RUN npm install -g pnpm
-
-# Installe les dépendances
-RUN pnpm install
-
-# Copie le reste des fichiers du projet
 COPY . .
+RUN npm install
+RUN npm run build
 
-# Compile le projet Next.js
-RUN pnpm build --no-lint
+# Étape 2 : Lancer le serveur Next.js
+FROM node:18 AS runner
+WORKDIR /app
+COPY --from=build /app/.next/standalone ./
+COPY --from=build /app/public ./public
+COPY --from=build /app/.next/static ./.next/static
 
-# Définit le port d'écoute
 EXPOSE 3000
-
-# Commande pour lancer le serveur
-CMD ["pnpm", "start"]
+CMD ["node", "server.js"]
