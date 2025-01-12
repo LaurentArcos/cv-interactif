@@ -56,7 +56,7 @@ export const experiences: Experience[] = [
       "Tailwind",
     ],
     website: "https://seagale.fr",
-    logo: "/images/logos/seagale.png",
+    logo: "/cv/images/logos/seagale.png",
   },
   {
     titleFr: "Développeur Web Fullstack - Concepteur d'application",
@@ -107,7 +107,7 @@ export const experiences: Experience[] = [
       "shadcn/ui",
     ],
     website: "https://github.com/LaurentArcos",
-    logo: "/images/logos/logola.png",
+    logo: "/cv/images/logos/logola.png",
   },
   {
     titleFr: "Concepteur Développeur d'Applications",
@@ -148,7 +148,7 @@ export const experiences: Experience[] = [
       "CI/CD",
     ],
     website: "https://www.worduel.fr",
-    logo: "/images/logos/worduel.png",
+    logo: "/cv/images/logos/worduel.png",
   },
   {
     titleFr: "Développeur Web Front-end",
@@ -181,7 +181,7 @@ export const experiences: Experience[] = [
 
     tags: ["React", "SCSS", "UX Design", "JavaScript"],
     website: "https://tribu.surge.sh/",
-    logo: "/images/logos/tribu.png",
+    logo: "/cv/images/logos/tribu.png",
   },
   {
     titleFr: "Area Manager Prêt-à-Porter",
@@ -234,7 +234,7 @@ export const experiences: Experience[] = [
       "Analyse de données",
     ],
     website: null,
-    logo: "/images/logos/esprit.png",
+    logo: "/cv/images/logos/esprit.png",
   },
   {
     titleFr: "Area Manager Bodywear",
@@ -271,7 +271,7 @@ export const experiences: Experience[] = [
       "Analyse de données",
     ],
     website: null,
-    logo: "/images/logos/esprit.png",
+    logo: "/cv/images/logos/esprit.png",
   },
   {
     titleFr: "Assistant Commercial et Logistique",
@@ -317,7 +317,7 @@ export const experiences: Experience[] = [
       "Gestion de litiges",
     ],
     website: null,
-    logo: "/images/logos/esprit.png",
+    logo: "/cv/images/logos/esprit.png",
   },
   {
     titleFr: "Office Manager - Chargé d'Opération et de Gestion",
@@ -365,7 +365,7 @@ export const experiences: Experience[] = [
       "Gestion de litiges",
     ],
     website: null,
-    logo: "/images/logos/dermeo.jpg",
+    logo: "/cv/images/logos/dermeo.jpg",
   },
   {
     titleFr: "Assistant Commercial Export",
