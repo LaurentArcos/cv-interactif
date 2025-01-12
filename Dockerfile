@@ -19,8 +19,8 @@ COPY . .
 # Compile le projet Next.js
 RUN pnpm build --no-lint
 
-# Définit le port d’écoute
+# Définit le port d'écoute
 EXPOSE 3000
 
-# Commande pour lancer le serveur avec output: standalone
-CMD ["node", ".next/standalone/server.js"]
+# Commande pour lancer le serveur
+CMD ["pnpm", "start"]
