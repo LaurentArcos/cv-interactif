@@ -4,8 +4,8 @@
 FROM node:18 AS build
 WORKDIR /app
 COPY . .
-RUN npm install
-RUN npm run build
+RUN pnpm install
+RUN pnpm run build
 
 # Étape 2 : Lancer le serveur Next.js
 FROM node:18 AS runner
