@@ -4,8 +4,9 @@ const nextConfig = {
   basePath: '/cv',
   assetPrefix: '/cv/',
   images: {
+    loader: 'default',
     path: '/cv/_next/image',
-    domains: ['www.laurentarcos.fr'], // Ajoute ton domaine ici
+    domains: ['www.laurentarcos.fr'],
   },
 };
 
