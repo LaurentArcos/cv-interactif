@@ -16,8 +16,8 @@ RUN pnpm install
 # Copie le reste des fichiers du projet
 COPY . .
 
-# Compile le projet Next.js
-RUN pnpm build --no-lint
+# Compile le projet Next.js sans ESLint
+RUN pnpm next build --no-lint
 
 # Définit le port d'écoute
 EXPOSE 3000
