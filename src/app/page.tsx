@@ -807,10 +807,10 @@ export default function Home() {
             <FolderIcon className="w-6 h-6 mr-2 text-foreground" />
             {t.projetsTitle}
           </h2>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8 md:gap-8">
             {projects.map((project, index) => {
               const cardContent = (
-                <div className="block p-4 bg-card-bg rounded-lg shadow-md border border-card-border hover:shadow-xl transition-shadow duration-300">
+                <div className="project-card block p-2 md:p-4 lg:p-4 bg-card-bg rounded-lg shadow-md border border-card-border hover:shadow-xl transition-shadow duration-300">
                   <Image
                     src={project.image}
                     alt={language === "fr" ? project.titleFr : project.titleEn}
@@ -818,10 +818,10 @@ export default function Home() {
                     height={200}
                     className="project-image rounded-md"
                   />
-                  <h3 className="text-l md:text-xl lg:text-xl font-bold mt-4">
+                  <h3 className="text-xs md:text-xl lg:text-xl font-bold mt-4">
                     {language === "fr" ? project.titleFr : project.titleEn}
                   </h3>
-                  <p className="text-sm text-text-secondary">
+                  <p className="text-xs md:text-sm lg:text-m text-text-secondary">
                     {language === "fr"
                       ? project.descriptionFr
                       : project.descriptionEn}
