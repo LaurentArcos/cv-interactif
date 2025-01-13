@@ -359,15 +359,6 @@ export default function Home() {
               {t.formations}
             </a>
             <a
-              href="#competences"
-              className={`hover:underline flex items-center gap-2 ${activeSection === "competences"
-                  ? "text-foreground font-bold"
-                  : "text-text-secondary"
-                }`}
-            >
-              {t.competences}
-            </a>
-            <a
               href="#projets"
               className={`hover:underline flex items-center gap-2 ${activeSection === "projets"
                   ? "text-foreground font-bold"
@@ -375,6 +366,15 @@ export default function Home() {
                 }`}
             >
               {t.projets}
+            </a>
+            <a
+              href="#competences"
+              className={`hover:underline flex items-center gap-2 ${activeSection === "competences"
+                  ? "text-foreground font-bold"
+                  : "text-text-secondary"
+                }`}
+            >
+              {t.competences}
             </a>
             <div className="flex items-center justify-between">
               <a
@@ -744,56 +744,6 @@ export default function Home() {
           </ul>
         </section>
 
-        {/* Section Compétences Techniques */}
-        <section
-          id="competences"
-          ref={(el) => {
-            sectionRefs.current.competences = el;
-          }}
-          className="mb-16"
-        >
-          <h2 className="text-xl md:text-3xl lg:text-3xl font-semibold mb-4 text-text-primary flex items-center">
-            <CommandLineIcon className="w-6 h-6 mr-2 text-foreground" />
-            {t.competencesTitle}
-          </h2>
-
-          {/* Filtres */}  
-          <div className="mb-8">
-            <label htmlFor="categorySelect" className="block text-sm font-medium mb-2">
-              {language === "fr" ? "Filtrer par catégorie :" : "Filter by category :"}
-            </label>
-            <select
-              id="categorySelect"
-              value={selectedCategory}
-              onChange={(e) => setSelectedCategory(e.target.value)}
-              className=""
-            >
-              <option value="All">{language === "fr" ? "Tous" : "All"}</option>
-              {[...new Set(skills.map((skill) => skill.category[language]))].map((category) => (
-                <option key={category} value={category}>
-                  {category}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          {/* Liste des compétences */}
-          <ul id="skills" className="grid grid-cols-3 gap-1 md:grid-cols-8 md:gap-2 lg:grid-cols-8 lg:gap-2">
-            {filteredSkills.map((skill, index) => (
-              <motion.li
-                key={index}
-                className="p-4 bg-card-bg rounded-lg shadow-md border border-card-border hover:border-foreground transition-colors duration-300"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                <h3 className="skills-title text-text-primary">
-                  {skill.name}
-                </h3>
-              </motion.li>
-            ))}
-          </ul>
-        </section>
 
         {/* Projets Section */}
         <section
@@ -845,6 +795,57 @@ export default function Home() {
                 </div>
               );
             })}
+          </ul>
+        </section>
+
+        {/* Section Compétences Techniques */}
+        <section
+          id="competences"
+          ref={(el) => {
+            sectionRefs.current.competences = el;
+          }}
+          className="mb-16"
+        >
+          <h2 className="text-xl md:text-3xl lg:text-3xl font-semibold mb-4 text-text-primary flex items-center">
+            <CommandLineIcon className="w-6 h-6 mr-2 text-foreground" />
+            {t.competencesTitle}
+          </h2>
+
+          {/* Filtres */}  
+          <div className="mb-8">
+            <label htmlFor="categorySelect" className="block text-sm font-medium mb-2">
+              {language === "fr" ? "Filtrer par catégorie :" : "Filter by category :"}
+            </label>
+            <select
+              id="categorySelect"
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              className=""
+            >
+              <option value="All">{language === "fr" ? "Tous" : "All"}</option>
+              {[...new Set(skills.map((skill) => skill.category[language]))].map((category) => (
+                <option key={category} value={category}>
+                  {category}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          {/* Liste des compétences */}
+          <ul id="skills" className="grid grid-cols-3 gap-1 md:grid-cols-8 md:gap-2 lg:grid-cols-8 lg:gap-2">
+            {filteredSkills.map((skill, index) => (
+              <motion.li
+                key={index}
+                className="p-4 bg-card-bg rounded-lg shadow-md border border-card-border hover:border-foreground transition-colors duration-300"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <h3 className="skills-title text-text-primary">
+                  {skill.name}
+                </h3>
+              </motion.li>
+            ))}
           </ul>
         </section>
 
