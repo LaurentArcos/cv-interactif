@@ -543,7 +543,7 @@ export default function Home() {
                   >
                     <div className="flex items-center gap-4 justify-between">
                       <div className="flex items-center gap-4">
-                        <div className="logo-wrapper bg-white w-[60px] h-[60px] rounded-md flex items-center justify-center">
+                        <div className="logo-wrapper bg-white rounded-md flex items-center justify-center">
                           {exp.logo ? (
                             <Image
                               src={exp.logo}
@@ -553,17 +553,17 @@ export default function Home() {
                               className="rounded-md"
                             />
                           ) : (
-                            <div className="w-[60px] h-[60px] bg-white rounded-md"></div>
+                            <div className=" bg-white rounded-md"></div>
                           )}
                         </div>
                         <div>
-                          <h3 className="text-l md:text-xl lg:text-xl font-bold text-text-primary">
-                            {language === "fr" ? exp.titleFr : exp.titleEn}
-                          </h3>
-                          <p className="text-sm text-text-secondary">{exp.company}</p>
-                          <p className="text-sm text-gray-500">
-                            {language === "fr" ? exp.dateFr : exp.dateEn}
-                          </p>
+                        <h3 className="text-base md:text-lg lg:text-xl font-bold text-text-primary">
+                          {language === "fr" ? exp.titleFr : exp.titleEn}
+                        </h3>
+                        <p className="text-xs md:text-sm text-text-secondary">{exp.company}</p>
+                        <p className="text-xs md:text-sm text-gray-500">
+                          {language === "fr" ? exp.dateFr : exp.dateEn}
+                        </p>
                         </div>
                       </div>
                       <button
@@ -581,7 +581,7 @@ export default function Home() {
 
                     {isOpen && (
                       <>
-                        <ul className="description list-disc list-inside text-text-secondary space-y-2 mt-4">
+                        <ul className="description list-disc list-inside text-text-secondary space-y-1 mt-2 text-sm md:text-base">
                           {(language === "fr" ? exp.descriptionFr : exp.descriptionEn)
                             .split("\n")
                             .filter((line) => line.trim().startsWith("-"))
@@ -604,7 +604,7 @@ export default function Home() {
                         )}
                         <div className="mt-4 flex flex-wrap gap-2">
                           {exp.tags.map((tag, i) => (
-                            <span key={i} className="sm:text-sm tag">
+                            <span key={i} className="tag">
                               {tag}
                             </span>
                           ))}
@@ -757,25 +757,24 @@ export default function Home() {
             {t.competencesTitle}
           </h2>
 
-          {/* Filtres */}
-          <div className="flex gap-4 mb-8">
-            {["All", ...new Set(skills.map((skill) => skill.category[language]))].map(
-              (category) => {
-                const isSelected = selectedCategory === category || (selectedCategory === "All" && category === "All");
-                const translatedCategory = category === "All" ? (language === "fr" ? "Tout" : "All") : category;
-
-                return (
-                  <button
-                    key={category}
-                    onClick={() => setSelectedCategory(category)}
-                    className={`px-4 py-2 text-sm rounded-md ${isSelected ? "bg-foreground text-background" : "bg-card-bg"
-                      }`}
-                  >
-                    {translatedCategory}
-                  </button>
-                );
-              }
-            )}
+          {/* Filtres */}  
+          <div className="mb-8">
+            <label htmlFor="categorySelect" className="block text-sm font-medium mb-2">
+              {language === "fr" ? "Filtrer par catégorie :" : "Filter by category :"}
+            </label>
+            <select
+              id="categorySelect"
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              className=""
+            >
+              <option value="All">{language === "fr" ? "Tous" : "All"}</option>
+              {[...new Set(skills.map((skill) => skill.category[language]))].map((category) => (
+                <option key={category} value={category}>
+                  {category}
+                </option>
+              ))}
+            </select>
           </div>
 
           {/* Liste des compétences */}
@@ -788,7 +787,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <h3 className="text-xs md:text-sm lg:text-sm font-semibold text-text-primary">
+                <h3 className="skills-title text-text-primary">
                   {skill.name}
                 </h3>
               </motion.li>

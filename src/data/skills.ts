@@ -31,7 +31,7 @@ export const skills: Skill[] = [
     category: { en: "Frontend Development", fr: "Développement Frontend" },
   },
   {
-    name: { en: "Bootstrap", fr: "Bootstrap" },
+    name: { en: "Shadcn/ui", fr: "Shadcn/ui" },
     category: { en: "Frontend Development", fr: "Développement Frontend" },
   },
   {
@@ -48,6 +48,10 @@ export const skills: Skill[] = [
   },
   {
     name: { en: "TypeScript", fr: "TypeScript" },
+    category: { en: "Frontend Development", fr: "Développement Frontend" },
+  },
+  {
+    name: { en: "Chartjs", fr: "Chartjs" },
     category: { en: "Frontend Development", fr: "Développement Frontend" },
   },
   {
@@ -123,6 +127,10 @@ export const skills: Skill[] = [
     category: { en: "DevOps & Tools", fr: "Outils & DevOps" },
   },
   {
+    name: { en: "Apache", fr: "Apache" },
+    category: { en: "Miscellaneous", fr: "Divers" },
+  },
+  {
     name: { en: "CI/CD", fr: "CI/CD" },
     category: { en: "DevOps & Tools", fr: "Outils & DevOps" },
   },
@@ -139,6 +147,14 @@ export const skills: Skill[] = [
     category: { en: "DevOps & Tools", fr: "Outils & DevOps" },
   },
   {
+    name: { en: "FileZilla", fr: "FileZilla" },
+    category: { en: "DevOps & Tools", fr: "Outils & DevOps" },
+  },
+  {
+    name: { en: "DBeaver", fr: "DBeaver" },
+    category: { en: "DevOps & Tools", fr: "Outils & DevOps" },
+  },
+  {
     name: { en: "Swagger", fr: "Swagger" },
     category: { en: "DevOps & Tools", fr: "Outils & DevOps" },
   },
@@ -151,7 +167,19 @@ export const skills: Skill[] = [
     category: { en: "DevOps & Tools", fr: "Outils & DevOps" },
   },
   {
+    name: { en: "pnpm", fr: "pnpm" },
+    category: { en: "DevOps & Tools", fr: "Outils & DevOps" },
+  },
+  {
+    name: { en: "npm", fr: "npm" },
+    category: { en: "DevOps & Tools", fr: "Outils & DevOps" },
+  },
+  {
     name: { en: "Yarn", fr: "Yarn" },
+    category: { en: "DevOps & Tools", fr: "Outils & DevOps" },
+  },
+  {
+    name: { en: "Raspberry Pi", fr: "Raspberry Pi" },
     category: { en: "DevOps & Tools", fr: "Outils & DevOps" },
   },
 
@@ -235,10 +263,6 @@ export const skills: Skill[] = [
     category: { en: "Project Management", fr: "Gestion de Projets & Méthodes Agiles" },
   },
   {
-    name: { en: "Debugging", fr: "Débogage" },
-    category: { en: "Project Management", fr: "Gestion de Projets & Méthodes Agiles" },
-  },
-  {
     name: { en: "Clean Code", fr: "Clean Code" },
     category: { en: "Project Management", fr: "Gestion de Projets & Méthodes Agiles" },
   },
@@ -257,31 +281,15 @@ export const skills: Skill[] = [
     category: { en: "Miscellaneous", fr: "Divers" },
   },
   {
-    name: { en: "shadcn/ui", fr: "shadcn/ui" },
-    category: { en: "Miscellaneous", fr: "Divers" },
-  },
-  {
-    name: { en: "Python", fr: "Python" },
-    category: { en: "Miscellaneous", fr: "Divers" },
-  },
-  {
     name: { en: "PHP", fr: "PHP" },
     category: { en: "Miscellaneous", fr: "Divers" },
   },
   {
-    name: { en: "Apache", fr: "Apache" },
+    name: { en: "English", fr: "Anglais" },
     category: { en: "Miscellaneous", fr: "Divers" },
   },
   {
-    name: { en: "Ajax", fr: "Ajax" },
-    category: { en: "Miscellaneous", fr: "Divers" },
-  },
-  {
-    name: { en: "International Trade", fr: "Commerce International" },
-    category: { en: "Miscellaneous", fr: "Divers" },
-  },
-  {
-    name: { en: "Incoterms", fr: "Incoterms" },
+    name: { en: "Spanish", fr: "Espagnol" },
     category: { en: "Miscellaneous", fr: "Divers" },
   },
 ];

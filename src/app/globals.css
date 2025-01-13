@@ -77,6 +77,10 @@ h1, h2, h3 {
   color: var(--text-primary);
 }
 
+.skills-title {
+  font-size: 1rem;
+}
+
 button {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -132,7 +136,6 @@ button:hover {
 .card {
   background-color: var(--card-bg);
   border-left: 4px solid var(--card-border);
-  border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -196,6 +199,42 @@ button:hover {
   border-radius: 0.5rem;
 }
 
+/* Taille des logos et des containers */
+.card .logo-wrapper {
+  width: 60px;
+  height: 60px;
+}
+
+/* Réduction de la taille des logos */
+.card .logo-wrapper img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+#categorySelect {
+  background-color: var(--background); /* Fond basé sur le thème */
+  color: var(--text-primary); 
+  border: 1px solid var(--card-border); /* Bordure adaptée */
+  border-radius: 0.375rem; /* Coins arrondis */
+  padding: 0.5rem 1rem; /* Espacement interne */
+  appearance: none; /* Supprime le style natif */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transition fluide */
+}
+
+/* Survol et focus */
+#categorySelect:hover,
+#categorySelect:focus {
+  background-color: var(--hover-bg); /* Fond sur survol */
+  color: var(--text-primary); /* Couleur de survol */
+  outline: none; /* Supprime le contour par défaut */
+}
+
+/* Icône de la flèche */
+#categorySelect::-ms-expand {
+  display: none; /* Supprime la flèche pour les navigateurs Microsoft */
+}
+
 
 @media (max-width: 768px) {
   .layout {
@@ -221,5 +260,39 @@ button:hover {
   }
   main {
     margin-top: 90px;
+  }
+  .card {
+    padding: 0.7rem;
+  }
+
+  .card h3 {
+    font-size: 0.85rem; /* Titre plus petit */
+  }
+
+  .card p {
+    font-size: 0.75rem; /* Texte plus petit */
+  }
+
+  .card .tag {
+    font-size: 0.7rem !important;
+    border-radius: 10px;
+  }
+
+  .description li {
+    font-size: 0.75rem;
+  }
+
+  .card .logo-wrapper {
+    width: 40px;
+    height: 40px;
+  }
+
+  .card .logo-wrapper img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .skills-title  {
+    font-size: 0.75rem;
   }
 }
