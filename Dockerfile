@@ -1,25 +1,21 @@
 FROM node:18-alpine
 
-# Définit le répertoire de travail
 WORKDIR /app
 
-# Copie les fichiers de gestion des dépendances
+# Copie des fichiers de dépendances
 COPY package.json pnpm-lock.yaml ./
 
-# Installe pnpm
 RUN npm install -g pnpm
-
-# Installe les dépendances
 RUN pnpm install --frozen-lockfile
 
-# Copie le reste des fichiers
+# Copie du code source
 COPY . .
 
-# Compile le projet
+# Build Next.js
 RUN pnpm build
 
-# Expose le port
-EXPOSE 3000
+# COPIE SUPPLÉMENTAIRE pour le mode standalone
+RUN cp -r .next/static .next/standalone/.next/static
 
-# Commande de démarrage
+EXPOSE 3000
 CMD ["node", ".next/standalone/server.js"]
