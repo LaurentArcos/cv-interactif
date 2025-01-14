@@ -1,4 +1,3 @@
-# Utilise une image Node.js stable comme base
 FROM node:18-alpine
 
 # Définit le répertoire de travail
@@ -16,8 +15,8 @@ RUN pnpm install --frozen-lockfile
 # Copie le reste des fichiers du projet
 COPY . .
 
-# Compile le projet Next.js en mode production
-RUN pnpm build --no-lint
+# Compile le projet Next.js en mode standalone
+RUN pnpm next build --no-lint
 
 # Définit la variable d'environnement pour le port d'écoute
 ENV PORT=3000
@@ -25,5 +24,5 @@ ENV PORT=3000
 # Expose le port 3000 utilisé par l'application
 EXPOSE 3000
 
-# Commande pour démarrer l'application en production
-CMD ["pnpm", "start"]
+# Commande pour démarrer l'application en standalone
+CMD ["node", ".next/standalone/server.js"]
