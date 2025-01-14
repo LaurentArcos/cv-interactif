@@ -13,7 +13,7 @@ export const aboutMe: AboutMe = {
   
   Mon objectif : allier sens pratique, créativité et rigueur pour proposer des solutions efficaces, avec une attention particulière portée à l'expérience utilisateur et à la qualité du code.
   
-  Ce CV interactif que vous consultez est un projet personnel que j'ai développé avec React, Next.js, TypeScript et Tailwind CSS, et il est hébergé sur mon propre Raspberry Pi 5.  
+  Ce CV interactif que vous consultez est un projet personnel que j'ai développé avec React, Next.js, TypeScript et Tailwind CSS, et il est hébergé sur mon propre Raspberry Pi 5 en utilisant Docker et Github Actions.  
   Cette solution me permet d'avoir un contrôle total sur mon environnement, tout en montrant ma capacité à déployer des projets complets, de l'idée initiale jusqu'à la mise en ligne.
   `,
   textEn: `
@@ -26,7 +26,7 @@ export const aboutMe: AboutMe = {
 
   My goal is to combine practical thinking, creativity, and attention to detail to deliver high-quality solutions, with a strong focus on user experience and clean code.
   
-  The interactive CV you're currently browsing is a personal project that I developed using React, Next.js, TypeScript, and Tailwind CSS, hosted on my own Raspberry Pi 5.  
+  The interactive CV you're currently browsing is a personal project that I developed using React, Next.js, TypeScript, and Tailwind CSS, hosted on my own Raspberry Pi 5, using Docker and Gihtub Actions.  
   This setup gives me complete control over my hosting environment and demonstrates my ability to build and deploy full-stack projects from concept to production.
   `,
 };

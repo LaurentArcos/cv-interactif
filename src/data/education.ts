@@ -46,7 +46,7 @@ export const education: Education[] = [
       "Web Performance", "Accessibility", "SEO", "Nginx", "Express.js"
     ],
     website: "https://oclock.io/formations/cda-alternance",
-    logo: "/cv/images/logos/oclock.png",
+    logo: "/images/logos/oclock.png",
   },
   {
     school: "Ecole O'clock",
@@ -94,7 +94,7 @@ export const education: Education[] = [
       "Linux", "Ubuntu", "Visual Studio Code", "ESLint", "API Integration"
     ],
     website: "https://oclock.io/formations/developpeur-web-web-mobile",
-    logo: "/cv/images/logos/oclock.png",
+    logo: "/images/logos/oclock.png",
   },
   
   {
@@ -117,7 +117,7 @@ export const education: Education[] = [
       "Error Management", "Forms", "Internationalization", "Mobile-First Design"
     ],
     website: "https://www.opquast.com",
-    logo: "/cv/images/logos/opquast.jpg",
+    logo: "/images/logos/opquast.jpg",
   },
   {
     school: "Institut d'Etudes Européennes - Université Paris 8",
@@ -137,7 +137,7 @@ export const education: Education[] = [
       "International Marketing", "Financial Analysis", "Risk Management"
     ],
     website: "https://iee.univ-paris8.fr/",
-    logo: "/cv/images/logos/paris8.svg",
+    logo: "/images/logos/paris8.svg",
   },
   {
     school: "Université de Toulon",
@@ -157,6 +157,6 @@ export const education: Education[] = [
       "Intercultural Skills", "Presentation Skills"
     ],
     website: "https://formations.univ-tln.fr/fr/offre-de-formation/licence-XA/licence-langues-etrangeres-appliquees-LOY3H2X5.html",
-    logo: "/cv/images/logos/toulon.jpg",
+    logo: "/images/logos/toulon.jpg",
   },
 ];
