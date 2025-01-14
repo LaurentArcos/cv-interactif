@@ -9,20 +9,17 @@ COPY package.json pnpm-lock.yaml ./
 # Installe pnpm
 RUN npm install -g pnpm
 
-# Installe les dépendances du projet
+# Installe les dépendances
 RUN pnpm install --frozen-lockfile
 
-# Copie le reste des fichiers du projet
+# Copie le reste des fichiers
 COPY . .
 
-# Compile le projet Next.js en mode standalone
-RUN pnpm next build --no-lint
+# Compile le projet
+RUN pnpm build
 
-# Définit la variable d'environnement pour le port d'écoute
-ENV PORT=3000
-
-# Expose le port 3000 utilisé par l'application
+# Expose le port
 EXPOSE 3000
 
-# Commande pour démarrer l'application en standalone
+# Commande de démarrage
 CMD ["node", ".next/standalone/server.js"]
