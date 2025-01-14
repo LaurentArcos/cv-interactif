@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   icons: {
-    icon: "/cv/favicon.ico",
+    icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   }
 };
