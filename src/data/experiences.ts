@@ -59,7 +59,7 @@ export const experiences: Experience[] = [
     logo: "/images/logos/seagale.png",
   },
   {
-    titleFr: "Développeur Fullstack - Concepteur d'application",
+    titleFr: "Développeur Fullstack - Concepteur d'applications",
     titleEn: "Fullstack Developer - Application Designer",
     type: "dev",
     company: "Freelance",
