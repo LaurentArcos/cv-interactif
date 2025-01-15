@@ -117,7 +117,7 @@ export const education: Education[] = [
       "Error Management", "Forms", "Internationalization", "Mobile-First Design"
     ],
     website: "https://www.opquast.com",
-    logo: "/images/logos/opquast.jpg",
+    logo: "/images/logos/opquast2.jpg",
   },
   {
     school: "Institut d'Etudes Européennes - Université Paris 8",
@@ -137,7 +137,7 @@ export const education: Education[] = [
       "International Marketing", "Financial Analysis", "Risk Management"
     ],
     website: "https://iee.univ-paris8.fr/",
-    logo: "/images/logos/paris8.svg",
+    logo: "/images/logos/paris.jpg",
   },
   {
     school: "Université de Toulon",

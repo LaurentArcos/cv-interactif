@@ -3,8 +3,8 @@ import { Experience } from "@/types";
 export const experiences: Experience[] = [
   {
     // Titre (FR / EN)
-    titleFr: "Développeur Full Stack",
-    titleEn: "Full Stack Developer",
+    titleFr: "Développeur Fullstack",
+    titleEn: "Fullstack Developer",
     type: "dev",
     company: "SEAGALE",
     location: "Toulon, France",
@@ -59,8 +59,8 @@ export const experiences: Experience[] = [
     logo: "/images/logos/seagale.png",
   },
   {
-    titleFr: "Développeur Web Fullstack - Concepteur d'application",
-    titleEn: "Fullstack Web Developer - Application Designer",
+    titleFr: "Développeur Fullstack - Concepteur d'application",
+    titleEn: "Fullstack Developer - Application Designer",
     type: "dev",
     company: "Freelance",
     location: "Hyères, France",
@@ -181,7 +181,7 @@ export const experiences: Experience[] = [
 
     tags: ["React", "SCSS", "UX Design", "JavaScript"],
     website: "https://tribu.surge.sh/",
-    logo: "/images/logos/tribu.png",
+    logo: "/images/logos/tribu.jpg",
   },
   {
     titleFr: "Area Manager Prêt-à-Porter",

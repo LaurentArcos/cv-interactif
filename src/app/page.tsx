@@ -291,7 +291,7 @@ export default function Home() {
             </div>
           </div>
 
-          <nav className="nav-links mt-4 md:mt-10 lg:mt-12 space-y-4">
+          <nav className="nav-links mt-4 md:mt-10 lg:mt-12 space-y-4" aria-label="Navigation principale">
             <a
               href="#aboutme"
               className={`hover:underline flex items-center gap-2 ${activeSection === "aboutme" ? "text-foreground font-bold" : "text-text-secondary"
@@ -961,7 +961,7 @@ export default function Home() {
             </button>
   </form>
 </section> */}
-        <footer className="text-center text-sm text-text-secondary mt-8 pb-4">
+        <footer className="text-center text-sm text-text-secondary mt-8 pb-4" role="contentinfo">
           {t.copyright}
         </footer>
       </main>
