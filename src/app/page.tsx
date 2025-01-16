@@ -191,7 +191,7 @@ export default function Home() {
           <button
             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
             className="md:hidden"
-            aria-label="Toggle Sidebar"
+            aria-label="Toggle Menu"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -222,7 +222,7 @@ export default function Home() {
           </div>
         </div>
         <div className={`${isSidebarOpen ? "block" : "hidden"} md:block`}>
-          <p className="text-text-secondary">{t.developerWeb}</p>
+          <p className="text-text-primary">{t.developerWeb}</p>
 
           {/* Social Links Mobile */}
           <div className="social-links flex gap-5 mt-4 md:hidden">
@@ -232,6 +232,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-text-secondary"
+                aria-label="Profil LinkedIn de Laurent Arcos"
               >
                 <FontAwesomeIcon icon={faLinkedin} className="w-4 h-4" />
               </a>
@@ -240,6 +241,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-text-secondary"
+                aria-label="Profil GitHub de Laurent Arcos"
               >
                 <FontAwesomeIcon icon={faGithub} className="w-4 h-4" />
               </a>
@@ -248,6 +250,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-text-secondary"
+                aria-label="Profil Bluesky de Laurent Arcos"
               >
                 <FontAwesomeIcon icon={faBluesky} className="w-4 h-4" />
               </a>
@@ -256,6 +259,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-text-secondary"
+                aria-label="Profil Letterboxd de Laurent Arcos"
               >
                 <FontAwesomeIcon icon={faLetterboxd} className="w-4 h-4" />
               </a>
@@ -264,11 +268,15 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-text-secondary"
+                aria-label="Profil Steam de Laurent Arcos"
               >
                 <FontAwesomeIcon icon={faSteam} className="w-4 h-4" />
               </a>
             </div>
             <div className="flex items-center mt-0 ml-16">
+            <label htmlFor="languageSelect" className="sr-only">
+              Choisir la langue
+            </label>
               <div className="relative">
                 <select
                   id="languageSelect"
@@ -411,6 +419,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               className="text-text-secondary"
+              aria-label="Profil LinkedIn de Laurent Arcos"
             >
               <FontAwesomeIcon icon={faLinkedin} className="w-6 h-6" />
             </a>
@@ -419,6 +428,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               className="text-text-secondary"
+              aria-label="Profil GitHub de Laurent Arcos"
             >
               <FontAwesomeIcon icon={faGithub} className="w-6 h-6" />
             </a>
@@ -427,6 +437,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               className="text-text-secondary"
+              aria-label="Profil Bluesky de Laurent Arcos"
             >
               <FontAwesomeIcon icon={faBluesky} className="w-6 h-6" />
             </a>
@@ -435,6 +446,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               className="text-text-secondary"
+              aria-label="Profil Letterboxd de Laurent Arcos"
             >
               <FontAwesomeIcon icon={faLetterboxd} className="w-6 h-6" />
             </a>
@@ -443,6 +455,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               className="text-text-secondary"
+              aria-label="Profil Steam de Laurent Arcos"
             >
               <FontAwesomeIcon icon={faSteam} className="w-6 h-6" />
             </a>
@@ -561,7 +574,7 @@ export default function Home() {
                           {language === "fr" ? exp.titleFr : exp.titleEn}
                         </h3>
                         <p className="text-xs md:text-sm text-text-secondary">{exp.company}</p>
-                        <p className="text-xs md:text-sm text-gray-500">
+                        <p className="date-color text-xs md:text-sm">
                           {language === "fr" ? exp.dateFr : exp.dateEn}
                         </p>
                         </div>
@@ -669,7 +682,7 @@ export default function Home() {
                         <p className="text-sm text-text-secondary">
                           {language === "fr" ? edu.degreeFr : edu.degreeEn}
                         </p>
-                        <p className="text-sm text-gray-400">
+                        <p className="date-color text-sm">
                           {language === "fr" ? edu.dateFr : edu.dateEn}
                         </p>
                       </div>
@@ -834,17 +847,14 @@ export default function Home() {
           {/* Liste des compétences */}
           <ul id="skills" className="grid grid-cols-3 gap-1 md:grid-cols-8 md:gap-2 lg:grid-cols-8 lg:gap-2">
             {filteredSkills.map((skill, index) => (
-              <motion.li
+              <li
                 key={index}
                 className="p-4 bg-card-bg rounded-lg shadow-md border border-card-border hover:border-foreground transition-colors duration-300"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3 }}
               >
                 <h3 className="skills-title text-text-primary">
                   {skill.name}
                 </h3>
-              </motion.li>
+              </li>
             ))}
           </ul>
         </section>

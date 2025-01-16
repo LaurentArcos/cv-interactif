@@ -89,7 +89,6 @@ button:hover {
   background-color: var(--hover-bg);
 }
 
-/* Mise en page principale */
 .layout {
   display: grid;
   grid-template-columns: 250px 1fr;
@@ -102,12 +101,18 @@ button:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* border-right: var(--background) 1px solid; */
 }
 
 .sidebar p {
-  color: var(--text-secondary);
   margin-top: 0.5rem;
+}
+
+.date-color {
+  color: var(--text-primary);
+}
+
+.color-job {
+  color: var(--text-primary);
 }
 
 .nav-links {
