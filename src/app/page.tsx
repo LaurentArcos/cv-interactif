@@ -28,7 +28,7 @@ import {
   faBluesky,
   faLetterboxd,
 } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 /** Exemple d’icône de chevron bas/haut. 
     Vous pouvez utiliser Heroicons, FontAwesome, etc. */
@@ -45,6 +45,23 @@ function Chevron({ isOpen }: { isOpen: boolean }) {
       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
     </svg>
   );
+}
+
+function isMobileDevice() {
+  if (typeof navigator === "undefined") return false;
+
+  return /Mobi|Android/i.test(navigator.userAgent);
+}
+
+function handleClickNumber(event: React.MouseEvent<HTMLAnchorElement>) {
+
+  if (!isMobileDevice()) {
+    event.preventDefault(); 
+
+    navigator.clipboard.writeText("0630205558").then(() => {
+      alert("Numéro copié dans le presse-papier !");
+    });
+  }
 }
 
 export default function Home() {
@@ -399,7 +416,9 @@ export default function Home() {
             </div>
 
             {isEmailOpen && (
-              <div className="flex items-center gap-2 mt-2 text-sm text-text-secondary">
+            <div className="flex flex-col gap-2 mt-2 text-sm text-text-secondary">
+
+              <div className="flex items-center gap-2">
                 <FontAwesomeIcon icon={faEnvelope} className="w-5 h-5" />
                 <a
                   href="mailto:laurent.arcos@gmail.com"
@@ -408,7 +427,26 @@ export default function Home() {
                   laurent.arcos@gmail.com
                 </a>
               </div>
-            )}
+
+              <div className="flex items-center gap-2">
+                <FontAwesomeIcon icon={faPhone} className="w-5 h-5" />
+                <a
+                  href="tel:+33630205558"
+                  onClick={handleClickNumber}
+                  className="
+                    text-lg
+                    cursor-pointer
+                    hover:font-bold
+                    transition
+                    duration-300
+                  "
+                  aria-label="Appeler Laurent Arcos ou copier le numéro"
+                >
+                  06&nbsp;30&nbsp;20&nbsp;55&nbsp;58
+                </a>
+              </div>
+            </div>
+          )}
           </nav>
         </div>
         {/* Social Links Desktop*/}
