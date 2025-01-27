@@ -50,11 +50,7 @@ Le projet sera **déployé sur mon Raspberry Pi** et accessible via un sous-doma
 
 - Ajouter des boutons permettant de filtrer les projets par **technologie** (React, TypeScript, etc.).
 
-### **5. Formulaire de contact**
-
-- Ajouter un **formulaire de contact intégré** qui utilise une **API route Next.js** pour envoyer les messages.
-
-### **6. Toggle de choix de langue (Français / Anglais)**
+### **5. Toggle de choix de langue (Français / Anglais)**
 
 - Ajouter un bouton permettant de basculer entre les versions **française** et **anglaise** du site.
 - Utiliser les fonctionnalités d'internationalisation de Next.js.
@@ -111,16 +107,16 @@ Le projet sera **déployé sur mon Raspberry Pi** et accessible via un sous-doma
 
 ## ✅ **Checklist des Fonctionnalités Finales**
 
-| Fonctionnalité                | Statut      |
-| ----------------------------- | ----------- |
-| Page principale avec sections | 🔄 En cours |
-| Timeline interactive          | ⬜ À faire   |
-| Dark Mode Toggle              | ⬜ À faire   |
-| Filtrage des projets          | ⬜ À faire   |
-| Formulaire de contact         | ⬜ À faire   |
-| Toggle de choix de langue     | ⬜ À faire   |
-| Dockerisation du projet       | ⬜ À faire   |
-| Déploiement sur Raspberry Pi  | ⬜ À faire   |
+| Fonctionnalité                | Statut    |
+| ----------------------------- | --------- |
+| Page principale avec sections | ✅ Fait   |
+| Timeline interactive          | ✅ Fait   |
+| Dark Mode Toggle              | ✅ Fait   |
+| Filtrage des projets          | ✅ Fait   |
+| Formulaire de contact         | ✅ Fait   |
+| Toggle de choix de langue     | ✅ Fait   |
+| Dockerisation du projet       | ✅ Fait   |
+| Déploiement sur Raspberry Pi  | ✅ Fait   |
 
 ---
 
@@ -129,5 +125,6 @@ Le projet sera **déployé sur mon Raspberry Pi** et accessible via un sous-doma
 - Ajouter une **page de blog** simple pour partager des articles.
 - Intégrer une **section "Testimonials"** avec des animations.
 - Ajouter des **tests unitaires** avec **Jest** pour sécuriser le code.
-
+- Ajouter un **formulaire de contact intégré** qui utilise une **API route Next.js** pour envoyer les messages.
+  
 ```
