@@ -7,6 +7,10 @@ export const skills: Skill[] = [
     category: { en: "Frontend Development", fr: "Développement Frontend" },
   },
   {
+    name: { en: "Vite", fr: "Vite" },
+    category: { en: "Frontend Development", fr: "Développement Frontend" },
+  },
+  {
     name: { en: "Next.js", fr: "Next.js" },
     category: { en: "Frontend Development", fr: "Développement Frontend" },
   },

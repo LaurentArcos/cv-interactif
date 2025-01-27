@@ -53,20 +53,42 @@ function isMobileDevice() {
   return /Mobi|Android/i.test(navigator.userAgent);
 }
 
-function handleClickNumber(event: React.MouseEvent<HTMLAnchorElement>) {
-
+function handleClickNumber(
+  event: React.MouseEvent<HTMLAnchorElement>,
+  language: "en" | "fr"
+) {
   if (!isMobileDevice()) {
-    event.preventDefault(); 
+    event.preventDefault();
 
     navigator.clipboard.writeText("0630205558").then(() => {
-      alert("Numéro copié dans le presse-papier !");
+      // Message différent selon la langue
+      if (language === "fr") {
+        alert("Numéro copié dans le presse-papier !");
+      } else {
+        alert("Phone number copied to clipboard!");
+      }
     });
   }
+}
+
+function getFirstNonEmptyLine(text: string): string {
+
+  return text
+    .split("\n")
+    .map(line => line.trim())
+    .filter(line => line.length > 0)[0]
+    || "";
 }
 
 export default function Home() {
   const [language, setLanguage] = useState<"en" | "fr">("fr");
   const t = language === "fr" ? fr : en;
+  const [isAboutMeOpen, setIsAboutMeOpen] = useState(false);
+  const aboutMeFullText = language === "fr" ? aboutMe.textFr : aboutMe.textEn;
+  const firstLine = getFirstNonEmptyLine(aboutMeFullText);
+  const displayedText = isAboutMeOpen
+  ? aboutMeFullText
+  : `${firstLine}... ${language === "fr" ? "(Lire la suite)" : "(Read more)"}`;
   const [showDev, setShowDev] = useState(true);
   const [showSales, setShowSales] = useState(true);
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
@@ -78,9 +100,23 @@ export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const toggleFilters = () => setIsFiltersOpen(!isFiltersOpen);
-  const [isAboutMeOpen, setIsAboutMeOpen] = useState(false);
 
   // Fonction pour filtrer les compétences
+
+  const aboutMeContent = isAboutMeOpen ? (
+    <>{aboutMeFullText}</>
+  ) : (
+    <>
+      {firstLine}...
+      {" "}
+      <span
+        onClick={() => setIsAboutMeOpen(true)}
+        className="text-blue-500 cursor-pointer underline"
+      >
+        {language === "fr" ? "(Lire la suite)" : "(Read more)"}
+      </span>
+    </>
+  );
 
   const getTranslatedSkill = (skill: Skill, language: "en" | "fr") => ({
     name: skill.name[language],
@@ -432,7 +468,7 @@ export default function Home() {
                 <FontAwesomeIcon icon={faPhone} className="w-5 h-5" />
                 <a
                   href="tel:+33630205558"
-                  onClick={handleClickNumber}
+                  onClick={(e) => handleClickNumber(e, language)}
                   className="
                     text-lg
                     cursor-pointer
@@ -532,30 +568,29 @@ export default function Home() {
       {/* Main Content */}
       <main className="flex-1 overflow-y-auto p-8">
 
-        {/* SECTION À PROPOS */}
-        <section id="aboutme" className="mb-8 md:mb-16 lg:mb-16">
-          <div className="flex items-center justify-between">
-            <h2 className="text-xl md:text-3xl lg:text-3xl font-semibold mb-4 text-text-primary flex items-center">
-              <UserCircleIcon className="w-6 h-6 mr-2 text-foreground" />
-              {language === "fr" ? aboutMe.titleFr : aboutMe.titleEn}
-              {/* BOUTON TOGGLE */}
-              <button
-                onClick={() => setIsAboutMeOpen(!isAboutMeOpen)}
-                className="text-text-secondary hover:text-text-primary pl-4"
-                aria-label="Toggle About Me"
-              >
-                <Chevron isOpen={isAboutMeOpen} />
-              </button>
-            </h2>
-          </div>
+      {/* SECTION À PROPOS */}
+      <section id="aboutme" className="mb-8 md:mb-16 lg:mb-16">
+      <div className="flex items-center justify-between">
+        <h2 className="text-xl md:text-3xl lg:text-3xl font-semibold mb-4 text-text-primary flex items-center">
+          <UserCircleIcon className="w-6 h-6 mr-2 text-foreground" />
+          {language === "fr" ? aboutMe.titleFr : aboutMe.titleEn}
 
-          {/* AFFICHAGE CONDITIONNEL */}
-          {isAboutMeOpen ? (
-            <p className="aboutme text-sm md:text-base text-justify whitespace-pre-line">
-              {language === "fr" ? aboutMe.textFr : aboutMe.textEn}
-            </p>
-          ) : null}
-        </section>
+          {/* Le chevron qui toggle également */}
+          <button
+            onClick={() => setIsAboutMeOpen(!isAboutMeOpen)}
+            className="text-text-secondary hover:text-text-primary pl-4"
+            aria-label="Toggle About Me"
+          >
+            <Chevron isOpen={isAboutMeOpen} />
+          </button>
+        </h2>
+      </div>
+
+      {/* Paragraphe : aboutMeContent */}
+      <p className="aboutme text-sm md:text-base text-justify whitespace-pre-line">
+        {aboutMeContent}
+      </p>
+    </section>
 
         {/* Expériences Professionnelles */}
         <section
