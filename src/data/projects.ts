@@ -123,4 +123,14 @@ export const projects: Project[] = [
     image: "/images/projects/flags.webp",
     link: "https://laurentarcosflagsoftheworld.surge.sh/",
   },
+  {
+    {
+      titleFr: "Page d’accueil sur laurentarcos.fr",
+      titleEn: "Home Page on laurentarcos.fr",
+      descriptionFr: "Petit projet HTML/CSS/JS pour proposer un visuel original (CSS art) et rediriger vers mon CV interactif.",
+      descriptionEn: "A small HTML/CSS/JS project showcasing some CSS art and providing a direct link to my interactive CV.",
+      image: "/images/projects/homepage.webp",
+      link: "https://www.laurentarcos.fr",
+    },
+  },
 ];
