@@ -62,6 +62,10 @@ export const skills: Skill[] = [
     name: { en: "Framer Motion", fr: "Framer Motion" },
     category: { en: "Frontend Development", fr: "Développement Frontend" },
   },
+  {
+    name: { en: "Angular", fr: "Angular" },
+    category: { en: "Frontend Development", fr: "Développement Frontend" },
+  },
 
   // 🧑‍💻 Développement Backend / Backend Development
   {
