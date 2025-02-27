@@ -84,7 +84,7 @@ export const projects: Project[] = [
   {
     titleFr: "Pokédex",
     titleEn: "Pokedex",
-    descriptionFr: "Un simple Pokédex en React créé pour ma nièce",
+    descriptionFr: "Un Pokédex en React créé pour ma nièce",
     descriptionEn: "A pokedex I made for my niece using React",
     image: "/images/projects/pokedex.webp",
     link: "https://pokedexdeclara.surge.sh/",
