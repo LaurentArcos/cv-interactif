@@ -1,3 +1,4 @@
+cd cv-interactif
 docker-compose down
 docker rmi laurentarcos/cv-interactif:latest
 git pull
