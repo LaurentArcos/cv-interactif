@@ -119,6 +119,10 @@ export const skills: Skill[] = [
     category: { en: "DevOps & Tools", fr: "Outils & DevOps" },
   },
   {
+    name: { en: "Surge", fr: "Surge" },
+    category: { en: "DevOps & Tools", fr: "Outils & DevOps" },
+  },
+  {
     name: { en: "Git", fr: "Git" },
     category: { en: "DevOps & Tools", fr: "Outils & DevOps" },
   },

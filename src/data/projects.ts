@@ -90,12 +90,20 @@ export const projects: Project[] = [
     link: "https://pokedexdeclara.surge.sh/",
   },
   {
-    titleFr: "Weather App",
+    titleFr: "App Météo",
     titleEn: "Weather App",
     descriptionFr: "Application météo en temps réel",
     descriptionEn: "Real-time weather application",
     image: "/images/projects/weather.webp",
     link: "http://laurentarcosweatherapp.surge.sh/",
+  },
+  {
+    titleFr: "App Custom SNCF",
+    titleEn: "SNCF Custom App",
+    descriptionFr: "Application légère pour découvrir Angular. Avec API SNCF.",
+    descriptionEn: "Light app to discover Angular. With SNCF API.",
+    image: "/images/projects/sncf.webp",
+    link: "https://laurentarcos-sncfcustomapp.surge.sh/",
   },
   {
     titleFr: "Trivia Quizz",
