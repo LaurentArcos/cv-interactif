@@ -82,6 +82,14 @@ export const projects: Project[] = [
     link: "https://margotjollyportfolio.surge.sh/",
   },
   {
+    titleFr: "Pokédex",
+    titleEn: "Pokedex",
+    descriptionFr: "Un simple Pokédex en React créé pour ma nièce",
+    descriptionEn: "A pokedex I made for my niece using React",
+    image: "/images/projects/pokedex.webp",
+    link: "https://pokedexdeclara.surge.sh/",
+  },
+  {
     titleFr: "Weather App",
     titleEn: "Weather App",
     descriptionFr: "Application météo en temps réel",
@@ -124,11 +132,11 @@ export const projects: Project[] = [
     link: "https://laurentarcosflagsoftheworld.surge.sh/",
   },
   {
-      titleFr: "Page d’accueil sur laurentarcos.fr",
-      titleEn: "Home Page on laurentarcos.fr",
-      descriptionFr: "Petit projet HTML/CSS/JS pour proposer un visuel original (CSS art) et rediriger vers mon CV interactif.",
-      descriptionEn: "A small HTML/CSS/JS project showcasing some CSS art and providing a direct link to my interactive CV.",
-      image: "/images/projects/homepage.webp",
-      link: "https://www.laurentarcos.fr",
+    titleFr: "Page d’accueil sur laurentarcos.fr",
+    titleEn: "Home Page on laurentarcos.fr",
+    descriptionFr: "Petit projet HTML/CSS/JS pour proposer un visuel original (CSS art) et rediriger vers mon CV interactif.",
+    descriptionEn: "A small HTML/CSS/JS project showcasing some CSS art and providing a direct link to my interactive CV.",
+    image: "/images/projects/homepage.webp",
+    link: "https://www.laurentarcos.fr",
   },
 ];
