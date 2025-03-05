@@ -129,6 +129,7 @@ button:hover {
 
 .nav-links a:hover {
   color: var(--foreground);
+  font-weight: bold;
 }
 
 .logo-wrapper {

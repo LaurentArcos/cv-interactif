@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import en from "@/app/translations/en";
 import fr from "@/app/translations/fr";
+
 import {
   BriefcaseIcon,
   AcademicCapIcon,
@@ -29,6 +30,7 @@ import {
   faLetterboxd,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+import LanguageDropdown from "@/components/LanguageDropdow";
 
 /** Exemple d’icône de chevron bas/haut. 
     Vous pouvez utiliser Heroicons, FontAwesome, etc. */
@@ -136,11 +138,9 @@ export default function Home() {
   // Fonction de toggle pour les expériences
   const toggleExperience = (index: number) => {
     setOpenExperiences((prev) => {
-      // si l’index est déjà présent => on le retire
       if (prev.includes(index)) {
         return prev.filter((i) => i !== index);
       } else {
-        // sinon, on l’ajoute
         return [...prev, index];
       }
     });
@@ -331,23 +331,10 @@ export default function Home() {
               Choisir la langue
             </label>
               <div className="relative">
-                <select
-                  id="languageSelect"
-                  value={language}
-                  onChange={(e) => setLanguage(e.target.value as "fr" | "en")}
-                  className="
-                  p-0
-                  pr-8
-                  border-none
-                  focus:outline-none
-                  bg-background
-                  text-foreground
-                  appearance-none
-                "
-                >
-                  <option value="fr">FR</option>
-                  <option value="en">EN</option>
-                </select>
+              <LanguageDropdown
+                language={language}
+                onChange={(lang) => setLanguage(lang)}
+              />
               </div>
             </div>
           </div>
@@ -355,7 +342,7 @@ export default function Home() {
           <nav className="nav-links mt-4 md:mt-10 lg:mt-12 space-y-4" aria-label="Navigation principale">
             <a
               href="#aboutme"
-              className={`hover:underline flex items-center gap-2 ${activeSection === "aboutme" ? "text-foreground font-bold" : "text-text-secondary"
+              className={`flex items-center gap-2 ${activeSection === "aboutme" ? "text-foreground font-bold" : "text-text-secondary"
                 }`}
               onClick={(e) => {
                 e.preventDefault();
@@ -369,7 +356,7 @@ export default function Home() {
             <div className="flex items-center justify-between">
               <a
                 href="#experiences"
-                className={`hover:underline flex items-center gap-2 ${activeSection === "experiences"
+                className={`flex items-center gap-2 ${activeSection === "experiences"
                     ? "text-foreground font-bold"
                     : "text-text-secondary"
                   }`}
@@ -412,7 +399,7 @@ export default function Home() {
 
             <a
               href="#formations"
-              className={`hover:underline flex items-center gap-2 ${activeSection === "formations"
+              className={`flex items-center gap-2 ${activeSection === "formations"
                   ? "text-foreground font-bold"
                   : "text-text-secondary"
                 }`}
@@ -421,7 +408,7 @@ export default function Home() {
             </a>
             <a
               href="#projets"
-              className={`hover:underline flex items-center gap-2 ${activeSection === "projets"
+              className={`flex items-center gap-2 ${activeSection === "projets"
                   ? "text-foreground font-bold"
                   : "text-text-secondary"
                 }`}
@@ -430,7 +417,7 @@ export default function Home() {
             </a>
             <a
               href="#competences"
-              className={`hover:underline flex items-center gap-2 ${activeSection === "competences"
+              className={`flex items-center gap-2 ${activeSection === "competences"
                   ? "text-foreground font-bold"
                   : "text-text-secondary"
                 }`}
@@ -440,7 +427,7 @@ export default function Home() {
             <div className="flex items-center justify-between">
               <a
                 href="#contact"
-                className="hover:underline flex items-center gap-2"
+                className="flex items-center gap-2"
                 onClick={(e) => {
                   e.preventDefault();
                   setIsEmailOpen(!isEmailOpen);
@@ -458,7 +445,6 @@ export default function Home() {
                 <FontAwesomeIcon icon={faEnvelope} className="w-5 h-5" />
                 <a
                   href="mailto:laurent.arcos@gmail.com"
-                  className="hover:underline"
                 >
                   laurent.arcos@gmail.com
                 </a>
@@ -486,7 +472,7 @@ export default function Home() {
           </nav>
         </div>
         {/* Social Links Desktop*/}
-        <div className="social-links hidden md:flex flex-col justify-start mt-28 mb-auto">
+        <div className="social-links hidden md:flex flex-col justify-start mt-28  mb-auto">
           <div className="flex gap-5">
             <a
               href="https://www.linkedin.com/in/laurentarcos/"
@@ -536,25 +522,12 @@ export default function Home() {
           </div>
 
 
-          <div className="flex items-center mt-8">
+          <div className="flex items-center mt-12">
             <div className="relative">
-              <select
-                id="languageSelect"
-                value={language}
-                onChange={(e) => setLanguage(e.target.value as "fr" | "en")}
-                className="
-                  p-1
-                  pr-8
-                  border-none
-                  focus:outline-none
-                  bg-background
-                  text-foreground
-                  appearance-none
-                "
-              >
-                <option value="fr">FR</option>
-                <option value="en">EN</option>
-              </select>
+            <LanguageDropdown
+              language={language}
+              onChange={(lang) => setLanguage(lang)}
+            />
             </div>
           </div>
         </div>
@@ -762,7 +735,9 @@ export default function Home() {
                     </div>
                     {/* Chevron */}
                     <button
-                      onClick={() => toggleEducation(index)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          toggleEducation(index)}}
                       className="text-text-secondary hover:text-text-primary"
                       aria-label="Toggle Card"
                     >

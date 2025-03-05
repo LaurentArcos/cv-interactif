@@ -15,27 +15,47 @@ export const experiences: Experience[] = [
 
     // Description (FR / EN)
     descriptionFr: `
-      - Création du programme de parrainage sur boutique en ligne Prestashop.
+    - Développement d'une application Point de Vente (POS) utilisée en magasin (avec React, Express, PHP et API Prestashop).
+    
+    - Création du module de programme de parrainage sur boutique en ligne Prestashop.
 
-      - Développement de plusieurs applications en React + Express.
+    - Développement de plusieurs applications en React + Express.
 
-      - Création d'une application utilisée pour les ventes en magasin.
+    - Refonte complète du frontend du site seagale.fr avec une modernisation du design et des performances optimisées.
 
-      - Gestion de routes API en PHP avec le Webservice API Prestashop.
+    - Développement d'un module FAQ dynamique pour améliorer l'expérience utilisateur et l'accès aux informations.
 
-      - Gestion de routes API en TypeScript avec l'API Shopify.
-    `,
+    - Développement d'un module de sondage interactif pour Prestashop.
+
+    - Automatisation de plusieurs tâches internes et flux de travail via Make et n8n, réduisant le temps de gestion manuelle.
+
+    - Création d'un module de sélection de Noël.
+
+    - Gestion de routes API en PHP avec le Webservice API Prestashop.
+
+    - Gestion de routes API en TypeScript avec l'API Shopify.
+  `,
     descriptionEn: `
-      - Implementation of a referral program on a Prestashop-based online store.
+    - Development of a Point of Sale (POS) application for in-store sales (with React, Express, PHP and Prestashop API).
 
-      - Development of multiple React + Express applications.
+    - Creation and implementation of a referral program module on a Prestashop-based online store.
 
-      - Creation of an application used for in-store sales.
-      
-      - PHP-based API routes management with Prestashop Webservice API.
-      
-      - TypeScript-based API routes management with the Shopify API.
-    `,
+    - Development of multiple React + Express applications.
+
+    - Complete frontend redesign of seagale.fr, modernizing the design and optimizing performance.
+
+    - Development of a dynamic FAQ module to improve user experience and access to information.
+
+    - Development of an interactive survey module.
+
+    - Automation of various internal tasks and workflows using Make and n8n, reducing manual workload.
+
+    - Creation of a Christmas selection module.
+
+    - PHP-based API routes management with Prestashop Webservice API.
+
+    - TypeScript-based API routes management with the Shopify API.
+  `,
 
     tags: [
       "React",
@@ -47,6 +67,8 @@ export const experiences: Experience[] = [
       "TypeScript",
       "PHP",
       "SQL",
+      "Make",
+      "n8n",
       "Prestashop",
       "Swagger",
       "Shopify",
