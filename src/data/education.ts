@@ -4,7 +4,7 @@ export const education: Education[] = [
   {
     school: "Ecole O'clock",
     degreeFr: "Titre professionnel (TP) de niveau 6, Concepteur Développeur d'Applications, Promo Elfes",
-    degreeEn: "Professional Degree (Level 6), Application Developer, 'Elfes' Cohort",
+    degreeEn: "Professional Degree (Level 6), Application Developer, 'Elfes' class",
     dateFr: "Septembre 2023 - Avril 2025",
     dateEn: "September 2023 - April 2025",
     descriptionFr: `
@@ -50,8 +50,8 @@ export const education: Education[] = [
   },
   {
     school: "Ecole O'clock",
-    degreeFr: "Développeur Web et Web Mobile, Promo De Vinci",
-    degreeEn: "Web & Mobile Developer, 'De Vinci' Cohort",
+    degreeFr: "Titre professionnel (TP) de niveau 5, Développeur Web et Web Mobile, Promo De Vinci",
+    degreeEn: "Professional Degree (Level 5), Web & Mobile Developer, 'Da Vinci' class",
     dateFr: "Mars 2022 - Septembre 2022",
     dateEn: "March 2022 - September 2022",
     descriptionFr: `
