@@ -78,10 +78,8 @@ export const projects: Project[] = [
   {
     titleFr: "Seagale - Dashboard d'analyse des résultats du sondage",
     titleEn: "Seagale - Survey Results Analysis Dashboard",
-    descriptionFr: `Développement d’un tableau de bord interactif en React permettant d’analyser les réponses du sondage collectées via un module personnalisé PrestaShop. 
-    Intégration d’une gestion automatisée des expéditions avec génération d’étiquettes et suivi des colis.`,
-    descriptionEn: `Development of an interactive React dashboard for analyzing survey responses collected via a custom PrestaShop module. 
-    Automated shipping management, including label generation and parcel tracking.`,
+    descriptionFr: `Développement d’un tableau de bord interactif en React permettant d’analyser les réponses du sondage collectées via un module personnalisé PrestaShop. `,
+    descriptionEn: `Development of an interactive React dashboard for analyzing survey responses collected via a custom PrestaShop module.`,
     image: "/images/projects/survey.webp",
     link: "https://survey.laurentarcos.fr/",
   },
