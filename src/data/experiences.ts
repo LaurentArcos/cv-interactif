@@ -31,6 +31,8 @@ export const experiences: Experience[] = [
 
     - Création d'un module de sélection de Noël.
 
+    - Création d'un module de sondage et d'un dashboard en react pour en analyser les réponses.
+
     - Gestion de routes API en PHP avec le Webservice API Prestashop.
 
     - Gestion de routes API en TypeScript avec l'API Shopify.
@@ -51,6 +53,8 @@ export const experiences: Experience[] = [
     - Automation of various internal tasks and workflows using Make and n8n, reducing manual workload.
 
     - Creation of a Christmas selection module.
+
+    - Creation of a survey module and a React dashboard to analyze the responses.
 
     - PHP-based API routes management with Prestashop Webservice API.
 

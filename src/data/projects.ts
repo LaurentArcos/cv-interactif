@@ -14,8 +14,8 @@ export const projects: Project[] = [
   {
     titleFr: "Seagale - POS App",
     titleEn: "Seagale - POS App",
-    descriptionFr: "Application utilisée par les vendeurs en boutique",
-    descriptionEn: "POS Application used by in-store employees",
+    descriptionFr: "Application en React utilisée par les vendeurs en boutique",
+    descriptionEn: "React POS Application used by in-store employees",
     image: "/images/projects/posapp.webp",
     link: "https://github.com/LaurentArcos/Cigale-POS-App",
   },
@@ -50,11 +50,13 @@ export const projects: Project[] = [
     titleEn: "Seagale - Various Prestashop Features",
     descriptionFr: `Création de divers outils pour Seagale sur Prestashop, notamment : 
     - Module de programme de parrainage
+    - Ajout d'un module de sondage
     - Page FAQ
     - Pages de sélection de Noël
     - Refonte du design du site`,
     descriptionEn: `Creation of various Prestashop tools for Seagale, including:
     - Referral program module
+    - survey module added
     - FAQ page
     - Christmas gift selection pages
     - Site design overhaul`,
@@ -64,7 +66,7 @@ export const projects: Project[] = [
   {
     titleFr: "Seagale - Hub WMS avec Shopify",
     titleEn: "Seagale - WMS Hub with Shopify",
-    descriptionFr: `Développement d'un hub logistique en prévision d'une migration vers Shopify. 
+    descriptionFr: `Développement d'un hub en React logistique en prévision d'une migration vers Shopify. 
     Intégration des API Shopify, Chronopost, Colissimo et DHL. 
     Gestion automatisée des expéditions, génération des étiquettes et suivi des colis.`,
     descriptionEn: `Development of a logistics hub in preparation for a Shopify migration.
@@ -74,10 +76,20 @@ export const projects: Project[] = [
     link: "",
   },
   {
+    titleFr: "Seagale - Dashboard d'analyse des résultats du sondage",
+    titleEn: "Seagale - Survey Results Analysis Dashboard",
+    descriptionFr: `Développement d’un tableau de bord interactif en React permettant d’analyser les réponses du sondage collectées via un module personnalisé PrestaShop. 
+    Intégration d’une gestion automatisée des expéditions avec génération d’étiquettes et suivi des colis.`,
+    descriptionEn: `Development of an interactive React dashboard for analyzing survey responses collected via a custom PrestaShop module. 
+    Automated shipping management, including label generation and parcel tracking.`,
+    image: "/images/projects/survey.webp",
+    link: "https://survey.laurentarcos.fr/",
+  },
+  {
     titleFr: "Moodboard Graphiste",
     titleEn: "Moodboard for a Graphic Designer",
-    descriptionFr: "Site vitrine démo pour un portfolio de graphiste",
-    descriptionEn: "A demo site showcasing a graphic designer's portfolio",
+    descriptionFr: "Site vitrine démo en React pour un portfolio de graphiste",
+    descriptionEn: "A React demo site showcasing a graphic designer's portfolio",
     image: "/images/projects/margot.webp",
     link: "https://margotjollyportfolio.surge.sh/",
   },
