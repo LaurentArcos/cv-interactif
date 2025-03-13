@@ -309,7 +309,7 @@ export const skills: Skill[] = [
     category: { en: "Miscellaneous", fr: "Divers" },
   },
   {
-    name: { en: "Spanish", fr: "Espagnol" },
+    name: { en: "English", fr: "Anglais" },
     category: { en: "Miscellaneous", fr: "Divers" },
   },
 ];
