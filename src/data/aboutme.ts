@@ -4,7 +4,7 @@ export const aboutMe: AboutMe = {
   titleFr: "À propos",
   titleEn: "About Me",
   textFr: `
-  Je m'appelle Laurent Arcos, développeur web vivant à Hyères (Var) avec un parcours riche et atypique.
+  Je m'appelle Laurent Arcos, développeur web habitant à Hyères (Var) avec un parcours riche et atypique.
   
   Avant de me tourner vers le développement web, j'ai passé plusieurs années dans le commerce et la logistique, des expériences qui m'ont appris à être polyvalent, à gérer les imprévus et à comprendre les besoins des utilisateurs finaux.  
   Cette double expertise, technique et métier, est aujourd'hui un atout majeur dans mon approche du développement.
