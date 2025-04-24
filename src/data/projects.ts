@@ -82,6 +82,14 @@ export const projects: Project[] = [
     descriptionEn: `Development of an interactive React dashboard for analyzing survey responses collected via a custom PrestaShop module.`,
     image: "/images/projects/survey.webp",
     link: "https://survey.laurentarcos.fr/",
+  },  
+  {
+    titleFr: "Seagale - Automatisations avec n8n et Airtable",
+    titleEn: "Seagale - n8n and Airtable Automations",
+    descriptionFr: `Développement d'automatisations pour la gestion des stocks, des commandes et plus avec n8n et Airtable.`,
+    descriptionEn: `Development of automations for stock and order management using n8n and Airtable.`,
+    image: "/images/projects/n8n.webp",
+    link: "", 
   },
   {
     titleFr: "Moodboard Graphiste",

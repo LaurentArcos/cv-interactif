@@ -305,6 +305,10 @@ export const skills: Skill[] = [
     category: { en: "Miscellaneous", fr: "Divers" },
   },
   {
+    name: { en: "Airtable", fr: "Airtable" },
+    category: { en: "Miscellaneous", fr: "Divers" },
+  },
+  {
     name: { en: "Spanish", fr: "Espagnol" },
     category: { en: "Miscellaneous", fr: "Divers" },
   },

@@ -10,8 +10,8 @@ export const experiences: Experience[] = [
     location: "Toulon, France",
 
     // Date (FR / EN)
-    dateFr: "Octobre 2023 - Présent",
-    dateEn: "October 2023 - Present",
+    dateFr: "Septrembre 2023 - Présent",
+    dateEn: "September 2023 - Present",
 
     // Description (FR / EN)
     descriptionFr: `
@@ -27,7 +27,7 @@ export const experiences: Experience[] = [
 
     - Développement d'un module de sondage interactif pour Prestashop.
 
-    - Automatisation de plusieurs tâches internes et flux de travail via Make et n8n, réduisant le temps de gestion manuelle.
+    - Automatisation de plusieurs tâches internes et flux de travail via n8n et airtable, réduisant le temps de gestion manuelle.
 
     - Création d'un module de sélection de Noël.
 
@@ -50,7 +50,7 @@ export const experiences: Experience[] = [
 
     - Development of an interactive survey module.
 
-    - Automation of various internal tasks and workflows using Make and n8n, reducing manual workload.
+    - Automation of various internal tasks and workflows using n8n and airtable, reducing manual workload.
 
     - Creation of a Christmas selection module.
 
