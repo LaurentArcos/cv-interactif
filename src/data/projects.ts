@@ -28,16 +28,6 @@ export const projects: Project[] = [
     link: "https://www.assurancedespros.fr/",
   },
   {
-    titleFr: "ISS Tracker App",
-    titleEn: "ISS Tracker App",
-    descriptionFr:
-      "Suivi en temps réel de la Station Spatiale Internationale avec la version gratuite de l'API Google Maps",
-    descriptionEn:
-      "Real-time tracking of the International Space Station using the free Google Maps API",
-    image: "/images/projects/iss.webp",
-    link: "https://laurentarcosisstracker.surge.sh/",
-  },
-  {
     titleFr: "L.A. Coffeedential",
     titleEn: "L.A. Coffeedential",
     descriptionFr: "Site vitrine pour un Coffee Shop",
@@ -90,6 +80,16 @@ export const projects: Project[] = [
     descriptionEn: `Development of automations for stock and order management using n8n and Airtable.`,
     image: "/images/projects/n8n.webp",
     link: "", 
+  },
+  {
+    titleFr: "ISS Tracker App",
+    titleEn: "ISS Tracker App",
+    descriptionFr:
+      "Suivi en temps réel de la Station Spatiale Internationale avec la version gratuite de l'API Google Maps",
+    descriptionEn:
+      "Real-time tracking of the International Space Station using the free Google Maps API",
+    image: "/images/projects/iss.webp",
+    link: "https://laurentarcosisstracker.surge.sh/",
   },
   {
     titleFr: "Moodboard Graphiste",
