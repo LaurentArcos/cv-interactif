@@ -10,7 +10,7 @@ export const experiences: Experience[] = [
     location: "Toulon, France",
 
     // Date (FR / EN)
-    dateFr: "Septrembre 2023 - Présent",
+    dateFr: "Septembre 2023 - Présent",
     dateEn: "September 2023 - Present",
 
     // Description (FR / EN)

@@ -551,7 +551,7 @@ export default function Home() {
       <main className="flex-1 overflow-y-auto p-8">
 
       {/* SECTION À PROPOS */}
-      <section id="aboutme" className="mb-8 md:mb-16 lg:mb-16">
+      <section id="aboutme" className="mb-8">
       <div className="flex items-center justify-between">
         <h2 className="text-xl md:text-3xl lg:text-3xl font-semibold mb-4 text-text-primary flex items-center">
           <UserCircleIcon className="w-6 h-6 mr-2 text-foreground" />
@@ -573,6 +573,22 @@ export default function Home() {
         {aboutMeContent}
       </p>
     </section>
+
+      {/* Certification - Titre Professionnel */}
+        <section className="mb-8">
+          <p className="aboutme text-sm md:text-base text-justify text-text-primary">
+            Je suis titulaire du <strong>Titre Professionnel de Concepteur Développeur d’Applications</strong>, une certification de niveau 6 (équivalent Bac+3/4). 
+            Cette formation me permet de concevoir, développer, mettre en ligne et maintenir des applications web et mobiles, de la base de données jusqu’à l’interface utilisateur. 
+            <a
+              href="https://www.francecompetences.fr/recherche/rncp/37873/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500 underline ml-1"
+            >
+              Voir la fiche officielle du diplôme
+            </a>
+          </p>
+        </section>
 
         {/* Expériences Professionnelles */}
         <section
