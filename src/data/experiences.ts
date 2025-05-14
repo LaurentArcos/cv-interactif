@@ -91,8 +91,8 @@ export const experiences: Experience[] = [
     company: "Freelance",
     location: "Hyères, France",
 
-    dateFr: "Octobre 2022 - Présent",
-    dateEn: "October 2022 - Present",
+    dateFr: "Mars 2022 - Présent",
+    dateEn: "March 2022 - Present",
 
     descriptionFr: `
       - Maintenance de site WordPress.
