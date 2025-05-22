@@ -550,6 +550,17 @@ export default function Home() {
       {/* Main Content */}
       <main className="flex-1 overflow-y-auto p-8">
 
+      {/* Bloc SEO visible pour Google, avant tout JS */}
+      <section className="sr-only">
+        <h2 className="text-lg font-semibold">Développeur web à Hyères – React, Node.js, Next.js</h2>
+        <p>
+          Laurent Arcos est un développeur web fullstack basé à Hyères (Var), spécialisé en React, Next.js, TypeScript, Node.js et automatisations avec n8n. 
+          Il conçoit et développe des applications modernes performantes, en alliant expérience utilisateur et qualité du code. 
+          Ce site est un projet personnel interactif auto-hébergé sur Raspberry Pi via Docker.
+        </p>
+      </section>
+  
+
       {/* SECTION À PROPOS */}
       <section id="aboutme" className="mb-8">
       <div className="flex items-center justify-between">

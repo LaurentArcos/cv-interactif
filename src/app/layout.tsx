@@ -28,11 +28,44 @@ export const metadata: Metadata = {
     "React",
     "Next.js",
     "JavaScript",
+    "Typescript",
     "Node.js",
     "Frontend",
     "Backend",
-    "Typescript",
+    "Développeur Frontend",
+    "Développeur Backend",
+    "Développeur Full Stack",
     "Portfolio",
+    "CV interactif",
+    "CV en ligne",
+    "CV numérique",
+    "n8n",
+    "automatisation",
+    "Airtable",
+    "API",
+    "HTML",
+    "CSS",
+    "Sass",
+    "Tailwind CSS",
+    "PHP",
+    "MySQL",
+    "PostgreSQL",
+    "MongoDB",
+    "GraphQL",
+    "NextJS",
+    "Docker",
+    "GitHub Actions",
+    "Raspberry Pi",
+    "Développeur Web Full Stack",
+    "Développeur Web Hyères",
+    "Développeur Web Var",
+    "Développeur Web Toulon",
+    "Développeur Web Provence-Alpes-Côte d'Azur",
+    "Développeur Web France",
+    "Développeur Web Marseille",
+    "Développeur Web Nice",
+    "Développeur Web Aix-en-Provence",
+    "Développeur Web PACA",
   ],
   authors: [{ name: "Laurent Arcos", url: "https://cv.laurentarcos.fr" }],
   openGraph: {
@@ -73,7 +106,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#1a202c" />
         <link rel="canonical" href="https://laurentarcos.fr" />
         <meta name="robots" content="index, follow" />
-        <meta name="description" content="CV interactif de Laurent Arcos, spécialisé en développement web et applications modernes en React, Typescript" />
+        <meta name="description" content="CV interactif de Laurent Arcos, spécialisé en développement web et applications modernes en React, Typescript et en automatisations n8n" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
