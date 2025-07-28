@@ -82,6 +82,16 @@ export const projects: Project[] = [
     link: "", 
   },
   {
+    titleFr: "Assistant de Lecture TL;DR",
+    titleEn: "TL;DR Reading Assistant",
+    descriptionFr: `Application web permettant de résumer automatiquement un texte, un article, une vidéo YouTube ou un fichier.
+  Fonctionne avec OpenAI, n8n et supporte plusieurs formats.`,
+    descriptionEn: `Web application that summarizes text, articles, YouTube videos, or files automatically.
+  Built with OpenAI and n8n, supports multiple formats.`,
+    image: "/images/projects/tldr.webp",
+    link: "https://laurentarcos.fr/tldr",
+  },
+  {
     titleFr: "ISS Tracker App",
     titleEn: "ISS Tracker App",
     descriptionFr:
