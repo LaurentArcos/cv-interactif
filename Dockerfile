@@ -7,8 +7,8 @@ COPY package.json pnpm-lock.yaml ./
 
 RUN npm install -g pnpm
 
-# ✅ Autorisation du build script de sharp
-RUN pnpm dlx pnpm-approve sharp
+# ✅ Désactive le blocage temporaire pour autoriser sharp et autres postinstall
+ENV PNPM_SKIP_VERIFY=true
 
 # Installation des dépendances
 RUN pnpm install --frozen-lockfile
