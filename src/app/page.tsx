@@ -814,6 +814,23 @@ export default function Home() {
                         </p>
                       )}
 
+                      {edu.school === "Opquast" && (
+  <div className="mt-4">
+    <a
+      href="https://directory.opquast.com/fr/certificat/SMY4W8/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        src="https://api.opquast.com/badge/SMY4W8.svg"
+        alt="Laurent ARCOS - Certifié(e) Opquast"
+        className="h-24 w-auto"
+        loading="lazy"
+      />
+    </a>
+  </div>
+)}
+
                       {edu.website && (
                         <div className="mt-4">
                           <a
