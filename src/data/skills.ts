@@ -216,6 +216,102 @@ export const skills: Skill[] = [
     name: { en: "Apollo Server", fr: "Apollo Server" },
     category: { en: "Data & APIs", fr: "Données & APIs" },
   },
+  {
+    name: { en: "Shopify API", fr: "API Shopify" },
+    category: { en: "Data & APIs", fr: "Données & APIs" },
+  },
+  {
+    name: { en: "Prestashop Webservice", fr: "Webservice Prestashop" },
+    category: { en: "Data & APIs", fr: "Données & APIs" },
+  },
+  {
+    name: { en: "Airtable API", fr: "API Airtable" },
+    category: { en: "Data & APIs", fr: "Données & APIs" },
+  },
+  {
+    name: { en: "Carrier APIs", fr: "API Transporteurs" },
+    category: { en: "Data & APIs", fr: "Données & APIs" },
+  },
+  {
+    name: { en: "Webhooks", fr: "Webhooks" },
+    category: { en: "Data & APIs", fr: "Données & APIs" },
+  },
+
+  // 🤖 IA & Automatisation / AI & Automation
+  {
+    name: { en: "OpenAI API", fr: "API OpenAI" },
+    category: { en: "AI & Automation", fr: "IA & Automatisation" },
+  },
+  {
+    name: { en: "Generative AI", fr: "IA générative" },
+    category: { en: "AI & Automation", fr: "IA & Automatisation" },
+  },
+  {
+    name: { en: "Prompt Engineering", fr: "Prompt Engineering" },
+    category: { en: "AI & Automation", fr: "IA & Automatisation" },
+  },
+  {
+    name: { en: "n8n", fr: "n8n" },
+    category: { en: "AI & Automation", fr: "IA & Automatisation" },
+  },
+  {
+    name: { en: "Make", fr: "Make" },
+    category: { en: "AI & Automation", fr: "IA & Automatisation" },
+  },
+  {
+    name: { en: "Airtable", fr: "Airtable" },
+    category: { en: "AI & Automation", fr: "IA & Automatisation" },
+  },
+  {
+    name: { en: "Workflow Automation", fr: "Automatisation de workflows" },
+    category: { en: "AI & Automation", fr: "IA & Automatisation" },
+  },
+
+  // 🛒 E-commerce & Logistique / E-commerce & Logistics
+  {
+    name: { en: "Shopify", fr: "Shopify" },
+    category: { en: "E-commerce & Logistics", fr: "E-commerce & Logistique" },
+  },
+  {
+    name: { en: "Prestashop", fr: "Prestashop" },
+    category: { en: "E-commerce & Logistics", fr: "E-commerce & Logistique" },
+  },
+  {
+    name: { en: "WMS / Inventory Management", fr: "WMS / Gestion des stocks" },
+    category: { en: "E-commerce & Logistics", fr: "E-commerce & Logistique" },
+  },
+  {
+    name: { en: "Conversion Rate Optimization", fr: "Optimisation du tunnel de conversion" },
+    category: { en: "E-commerce & Logistics", fr: "E-commerce & Logistique" },
+  },
+  {
+    name: { en: "Digital Marketing", fr: "Marketing digital" },
+    category: { en: "E-commerce & Logistics", fr: "E-commerce & Logistique" },
+  },
+  {
+    name: { en: "Klaviyo", fr: "Klaviyo" },
+    category: { en: "E-commerce & Logistics", fr: "E-commerce & Logistique" },
+  },
+  {
+    name: { en: "Email Marketing", fr: "Email marketing" },
+    category: { en: "E-commerce & Logistics", fr: "E-commerce & Logistique" },
+  },
+  {
+    name: { en: "Marketing Automation", fr: "Marketing automation" },
+    category: { en: "E-commerce & Logistics", fr: "E-commerce & Logistique" },
+  },
+  {
+    name: { en: "Customer Segmentation", fr: "Segmentation client" },
+    category: { en: "E-commerce & Logistics", fr: "E-commerce & Logistique" },
+  },
+  {
+    name: { en: "Data Migration", fr: "Reprise de données" },
+    category: { en: "E-commerce & Logistics", fr: "E-commerce & Logistique" },
+  },
+  {
+    name: { en: "Supply Chain", fr: "Supply Chain" },
+    category: { en: "E-commerce & Logistics", fr: "E-commerce & Logistique" },
+  },
 
   // 🧩 Tests & Assurance Qualité / Testing & Quality Assurance
   {
@@ -278,34 +374,22 @@ export const skills: Skill[] = [
     name: { en: "Clean Code", fr: "Clean Code" },
     category: { en: "Project Management", fr: "Gestion de Projets & Méthodes Agiles" },
   },
+  {
+    name: { en: "Product Ownership", fr: "Product Ownership" },
+    category: { en: "Project Management", fr: "Gestion de Projets & Méthodes Agiles" },
+  },
+  {
+    name: { en: "Functional Scoping", fr: "Cadrage fonctionnel" },
+    category: { en: "Project Management", fr: "Gestion de Projets & Méthodes Agiles" },
+  },
+  {
+    name: { en: "Cross-team Coordination", fr: "Coordination inter-équipes" },
+    category: { en: "Project Management", fr: "Gestion de Projets & Méthodes Agiles" },
+  },
 
   // 🛠 Divers / Miscellaneous
   {
     name: { en: "WordPress", fr: "WordPress" },
-    category: { en: "Miscellaneous", fr: "Divers" },
-  },
-  {
-    name: { en: "Prestashop", fr: "Prestashop" },
-    category: { en: "Miscellaneous", fr: "Divers" },
-  },
-  {
-    name: { en: "Shopify", fr: "Shopify" },
-    category: { en: "Miscellaneous", fr: "Divers" },
-  },
-  {
-    name: { en: "PHP", fr: "PHP" },
-    category: { en: "Miscellaneous", fr: "Divers" },
-  },
-  {
-    name: { en: "Make", fr: "Make" },
-    category: { en: "Miscellaneous", fr: "Divers" },
-  },
-  {
-    name: { en: "n8n", fr: "n8n" },
-    category: { en: "Miscellaneous", fr: "Divers" },
-  },
-  {
-    name: { en: "Airtable", fr: "Airtable" },
     category: { en: "Miscellaneous", fr: "Divers" },
   },
   {

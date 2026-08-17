@@ -4,11 +4,13 @@ export const aboutMe: AboutMe = {
   titleFr: "À propos",
   titleEn: "About Me",
   textFr: `
-  Je m'appelle Laurent Arcos, développeur web habitant à Hyères (Var) avec un parcours riche et atypique.
-  
-  Avant de me tourner vers le développement web, j'ai passé plusieurs années dans le commerce et la logistique, des expériences qui m'ont appris à être polyvalent, à gérer les imprévus et à comprendre les besoins des utilisateurs finaux.  
+  Je m'appelle Laurent Arcos, développeur full stack habitant à Hyères (Var), avec un parcours riche et atypique.
+
+  Avant de me tourner vers le développement web, j'ai passé plusieurs années dans le commerce et la logistique, des expériences qui m'ont appris à être polyvalent, à gérer les imprévus et à comprendre les besoins des utilisateurs finaux.
   Cette double expertise, technique et métier, est aujourd'hui un atout majeur dans mon approche du développement.
-  
+
+  Chez Seagale, elle m'a naturellement conduit à élargir mon rôle : je suis aujourd'hui à la fois développeur full stack et responsable marketing, tech et e-commerce. Je pilote la migration Prestashop vers Shopify, je suis Product Owner du hub logistique interne que je développe, et je conçois les automatisations qui relient nos outils entre eux.
+
   Curieux de nature, j'aime apprendre continuellement et me tenir à jour sur les dernières technologies. Je m'adapte facilement à différents environnements de travail et je cherche toujours à créer des applications performantes, intuitives et adaptées aux besoins réels.
   
   Mon objectif : allier sens pratique, créativité et rigueur pour proposer des solutions efficaces, avec une attention particulière portée à l'expérience utilisateur et à la qualité du code.
@@ -17,11 +19,13 @@ export const aboutMe: AboutMe = {
   Cette solution me permet d'avoir un contrôle total sur mon environnement, tout en montrant ma capacité à déployer des projets complets, de l'idée initiale jusqu'à la mise en ligne.
   `,
   textEn: `
-  I'm Laurent Arcos, a web developer based in Hyères,France with a diverse and unique background.
-  
-  Before transitioning to web development, I built a solid career in retail and logistics, gaining valuable experience in problem-solving, managing unexpected challenges, and understanding end-user needs.  
+  I'm Laurent Arcos, a full stack developer based in Hyères, France, with a diverse and unique background.
+
+  Before transitioning to web development, I built a solid career in retail and logistics, gaining valuable experience in problem-solving, managing unexpected challenges, and understanding end-user needs.
   This dual expertise—both technical and business-oriented—gives me a well-rounded approach to building digital solutions today.
-  
+
+  At Seagale, it naturally led me to broaden my role: I am now both a full stack developer and Head of Marketing, Tech and E-Commerce. I lead the Prestashop to Shopify migration, act as Product Owner of the internal logistics hub I build, and design the automations that connect our tools together.
+
   Naturally curious and eager to learn, I constantly stay up to date with the latest technologies. I thrive in adapting to new environments and aim to build efficient, user-friendly applications that address real-world challenges.
 
   My goal is to combine practical thinking, creativity, and attention to detail to deliver high-quality solutions, with a strong focus on user experience and clean code.

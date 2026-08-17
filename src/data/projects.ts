@@ -2,6 +2,42 @@ import { Project } from "@/types";
 
 export const projects: Project[] = [
   {
+    titleFr: "Seagale Hub — WMS / Logistique / Stocks",
+    titleEn: "Seagale Hub — WMS / Logistics / Inventory",
+    descriptionFr: `Product Owner et développeur principal de l'outil logistique interne de Seagale (React, TypeScript, Tailwind), connecté aux API Shopify et Airtable : préparations de commandes, sessions de picking, gestion des stocks, flux entrepôt / boutiques, génération des étiquettes via les API transporteurs et suivi des colis.`,
+    descriptionEn: `Product Owner and lead developer of Seagale's internal logistics tool (React, TypeScript, Tailwind), connected to the Shopify and Airtable APIs: order preparation, picking sessions, inventory management, warehouse / store flows, carrier-API label generation and parcel tracking.`,
+    // TODO: remplacer par une capture du Hub en production
+    image: "/images/projects/seagaleshopi.webp",
+    link: "",
+  },
+  {
+    titleFr: "Seagale — App de reporting e-commerce",
+    titleEn: "Seagale — E-commerce Reporting App",
+    descriptionFr: `Application de reporting construite sur les données Shopify : chiffre d'affaires, marges, performance par canal et comparaison entre boutiques physiques et web.`,
+    descriptionEn: `Reporting application built on Shopify data: revenue, margins, performance by channel and comparison between physical stores and web.`,
+    // TODO: remplacer par une capture du dashboard de reporting
+    image: "/images/projects/survey.webp",
+    link: "",
+  },
+  {
+    titleFr: "Seagale — App Zapptax (détaxe)",
+    titleEn: "Seagale — Zapptax App (Tax-Free)",
+    descriptionFr: `Application dédiée à la gestion des commandes et des flux liés à la détaxe, développée dans le cadre du partenariat Zapptax x Seagale.`,
+    descriptionEn: `Application dedicated to managing orders and flows related to tax-free shopping, built as part of the Zapptax x Seagale partnership.`,
+    // TODO: remplacer par une capture de l'app Zapptax
+    image: "/images/projects/posapp.webp",
+    link: "",
+  },
+  {
+    titleFr: "Seagale — App de répartition des stocks",
+    titleEn: "Seagale — Warehouse Stock Allocation App",
+    descriptionFr: `Outil d'allocation des stocks au sein de l'entrepôt : répartition entre emplacements et zones internes pour optimiser le picking.`,
+    descriptionEn: `Warehouse stock allocation tool: distribution across internal locations and zones to optimize picking.`,
+    // TODO: remplacer par une capture de l'app de répartition
+    image: "/images/projects/seagaleshopi.webp",
+    link: "",
+  },
+  {
     titleFr: "Worduel",
     titleEn: "Worduel",
     descriptionFr:
@@ -54,14 +90,10 @@ export const projects: Project[] = [
     link: "",
   },
   {
-    titleFr: "Seagale - Hub WMS avec Shopify",
-    titleEn: "Seagale - WMS Hub with Shopify",
-    descriptionFr: `Développement d'un hub en React logistique en prévision d'une migration vers Shopify. 
-    Intégration des API Shopify, Chronopost, Colissimo et DHL. 
-    Gestion automatisée des expéditions, génération des étiquettes et suivi des colis.`,
-    descriptionEn: `Development of a logistics hub in preparation for a Shopify migration.
-    Integration of Shopify, Chronopost, Colissimo, and DHL APIs.
-    Automated shipments, label generation, and parcel tracking.`,
+    titleFr: "Seagale - Migration Prestashop → Shopify",
+    titleEn: "Seagale - Prestashop → Shopify Migration",
+    descriptionFr: `Cadrage fonctionnel et pilotage de la migration de la boutique Seagale vers Shopify : choix des applications, structuration et reprise des données, refonte des intégrations logistiques (Chronopost, Colissimo, DHL) et mise en production.`,
+    descriptionEn: `Functional scoping and management of the Seagale store migration to Shopify: app selection, data structuring and migration, redesign of logistics integrations (Chronopost, Colissimo, DHL) and go-live.`,
     image: "/images/projects/seagaleshopi.webp",
     link: "",
   },
@@ -76,8 +108,8 @@ export const projects: Project[] = [
   {
     titleFr: "Seagale - Automatisations avec n8n et Airtable",
     titleEn: "Seagale - n8n and Airtable Automations",
-    descriptionFr: `Développement d'automatisations pour la gestion des stocks, des commandes et plus avec n8n et Airtable.`,
-    descriptionEn: `Development of automations for stock and order management using n8n and Airtable.`,
+    descriptionFr: `Automatisations métiers avec n8n et Airtable : synchronisations Shopify ↔ Airtable, mouvements de stocks, gestion des commandes, notifications internes et génération d'images et de vidéos par IA.`,
+    descriptionEn: `Business automations with n8n and Airtable: Shopify ↔ Airtable syncs, stock movements, order management, internal notifications and AI-generated images and videos.`,
     image: "/images/projects/n8n.webp",
     link: "", 
   },
