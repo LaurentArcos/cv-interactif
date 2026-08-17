@@ -116,6 +116,10 @@ export const skills: Skill[] = [
     name: { en: "PHP", fr: "PHP" },
     category: { en: "Backend Development", fr: "Développement Backend" },
   },
+  {
+    name: { en: "Supabase", fr: "Supabase" },
+    category: { en: "Backend Development", fr: "Développement Backend" },
+  },
 
   // ⚙️ DevOps & Outils / DevOps & Tools
   {
@@ -192,6 +196,10 @@ export const skills: Skill[] = [
   },
   {
     name: { en: "Raspberry Pi", fr: "Raspberry Pi" },
+    category: { en: "DevOps & Tools", fr: "Outils & DevOps" },
+  },
+  {
+    name: { en: "Vercel", fr: "Vercel" },
     category: { en: "DevOps & Tools", fr: "Outils & DevOps" },
   },
 
