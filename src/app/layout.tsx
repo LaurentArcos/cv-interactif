@@ -1,93 +1,60 @@
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Hanken_Grotesk, Martian_Mono } from "next/font/google";
+import { Shell } from "@/components/cv/Shell";
 import "./globals.css";
 
 // Chargement des polices
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const body = Hanken_Grotesk({
+  variable: "--font-body",
   subsets: ["latin"],
   display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const display = Martian_Mono({
+  variable: "--font-display",
   subsets: ["latin"],
+  axes: ["wdth"],
   display: "swap",
 });
 
 // Métadonnées de la page
+const SITE = "https://cv-interactif-nu.vercel.app";
+const TITLE = "Laurent Arcos - Développeur full stack & e-commerce";
+const DESCRIPTION =
+  "CV de Laurent Arcos, développeur full stack et e-commerce à Toulon : Next.js, TypeScript, Shopify, n8n, Klaviyo et outils logistiques.";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://laurentarcos.fr"), 
-  title: "Laurent Arcos - Développeur Web - CV interactif",
-  description: "CV interactif de Laurent Arcos, spécialisé en développement web et applications modernes.",
+  metadataBase: new URL(SITE),
+  title: TITLE,
+  description: DESCRIPTION,
   keywords: [
     "Laurent Arcos",
-    "Développeur Web",
-    "curriculum vitae",
-    "cv",
-    "React",
-    "Next.js",
-    "JavaScript",
-    "Typescript",
-    "Node.js",
-    "Frontend",
-    "Backend",
-    "Développeur Frontend",
-    "Développeur Backend",
     "Développeur Full Stack",
-    "Portfolio",
-    "CV interactif",
-    "CV en ligne",
-    "CV numérique",
+    "Développeur e-commerce",
+    "Développeur Toulon",
+    "Développeur Var",
+    "Shopify",
     "n8n",
-    "automatisation",
+    "Klaviyo",
     "Airtable",
-    "API",
-    "HTML",
-    "CSS",
-    "Sass",
-    "Tailwind CSS",
-    "PHP",
-    "MySQL",
-    "PostgreSQL",
-    "MongoDB",
-    "GraphQL",
-    "NextJS",
-    "Docker",
-    "GitHub Actions",
-    "Raspberry Pi",
-    "Développeur Web Full Stack",
-    "Développeur Web Hyères",
-    "Développeur Web Var",
-    "Développeur Web Toulon",
-    "Développeur Web Provence-Alpes-Côte d'Azur",
-    "Développeur Web France",
-    "Développeur Web Marseille",
-    "Développeur Web Nice",
-    "Développeur Web Aix-en-Provence",
-    "Développeur Web PACA",
+    "Next.js",
+    "React",
+    "TypeScript",
+    "WMS",
+    "CV",
   ],
-  authors: [{ name: "Laurent Arcos", url: "https://cv.laurentarcos.fr" }],
+  authors: [{ name: "Laurent Arcos", url: SITE }],
+  alternates: { canonical: "/" },
+  robots: { index: true, follow: true },
   openGraph: {
-    title: "Laurent Arcos - Développeur Web - CV interactif",
-    description: "Découvrez le CV interactif de Laurent Arcos,  spécialisé en développement web et applications modernes.",
-    url: "https://cv.laurentarcos.fr",
-    siteName: "Laurent Arcos CV",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Laurent Arcos - Développeur Web",
-      },
-    ],
+    title: TITLE,
+    description: DESCRIPTION,
+    url: SITE,
+    siteName: "Laurent Arcos",
     locale: "fr_FR",
     type: "website",
   },
-  icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-  }
 };
 
 export default function RootLayout({
@@ -96,17 +63,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr">
+    <html lang="fr" className={`${body.variable} ${display.variable}`}>
       <head>
-        {/* Ajout de la favicon */}
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#1a202c" />
-        <link rel="canonical" href="https://laurentarcos.fr" />
-        <meta name="robots" content="index, follow" />
-        <meta name="description" content="CV interactif de Laurent Arcos, spécialisé en développement web et applications modernes en React, Typescript et en automatisations n8n" />
+        <meta name="theme-color" content="#11161d" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -114,20 +73,16 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Laurent Arcos",
-              url: "https://laurentarcos.fr",
-              jobTitle: "Développeur Web",
-              sameAs: [
-                "https://www.linkedin.com/in/laurentarcos/",
-                "https://github.com/LaurentArcos",
-              ],
+              url: SITE,
+              jobTitle: "Développeur full stack & e-commerce",
+              sameAs: ["https://www.linkedin.com/in/laurentarcos/", "https://github.com/LaurentArcos"],
             }),
           }}
         />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
-      >
-        {children}
+      <body>
+        <Shell>{children}</Shell>
+        <Analytics />
       </body>
     </html>
   );

@@ -1,13 +1,10 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  output: 'standalone',
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+import type { NextConfig } from "next";
+import { withBotId } from "botid/next/config";
+
+const nextConfig: NextConfig = {
   images: {
-    // domains: ['cv.laurentarcos.fr'],
-    unoptimized: true, // Désactive l'optimiseur Next
+    unoptimized: true,
   },
 };
 
-module.exports = nextConfig;
+export default withBotId(nextConfig);

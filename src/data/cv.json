@@ -1,0 +1,1459 @@
+{
+ "experiences": [
+  {
+   "lane": "dev",
+   "company": "Seagale",
+   "loc": "Toulon",
+   "contract": {
+    "fr": "CDI · hybride",
+    "en": "Permanent · hybrid"
+   },
+   "title": {
+    "fr": "Développeur Full Stack & Responsable Marketing, Tech et E-Commerce",
+    "en": "Full Stack Developer & Head of Marketing, Tech and E-Commerce"
+   },
+   "date": {
+    "fr": "Novembre 2025 - aujourd’hui",
+    "en": "November 2025 - present"
+   },
+   "one": {
+    "fr": "Conception et développement des outils logistiques, automatisation, marketing et e-commerce.",
+    "en": "Designing and building logistics tools, automation, marketing and e-commerce."
+   },
+   "groups": [
+    {
+     "h": {
+      "fr": "Applications internes : product owner, conception, développement, mise en production et maintenance",
+      "en": "Internal applications: product owner, design, development, deployment and maintenance"
+     },
+     "items": {
+      "fr": [
+       "Hub logistique (Next.js, React, TypeScript, Tailwind), connecté à Shopify et Airtable : préparations de commandes, sessions de picking, stocks, flux entre entrepôt et boutiques.",
+       "Reporting e-commerce sur les données Shopify : chiffre d’affaires, marges, meilleures ventes, réductions, canaux, boutiques et web.",
+       "Répartition des stocks entre les emplacements et les zones de l’entrepôt.",
+       "Suivi des stocks matières (tissus, boutons, zips) chez les fournisseurs.",
+       "Gestion des commandes et des flux liés à la détaxe."
+      ],
+      "en": [
+       "Logistics hub (Next.js, React, TypeScript, Tailwind) connected to Shopify and Airtable: order preparation, picking sessions, stock, flows between warehouse and stores.",
+       "E-commerce reporting on Shopify data: revenue, margins, best sellers, discounts, channels, stores and web.",
+       "Stock allocation across warehouse locations and zones.",
+       "Tracking of raw materials (fabrics, buttons, zips) held at suppliers.",
+       "Order and flow management for tax-free sales."
+      ]
+     }
+    },
+    {
+     "h": {
+      "fr": "Logistique et opérations",
+      "en": "Logistics and operations"
+     },
+     "items": {
+      "fr": [
+       "Conception des process logistiques à partir des contraintes du terrain, au contact quotidien des équipes entrepôt et retail.",
+       "Choix et configuration des transporteurs, flux entre entrepôt, boutiques et clients.",
+       "Stratégie et mise en œuvre des retours e-commerce, paramétrage de la solution."
+      ],
+      "en": [
+       "Designing logistics processes from field constraints, working daily with warehouse and retail teams.",
+       "Carrier selection and setup, flows between warehouse, stores and customers.",
+       "Strategy and rollout of e-commerce returns, solution configuration."
+      ]
+     }
+    },
+    {
+     "h": {
+      "fr": "Automatisation et infrastructure",
+      "en": "Automation and infrastructure"
+     },
+     "items": {
+      "fr": [
+       "Une cinquantaine de workflows n8n actifs : synchronisations Shopify et Airtable, mouvements de stocks, suivi des colis, étiquettes de transport, notifications et exports mensuels pour la comptabilité.",
+       "Génération d’images et de vidéos par IA dans les workflows n8n.",
+       "Impression des étiquettes, gestion des imprimantes et du réseau.",
+       "Administration système et DevOps des applications internes : déploiement, mises à jour, supervision et maintenance (Next.js, Node.js, Docker)."
+      ],
+      "en": [
+       "Around 50 active n8n workflows: Shopify and Airtable sync, stock movements, parcel tracking, shipping labels, notifications and monthly accounting exports.",
+       "AI image and video generation inside n8n workflows.",
+       "Label printing, printer and network management.",
+       "System administration and DevOps for internal apps: deployment, updates, monitoring and maintenance (Next.js, Node.js, Docker)."
+      ]
+     }
+    },
+    {
+     "h": {
+      "fr": "Marketing et e-commerce Shopify",
+      "en": "Shopify marketing and e-commerce"
+     },
+     "items": {
+      "fr": [
+       "Analyses business à partir du reporting (ventes, marges, réductions, canaux) pour nourrir la stratégie et les décisions.",
+       "Stratégie e-commerce : offres, animations commerciales, parcours client.",
+       "Optimisation du tunnel de conversion et de l’expérience utilisateur.",
+       "CRM et emailing sur Klaviyo : flows marketing (bienvenue, panier abandonné, post-achat, réactivation) et transactionnels, segmentation, campagnes et suivi des performances.",
+       "Coordination entre marketing, retail et logistique autour des outils digitaux."
+      ],
+      "en": [
+       "Business analysis from the reporting tool (sales, margins, discounts, channels) to inform strategy and decisions.",
+       "E-commerce strategy: offers, commercial campaigns, customer journey.",
+       "Conversion funnel and user experience optimization.",
+       "CRM and email on Klaviyo: marketing flows (welcome, abandoned cart, post-purchase, win-back) and transactional flows, segmentation, campaigns and performance tracking.",
+       "Coordination between marketing, retail and logistics around digital tools."
+      ]
+     }
+    }
+   ],
+   "tags": [
+    "React",
+    "TypeScript",
+    "Next.js",
+    "Node.js",
+    "Tailwind",
+    "Shopify",
+    "API GraphQL",
+    "API Rest",
+    "Airtable",
+    "n8n",
+    "Klaviyo",
+    "Email marketing",
+    "Docker",
+    "DevOps",
+    "IA générative",
+    "WMS",
+    "Logistique",
+    "Product Ownership",
+    "E-commerce",
+    "Marketing digital",
+    "CRO",
+    "Claude"
+   ]
+  },
+  {
+   "lane": "dev",
+   "company": "Seagale",
+   "loc": "Toulon",
+   "contract": {
+    "fr": "CDD · hybride",
+    "en": "Fixed-term · hybrid"
+   },
+   "title": {
+    "fr": "Développeur Full Stack",
+    "en": "Full Stack Developer"
+   },
+   "date": {
+    "fr": "Mai 2025 - Octobre 2025",
+    "en": "May 2025 - October 2025"
+   },
+   "one": {
+    "fr": "Migration Prestashop vers Shopify, mise en production en octobre 2025.",
+    "en": "Prestashop to Shopify migration, live in October 2025."
+   },
+   "groups": [
+    {
+     "items": {
+      "fr": [
+       "Migration Prestashop vers Shopify : cadrage fonctionnel, choix des applications, structuration et reprise des données, mise en production en octobre 2025.",
+       "Conception des premiers outils connectés à l’API Shopify et des bases du futur hub logistique et stocks.",
+       "Automatisations avec n8n et Airtable : mouvements de stocks, synchronisations, génération d’images et de vidéos par IA.",
+       "Applications internes en React et TypeScript, dont l’application POS utilisée pour les ventes en boutique avec l’API Prestashop.",
+       "Routes API en PHP avec le Webservice Prestashop : POS, commandes, clients, stocks.",
+       "Maintenance et refonte graphique du site Prestashop seagale.fr.",
+       "Programme de parrainage sur la boutique en ligne Prestashop.",
+       "Module de sondage post-achat pour Prestashop et outil React d’analyse des résultats."
+      ],
+      "en": [
+       "Prestashop to Shopify migration: functional scoping, app selection, data structuring and migration, go-live in October 2025.",
+       "Design of the first tools connected to the Shopify API and the foundations of the future logistics and stock hub.",
+       "Automation with n8n and Airtable: stock movements, sync, AI image and video generation.",
+       "Internal apps in React and TypeScript, including the POS app used for in-store sales with the Prestashop API.",
+       "PHP API routes with the Prestashop Webservice: POS, orders, customers, stock.",
+       "Maintenance and visual redesign of the Prestashop site seagale.fr.",
+       "Referral program on the Prestashop online store.",
+       "Post-purchase survey module for Prestashop and a React tool to analyze the results."
+      ]
+     }
+    }
+   ],
+   "tags": [
+    "React",
+    "TypeScript",
+    "JavaScript",
+    "Node.js",
+    "Express",
+    "PHP",
+    "SQL",
+    "Prestashop",
+    "Shopify",
+    "API Rest",
+    "n8n",
+    "Airtable",
+    "IA générative",
+    "HTML",
+    "CSS",
+    "SCSS",
+    "Tailwind"
+   ]
+  },
+  {
+   "lane": "dev",
+   "company": "Seagale",
+   "loc": "Toulon",
+   "contract": {
+    "fr": "Alternance",
+    "en": "Work-study"
+   },
+   "title": {
+    "fr": "Développeur Full Stack",
+    "en": "Full Stack Developer"
+   },
+   "date": {
+    "fr": "Septembre 2023 - Avril 2025",
+    "en": "September 2023 - April 2025"
+   },
+   "one": {
+    "fr": "Application de caisse en boutique, refonte du site et modules Prestashop, en parallèle du titre CDA.",
+    "en": "In-store POS app, site redesign and Prestashop modules, alongside my level 6 developer degree."
+   },
+   "groups": [
+    {
+     "items": {
+      "fr": [
+       "Alternance réalisée en parallèle du titre professionnel Concepteur Développeur d’Applications (École O’clock).",
+       "Application Point de Vente (POS) utilisée quotidiennement en boutique, en React, Express et PHP, connectée au Webservice Prestashop.",
+       "Routes API en PHP avec le Webservice Prestashop : POS, commandes, clients, stocks.",
+       "Applications internes en React et TypeScript.",
+       "Refonte complète du frontend de seagale.fr : modernisation du design et optimisation des performances.",
+       "Programme de parrainage sur la boutique en ligne Prestashop.",
+       "Module de sondage post-achat pour Prestashop et dashboard React d’analyse des réponses.",
+       "Module FAQ dynamique et module de sélection de Noël.",
+       "Premières automatisations de tâches internes avec n8n et Airtable."
+      ],
+      "en": [
+       "Work-study alongside the Application Designer and Developer professional degree (O’clock school).",
+       "Point of Sale (POS) app used daily in stores, built with React, Express and PHP, connected to the Prestashop Webservice.",
+       "PHP API routes with the Prestashop Webservice: POS, orders, customers, stock.",
+       "Internal apps in React and TypeScript.",
+       "Full frontend redesign of seagale.fr: modernized design and improved performance.",
+       "Referral program on the Prestashop online store.",
+       "Post-purchase survey module for Prestashop and a React dashboard to analyze responses.",
+       "Dynamic FAQ module and Christmas selection module.",
+       "First automations of internal tasks with n8n and Airtable."
+      ]
+     }
+    }
+   ],
+   "tags": [
+    "React",
+    "JavaScript",
+    "TypeScript",
+    "Node.js",
+    "Express",
+    "PHP",
+    "SQL",
+    "Prestashop",
+    "API Rest",
+    "Swagger",
+    "n8n",
+    "Airtable",
+    "HTML",
+    "CSS",
+    "SCSS",
+    "Tailwind"
+   ]
+  },
+  {
+   "lane": "dev",
+   "company": "Freelance",
+   "loc": "Var",
+   "title": {
+    "fr": "Développeur Web Fullstack - Concepteur d’application",
+    "en": "Fullstack Web Developer - Application Designer"
+   },
+   "date": {
+    "fr": "Mars 2022 - aujourd’hui",
+    "en": "March 2022 - present"
+   },
+   "one": {
+    "fr": "Applications web sur mesure, maintenance WordPress et accompagnement technique.",
+    "en": "Custom web applications, WordPress maintenance and technical support."
+   },
+   "groups": [
+    {
+     "items": {
+      "fr": [
+       "Développement d’applications web sur mesure et accompagnement technique de projets indépendants.",
+       "Maintenance de sites WordPress, dont assurancedespros.fr pour une agence Allianz.",
+       "Applications web en React et Next.js : outils internes, interfaces métier et API personnalisées.",
+       "CV interactif (Next.js, TypeScript, Tailwind) auto-hébergé sur Raspberry Pi 5 avec Docker et GitHub Actions, de l’idée à la mise en production.",
+       "TL;DR, un assistant de lecture qui résume un texte, un article, une vidéo YouTube ou un fichier (OpenAI et n8n)."
+      ],
+      "en": [
+       "Custom web applications and technical support for independent projects.",
+       "WordPress site maintenance, including assurancedespros.fr for an Allianz agency.",
+       "Web apps in React and Next.js: internal tools, business interfaces and custom APIs.",
+       "Interactive resume (Next.js, TypeScript, Tailwind) self-hosted on a Raspberry Pi 5 with Docker and GitHub Actions, from idea to production.",
+       "TL;DR, a reading assistant that summarizes text, articles, YouTube videos or files (OpenAI and n8n)."
+      ]
+     }
+    }
+   ],
+   "tags": [
+    "React",
+    "Node.js",
+    "Docker",
+    "Next.js",
+    "PHP",
+    "JavaScript",
+    "TypeScript",
+    "Express",
+    "API",
+    "WordPress",
+    "Prestashop",
+    "HTML",
+    "CSS",
+    "SCSS",
+    "Tailwind",
+    "GraphQL",
+    "shadcn/ui",
+    "OpenAI",
+    "n8n",
+    "Raspberry Pi",
+    "GitHub Actions"
+   ]
+  },
+  {
+   "lane": "com",
+   "company": "Esprit",
+   "loc": "Boulogne-Billancourt",
+   "title": {
+    "fr": "Area Manager Prêt-à-Porter",
+    "en": "Area Manager (Fashion Retail)"
+   },
+   "date": {
+    "fr": "Juillet 2018 - Décembre 2021",
+    "en": "July 2018 - December 2021"
+   },
+   "one": {
+    "fr": "Boutiques multimarques du Grand-Est, de Bourgogne, de l’est de l’Île-de-France et des DOM-TOM.",
+    "en": "Multi-brand stores in Grand-Est, Bourgogne, eastern Île-de-France and the French overseas territories."
+   },
+   "groups": [
+    {
+     "items": {
+      "fr": [
+       "Responsable secteur pour les boutiques multimarques des régions Grand-Est, Bourgogne, Est de l'Île-de-France et DOM-TOM.",
+       "Suivi du portefeuille clients existant et prospection de nouveaux partenaires via tournées terrain et l'outil Fashop.",
+       "Rendez-vous clients et prospects en showroom pendant les périodes de ventes : présentation des collections, négociation des budgets et saisie des commandes.",
+       "Calcul des objectifs de vente et suivi des performances personnelles et des clients.",
+       "Animation de rendez-vous à distance : clients DOM-TOM et réassorts hors périodes de ventes.",
+       "Création et mise en place d'opérations commerciales (SWAP, Buy&Get, Call Days, Crazy Days) pour augmenter les budgets clients et booster les sell-out.",
+       "Suivi des livraisons et des règlements clients avec les services comptabilité, logistique et ADV.",
+       "Veille marché et concurrence, maîtrise des conditions commerciales (RFA, RFS).",
+       "Préparation, prospection et ventes lors d'événements et de salons professionnels."
+      ],
+      "en": [
+       "Regional manager for multi-brand stores across Grand-Est, Bourgogne, eastern Île-de-France, and French overseas territories.",
+       "Managed the existing client portfolio and prospected new partners through field tours and the Fashop tool.",
+       "Held showroom meetings with clients and prospects during selling periods: collection presentations, budget negotiation and order entry.",
+       "Defined sales targets and monitored performance for both personal and client metrics.",
+       "Hosted remote meetings: overseas clients and restock orders outside selling periods.",
+       "Created and rolled out commercial operations (SWAP, Buy&Get, Call Days, Crazy Days) to grow client budgets and boost sell-out.",
+       "Coordinated deliveries and customer payments with the accounting, logistics and sales administration teams.",
+       "Monitored market and competitor activity, applied commercial terms (volume and settlement rebates).",
+       "Prepared and ran prospecting and sales at trade events and fairs."
+      ]
+     }
+    }
+   ],
+   "tags": [
+    "Gestion de portefeuille",
+    "Prospection",
+    "Relation client",
+    "Mode",
+    "Vente B2B",
+    "Animation commerciale",
+    "Analyse de données"
+   ]
+  },
+  {
+   "lane": "com",
+   "company": "Esprit",
+   "loc": "Boulogne-Billancourt",
+   "title": {
+    "fr": "Area Manager Bodywear",
+    "en": "Area Manager (Bodywear)"
+   },
+   "date": {
+    "fr": "Avril 2017 - Juillet 2018",
+    "en": "April 2017 - July 2018"
+   },
+   "one": {
+    "fr": "Boutiques de lingerie en France métropolitaine et dans les DOM-TOM.",
+    "en": "Lingerie stores in mainland France and the French overseas territories."
+   },
+   "groups": [
+    {
+     "items": {
+      "fr": [
+       "Responsable secteur pour les boutiques de lingerie en France métropolitaine et DOM-TOM.",
+       "Suivi et développement du portefeuille clients, prospection de nouveaux points de vente.",
+       "Présentation des collections et négociation des budgets en showroom, saisie des commandes.",
+       "Animation des ventes et suivi des performances sell-in et sell-out des clients.",
+       "Gestion des commandes, des livraisons, des litiges et des retours avec les services ADV, logistique et comptabilité."
+      ],
+      "en": [
+       "Area manager for lingerie stores in mainland France and the overseas territories.",
+       "Managed and grew the client portfolio, prospected new points of sale.",
+       "Presented collections and negotiated budgets in the showroom, entered orders.",
+       "Drove sales and tracked clients’ sell-in and sell-out performance.",
+       "Handled orders, deliveries, disputes and returns with sales administration, logistics and accounting."
+      ]
+     }
+    }
+   ],
+   "tags": [
+    "Gestion de portefeuille",
+    "Prospection",
+    "Relation client",
+    "Mode",
+    "Vente B2B",
+    "Animation commerciale",
+    "Analyse de données"
+   ]
+  },
+  {
+   "lane": "com",
+   "company": "Esprit",
+   "loc": "Boulogne-Billancourt",
+   "title": {
+    "fr": "Assistant Commercial et Logistique",
+    "en": "Commercial & Logistics Assistant"
+   },
+   "date": {
+    "fr": "Juin 2012 - Avril 2017",
+    "en": "June 2012 - April 2017"
+   },
+   "one": {
+    "fr": "Administration des ventes, commandes, litiges et analyse pour les franchisés et multimarques.",
+    "en": "Sales administration, orders, disputes and reporting for franchise and multi-brand partners."
+   },
+   "groups": [
+    {
+     "items": {
+      "fr": [
+       "Gestion de l'administration des ventes pour les partenaires franchisés et multimarques.",
+       "Saisie des commandes, suivi des livraisons et gestion des litiges.",
+       "Création et mise à jour des comptes clients dans la base de données.",
+       "Saisie et validation des commandes des franchisés en showroom, annulations et transferts si nécessaire.",
+       "Création des matrices de saisie de commandes sur Excel.",
+       "Traitement des demandes de retours de marchandises et création des avoirs pour articles manquants.",
+       "Assistance aux clients pour les commandes de réassort B-SHOP et NOOS (télévente et relances lors d'opérations spéciales).",
+       "Extraction et analyse des états de commandes et de livraisons depuis le système BI interne.",
+       "Suivi des livraisons, refus de marchandises et retours avec les transporteurs et transitaires."
+      ],
+      "en": [
+       "Managed sales administration for franchised and multi-brand partners.",
+       "Entered orders, tracked deliveries, and handled disputes.",
+       "Created and updated client accounts in the database.",
+       "Entered and validated franchisee orders in the showroom, including cancellations and transfers when needed.",
+       "Built order-entry matrices in Excel.",
+       "Processed goods return requests and issued credit notes for items missing on delivery.",
+       "Assisted clients with B-SHOP and NOOS restock orders (telesales and follow-up during special operations).",
+       "Extracted and analyzed order and delivery reports from the internal BI system.",
+       "Tracked deliveries, refused goods and returns with carriers and freight forwarders."
+      ]
+     }
+    }
+   ],
+   "tags": [
+    "Administration des ventes",
+    "Logistique",
+    "Service client",
+    "Analyse de données",
+    "Reporting",
+    "Mode",
+    "Vente B2B",
+    "Gestion de litiges"
+   ]
+  },
+  {
+   "lane": "com",
+   "company": "DERMEO",
+   "loc": "Paris",
+   "title": {
+    "fr": "Office Manager - Chargé d'Opération et de Gestion",
+    "en": "Office Manager - Operations & Management Coordinator"
+   },
+   "date": {
+    "fr": "Février 2011 - Mai 2012",
+    "en": "February 2011 - May 2012"
+   },
+   "one": {
+    "fr": "Administration, ventes, RH et relations fournisseurs, aux côtés des dirigeants.",
+    "en": "Administration, sales, HR and supplier relations, working directly with the directors."
+   },
+   "groups": [
+    {
+     "items": {
+      "fr": [
+       "Tâches administratives diverses en relation directe avec les dirigeants de la société.",
+       "Administration des ventes : gestion des commandes, factures et suivi des paiements.",
+       "Relation avec l'expert-comptable : préparation des documents comptables.",
+       "Gestion RH : établissement des contrats de travail, conventions de stage, gestion de la paie, gestion des fins de contrat et soldes de tout compte.",
+       "Relation avec les fournisseurs : gestion des paiements, des commandes et des litiges.",
+       "Collaboration avec les banques et les assureurs pour les démarches administratives."
+      ],
+      "en": [
+       "Handled various administrative tasks in direct collaboration with company directors.",
+       "Managed sales administration: orders, invoices, and payment follow-up.",
+       "Coordinated with the external accountant to prepare financial documents.",
+       "Handled HR tasks: drafted employment contracts and internship agreements, managed payroll, end-of-contract processes, and final settlements.",
+       "Oversaw supplier relations: payments, orders, and dispute resolution.",
+       "Worked with banks and insurers for administrative procedures."
+      ]
+     }
+    }
+   ],
+   "tags": [
+    "Administration des ventes",
+    "Ressources Humaines",
+    "Relation fournisseurs",
+    "Comptabilité",
+    "Gestion administrative",
+    "Gestion de litiges"
+   ]
+  },
+  {
+   "lane": "com",
+   "company": "CRIOM",
+   "loc": "Boulogne-Billancourt",
+   "title": {
+    "fr": "Assistant Commercial Export",
+    "en": "Export Sales Assistant"
+   },
+   "date": {
+    "fr": "Mars 2008 - Février 2011",
+    "en": "March 2008 - February 2011"
+   },
+   "one": {
+    "fr": "Export de papeterie et de mobilier vers les DOM-TOM, l’Afrique francophone et le Proche-Orient.",
+    "en": "Export of stationery and furniture to the overseas territories, Francophone Africa and the Middle East."
+   },
+   "groups": [
+    {
+     "items": {
+      "fr": [
+       "Gestion des clients et fournisseurs pour l'export de papeterie, fournitures de bureau, mobilier et vaisselle.",
+       "Suivi des commandes des clients situés dans les DOM-TOM, en Afrique francophone et au Proche-Orient.",
+       "Transmission des commandes aux fournisseurs en France, Allemagne, Italie, Pays-Bas, Chine et Inde.",
+       "Administration des ventes : création de devis, factures pro forma et définitives.",
+       "Suivi logistique des livraisons : gestion des contraintes douanières, Incoterms, bons de livraison, attestations douanières et documents de transport.",
+       "Création de catalogues produits pour les clients.",
+       "Support aux commerciaux terrain pour les tâches administratives et commerciales."
+      ],
+      "en": [
+       "Handled clients and suppliers for the export of stationery, office supplies, furniture, and tableware.",
+       "Managed orders for customers in French overseas territories, Francophone Africa, and the Middle East.",
+       "Forwarded orders to suppliers in France, Germany, Italy, the Netherlands, China, and India.",
+       "Oversaw sales administration: drafting quotes, pro forma, and final invoices.",
+       "Supervised logistics of deliveries: customs constraints, Incoterms, delivery notes, customs certificates, and transport documents.",
+       "Created product catalogs for clients.",
+       "Provided administrative and commercial support to field sales teams."
+      ]
+     }
+    }
+   ],
+   "tags": [
+    "Export",
+    "Logistique",
+    "Relation client",
+    "Administration des ventes",
+    "Commerce international",
+    "Incoterms"
+   ]
+  }
+ ],
+ "projects": [
+  {
+   "group": "perso",
+   "status": "live",
+   "title": {
+    "fr": "Olbia",
+    "en": "Olbia"
+   },
+   "desc": {
+    "fr": "Site de vulgarisation en six langues sur Olbia, la cité grecque de l’Almanarre à Hyères. Projet personnel, site non officiel.",
+    "en": "A popular history site in six languages about Olbia, the Greek city at L’Almanarre in Hyères. Personal project, not an official site."
+   },
+   "tags": [
+    "Vercel",
+    "Responsive Design"
+   ],
+   "link": "https://olbia-hyeres.vercel.app"
+  },
+  {
+   "group": "seagale",
+   "status": "internal",
+   "title": {
+    "fr": "Hub logistique",
+    "en": "Logistics hub"
+   },
+   "desc": {
+    "fr": "WMS interne : préparations, picking, stocks, flux entre entrepôt et boutiques, étiquettes de transport.",
+    "en": "Internal WMS: order preparation, picking, stock, warehouse and store flows, shipping labels."
+   },
+   "tags": [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Tailwind",
+    "Docker",
+    "Airtable",
+    "Shopify",
+    "WMS"
+   ],
+   "page": "/hub"
+  },
+  {
+   "group": "seagale",
+   "status": "internal",
+   "title": {
+    "fr": "Migration vers Shopify",
+    "en": "Shopify migration"
+   },
+   "desc": {
+    "fr": "Cadrage et conduite de la migration depuis Prestashop, mise en production en octobre 2025.",
+    "en": "Scoping and delivery of the move from Prestashop, live in October 2025."
+   },
+   "tags": [
+    "Shopify",
+    "Prestashop"
+   ]
+  },
+  {
+   "group": "seagale",
+   "status": "internal",
+   "title": {
+    "fr": "Reporting e-commerce",
+    "en": "E-commerce reporting"
+   },
+   "desc": {
+    "fr": "Application construite sur les données Shopify : chiffre d’affaires, marges, canaux, boutiques et web.",
+    "en": "App built on Shopify data: revenue, margins, channels, stores and web."
+   },
+   "tags": [
+    "React",
+    "TypeScript",
+    "Shopify",
+    "API GraphQL"
+   ],
+   "page": "/reporting"
+  },
+  {
+   "group": "seagale",
+   "status": "internal",
+   "title": {
+    "fr": "Répartition des stocks",
+    "en": "Stock allocation"
+   },
+   "desc": {
+    "fr": "Allocation des stocks entre les emplacements et les zones de l’entrepôt.",
+    "en": "Stock allocation across warehouse locations and zones."
+   },
+   "tags": [
+    "React",
+    "TypeScript",
+    "WMS"
+   ]
+  },
+  {
+   "group": "seagale",
+   "status": "internal",
+   "title": {
+    "fr": "Suivi des stocks matières",
+    "en": "Raw materials tracking"
+   },
+   "desc": {
+    "fr": "Visibilité sur les tissus, boutons et zips détenus chez les fournisseurs, en amont de la production.",
+    "en": "Visibility on fabrics, buttons and zips held at suppliers, ahead of production."
+   },
+   "tags": [
+    "React",
+    "TypeScript",
+    "Airtable"
+   ]
+  },
+  {
+   "group": "seagale",
+   "status": "internal",
+   "title": {
+    "fr": "Automatisations n8n",
+    "en": "n8n automations"
+   },
+   "desc": {
+    "fr": "Une cinquantaine de workflows actifs entre Shopify, Airtable, Klaviyo et les transporteurs.",
+    "en": "Around 50 active workflows between Shopify, Airtable, Klaviyo and carriers."
+   },
+   "tags": [
+    "n8n",
+    "Airtable",
+    "Shopify",
+    "Klaviyo"
+   ]
+  },
+  {
+   "group": "seagale",
+   "status": "internal",
+   "title": {
+    "fr": "Application de caisse",
+    "en": "POS app"
+   },
+   "desc": {
+    "fr": "Application React utilisée par les vendeurs en boutique, connectée au Webservice Prestashop.",
+    "en": "React app used by store staff, connected to the Prestashop Webservice."
+   },
+   "tags": [
+    "React",
+    "Express",
+    "PHP",
+    "Prestashop"
+   ]
+  },
+  {
+   "group": "perso",
+   "status": "live",
+   "title": {
+    "fr": "Worduel",
+    "en": "Worduel"
+   },
+   "desc": {
+    "fr": "Jeu en ligne inspiré de Wordle, en solo ou en duel temps réel. Projet de fin de formation CDA.",
+    "en": "Online game inspired by Wordle, solo or real-time duel. Final project of my developer degree."
+   },
+   "tags": [
+    "React",
+    "TypeScript",
+    "Node.js",
+    "GraphQL",
+    "Apollo",
+    "Docker",
+    "CI/CD",
+    "Tailwind",
+    "shadcn/ui"
+   ],
+   "link": "https://www.worduel.fr/"
+  },
+  {
+   "group": "perso",
+   "status": "offline",
+   "title": {
+    "fr": "TL;DR",
+    "en": "TL;DR"
+   },
+   "desc": {
+    "fr": "Assistant de lecture qui résume un texte, un article, une vidéo YouTube ou un fichier.",
+    "en": "Reading assistant that summarizes text, articles, YouTube videos or files."
+   },
+   "tags": [
+    "OpenAI",
+    "n8n"
+   ]
+  },
+  {
+   "group": "perso",
+   "status": "partial",
+   "title": {
+    "fr": "Tribu",
+    "en": "Tribu"
+   },
+   "desc": {
+    "fr": "Réseau social pour les Français expatriés, projet de fin de formation. Lead développeur front-end.",
+    "en": "Social network for French expats, final training project. Lead front-end developer."
+   },
+   "tags": [
+    "React",
+    "SCSS",
+    "JavaScript",
+    "UX Design"
+   ],
+   "link": "https://tribu.surge.sh/"
+  },
+  {
+   "group": "perso",
+   "status": "live",
+   "title": {
+    "fr": "Assurancedespros.fr",
+    "en": "Assurancedespros.fr"
+   },
+   "desc": {
+    "fr": "Maintenance du site WordPress d’une agence Allianz. Mission freelance.",
+    "en": "WordPress site maintenance for an Allianz agency. Freelance work."
+   },
+   "tags": [
+    "WordPress"
+   ],
+   "link": "https://www.assurancedespros.fr/"
+  },
+  {
+   "group": "perso",
+   "status": "live",
+   "title": {
+    "fr": "L.A. Coffeedential",
+    "en": "L.A. Coffeedential"
+   },
+   "desc": {
+    "fr": "Site vitrine pour un coffee shop.",
+    "en": "Showcase website for a coffee shop."
+   },
+   "tags": [],
+   "link": "https://lacoffeedential.surge.sh/"
+  },
+  {
+   "group": "perso",
+   "status": "live",
+   "title": {
+    "fr": "Portfolio de graphiste",
+    "en": "Graphic designer portfolio"
+   },
+   "desc": {
+    "fr": "Site vitrine de démonstration en React pour le portfolio d’une graphiste.",
+    "en": "React demo showcase site for a graphic designer’s portfolio."
+   },
+   "tags": [
+    "React"
+   ],
+   "link": "https://margotjollyportfolio.surge.sh/"
+  }
+ ],
+ "learning": [
+  {
+   "title": {
+    "fr": "ISS Tracker App",
+    "en": "ISS Tracker App"
+   },
+   "desc": {
+    "fr": "Suivi en temps réel de la Station Spatiale Internationale avec la version gratuite de l'API Google Maps",
+    "en": "Real-time tracking of the International Space Station using the free Google Maps API"
+   },
+   "link": "https://laurentarcosisstracker.surge.sh/"
+  },
+  {
+   "title": {
+    "fr": "Pokédex",
+    "en": "Pokedex"
+   },
+   "desc": {
+    "fr": "Un Pokédex en React créé pour ma nièce",
+    "en": "A pokedex I made for my niece using React"
+   },
+   "link": "https://pokedexdeclara.surge.sh/"
+  },
+  {
+   "title": {
+    "fr": "App Météo",
+    "en": "Weather App"
+   },
+   "desc": {
+    "fr": "Application météo en temps réel",
+    "en": "Real-time weather application"
+   },
+   "link": "http://laurentarcosweatherapp.surge.sh/"
+  },
+  {
+   "title": {
+    "fr": "App Custom SNCF",
+    "en": "SNCF Custom App"
+   },
+   "desc": {
+    "fr": "Application légère pour découvrir Angular. Avec API SNCF.",
+    "en": "Light app to discover Angular. With SNCF API."
+   },
+   "link": "https://laurentarcos-sncfcustomapp.surge.sh/"
+  },
+  {
+   "title": {
+    "fr": "Trivia Quizz",
+    "en": "Trivia Quiz"
+   },
+   "desc": {
+    "fr": "Jeu de quizz de culture générale intéractif",
+    "en": "Interactive general-knowledge quiz game"
+   },
+   "link": "https://laurentarcostriviaquizz.surge.sh/"
+  },
+  {
+   "title": {
+    "fr": "Calculatrice",
+    "en": "Calculator"
+   },
+   "desc": {
+    "fr": "Application calculatrice en ligne",
+    "en": "Online calculator app"
+   },
+   "link": "https://laurentarcoscalculatrice.surge.sh/"
+  },
+  {
+   "title": {
+    "fr": "Drapeaux du monde",
+    "en": "Flags of the World"
+   },
+   "desc": {
+    "fr": "Application interactive sur les drapeaux du monde",
+    "en": "Interactive application about world flags"
+   },
+   "link": "https://laurentarcosflagsoftheworld.surge.sh/"
+  }
+ ],
+ "education": [
+  {
+   "school": "École O’clock",
+   "date": {
+    "fr": "2023 - 2025",
+    "en": "2023 - 2025"
+   },
+   "degree": {
+    "fr": "Titre professionnel niveau 6, Concepteur Développeur d’Applications",
+    "en": "Level 6 professional degree, Application Designer and Developer"
+   },
+   "note": {
+    "fr": "En alternance. Équivalent Bac+3/4.",
+    "en": "Work-study. Equivalent to a bachelor’s level."
+   },
+   "link": "https://www.francecompetences.fr/recherche/rncp/37873/",
+   "linkLabel": {
+    "fr": "Fiche officielle",
+    "en": "Official record"
+   }
+  },
+  {
+   "school": "Opquast",
+   "date": {
+    "fr": "Décembre 2022",
+    "en": "December 2022"
+   },
+   "degree": {
+    "fr": "Certification Maîtrise de la qualité en projet web",
+    "en": "Web project quality certification"
+   },
+   "note": {
+    "fr": "Niveau avancé, 855/1000.",
+    "en": "Advanced level, 855/1000."
+   },
+   "link": "https://directory.opquast.com/fr/certificat/SMY4W8/",
+   "linkLabel": {
+    "fr": "Certificat",
+    "en": "Certificate"
+   }
+  },
+  {
+   "school": "École O’clock",
+   "date": {
+    "fr": "2022",
+    "en": "2022"
+   },
+   "degree": {
+    "fr": "Titre professionnel niveau 5, Développeur Web et Web Mobile",
+    "en": "Level 5 professional degree, Web and Mobile Developer"
+   },
+   "note": {
+    "fr": "Formation labellisée Grande École du Numérique.",
+    "en": "Certified by the Grande École du Numérique label."
+   }
+  },
+  {
+   "school": "Université Paris 8",
+   "date": {
+    "fr": "2007 - 2008",
+    "en": "2007 - 2008"
+   },
+   "degree": {
+    "fr": "Licence professionnelle, Commerce et Logistique international",
+    "en": "Professional bachelor’s, International Trade and Logistics"
+   },
+   "note": {
+    "fr": "Institut d’Études Européennes.",
+    "en": "Institute of European Studies."
+   }
+  },
+  {
+   "school": "Université de Toulon",
+   "date": {
+    "fr": "2003 - 2006",
+    "en": "2003 - 2006"
+   },
+   "degree": {
+    "fr": "Licence LEA, Anglais et Espagnol",
+    "en": "Bachelor’s in Applied Foreign Languages, English and Spanish"
+   }
+  }
+ ],
+ "skills": [
+  {
+   "name": {
+    "en": "Frontend Development",
+    "fr": "Développement Frontend"
+   },
+   "items": [
+    {
+     "en": "React",
+     "fr": "React"
+    },
+    {
+     "en": "Vite",
+     "fr": "Vite"
+    },
+    {
+     "en": "Next.js",
+     "fr": "Next.js"
+    },
+    {
+     "en": "Tailwind CSS",
+     "fr": "Tailwind CSS"
+    },
+    {
+     "en": "SCSS",
+     "fr": "SCSS"
+    },
+    {
+     "en": "Shadcn/ui",
+     "fr": "Shadcn/ui"
+    },
+    {
+     "en": "JavaScript",
+     "fr": "JavaScript"
+    },
+    {
+     "en": "TypeScript",
+     "fr": "TypeScript"
+    },
+    {
+     "en": "Framer Motion",
+     "fr": "Framer Motion"
+    }
+   ]
+  },
+  {
+   "name": {
+    "en": "Backend Development",
+    "fr": "Développement Backend"
+   },
+   "items": [
+    {
+     "en": "Node.js",
+     "fr": "Node.js"
+    },
+    {
+     "en": "Express.js",
+     "fr": "Express.js"
+    },
+    {
+     "en": "NestJS",
+     "fr": "NestJS"
+    },
+    {
+     "en": "GraphQL",
+     "fr": "GraphQL"
+    },
+    {
+     "en": "Apollo",
+     "fr": "Apollo"
+    },
+    {
+     "en": "Prisma",
+     "fr": "Prisma"
+    },
+    {
+     "en": "MySQL",
+     "fr": "MySQL"
+    },
+    {
+     "en": "PostgreSQL",
+     "fr": "PostgreSQL"
+    },
+    {
+     "en": "MongoDB",
+     "fr": "MongoDB"
+    },
+    {
+     "en": "PHP",
+     "fr": "PHP"
+    },
+    {
+     "en": "Supabase",
+     "fr": "Supabase"
+    }
+   ]
+  },
+  {
+   "name": {
+    "en": "DevOps & Tools",
+    "fr": "Outils & DevOps"
+   },
+   "items": [
+    {
+     "en": "Docker",
+     "fr": "Docker"
+    },
+    {
+     "en": "Git",
+     "fr": "Git"
+    },
+    {
+     "en": "GitHub",
+     "fr": "GitHub"
+    },
+    {
+     "en": "GitHub Actions",
+     "fr": "GitHub Actions"
+    },
+    {
+     "en": "CI/CD",
+     "fr": "CI/CD"
+    },
+    {
+     "en": "Nginx",
+     "fr": "Nginx"
+    },
+    {
+     "en": "Postman",
+     "fr": "Postman"
+    },
+    {
+     "en": "DBeaver",
+     "fr": "DBeaver"
+    },
+    {
+     "en": "Swagger",
+     "fr": "Swagger"
+    },
+    {
+     "en": "Linux",
+     "fr": "Linux"
+    },
+    {
+     "en": "Ubuntu",
+     "fr": "Ubuntu"
+    },
+    {
+     "en": "pnpm",
+     "fr": "pnpm"
+    },
+    {
+     "en": "npm",
+     "fr": "npm"
+    },
+    {
+     "en": "Raspberry Pi",
+     "fr": "Raspberry Pi"
+    },
+    {
+     "en": "Vercel",
+     "fr": "Vercel"
+    },
+    {
+     "en": "TDD",
+     "fr": "TDD"
+    },
+    {
+     "en": "ESLint",
+     "fr": "ESLint"
+    }
+   ]
+  },
+  {
+   "name": {
+    "en": "Data & APIs",
+    "fr": "Données & APIs"
+   },
+   "items": [
+    {
+     "en": "API REST",
+     "fr": "API REST"
+    },
+    {
+     "en": "API GraphQL",
+     "fr": "API GraphQL"
+    },
+    {
+     "en": "OAuth",
+     "fr": "OAuth"
+    },
+    {
+     "en": "WebSocket",
+     "fr": "WebSocket"
+    },
+    {
+     "en": "Shopify API",
+     "fr": "API Shopify"
+    },
+    {
+     "en": "Prestashop Webservice",
+     "fr": "Webservice Prestashop"
+    },
+    {
+     "en": "Carrier APIs",
+     "fr": "API Transporteurs"
+    },
+    {
+     "en": "Webhooks",
+     "fr": "Webhooks"
+    }
+   ]
+  },
+  {
+   "name": {
+    "en": "AI & Automation",
+    "fr": "IA & Automatisation"
+   },
+   "items": [
+    {
+     "en": "OpenAI API",
+     "fr": "API OpenAI"
+    },
+    {
+     "en": "Generative AI",
+     "fr": "IA générative"
+    },
+    {
+     "en": "n8n",
+     "fr": "n8n"
+    },
+    {
+     "en": "Airtable",
+     "fr": "Airtable"
+    },
+    {
+     "en": "Workflow Automation",
+     "fr": "Automatisation de workflows"
+    },
+    {
+     "en": "Claude",
+     "fr": "Claude"
+    },
+    {
+     "en": "AI-assisted development",
+     "fr": "Développement assisté par IA"
+    }
+   ]
+  },
+  {
+   "name": {
+    "en": "E-commerce & Logistics",
+    "fr": "E-commerce & Logistique"
+   },
+   "items": [
+    {
+     "en": "Shopify",
+     "fr": "Shopify"
+    },
+    {
+     "en": "Prestashop",
+     "fr": "Prestashop"
+    },
+    {
+     "en": "WMS / Inventory Management",
+     "fr": "WMS / Gestion des stocks"
+    },
+    {
+     "en": "Conversion Rate Optimization",
+     "fr": "Optimisation du tunnel de conversion"
+    },
+    {
+     "en": "Digital Marketing",
+     "fr": "Marketing digital"
+    },
+    {
+     "en": "Klaviyo",
+     "fr": "Klaviyo"
+    },
+    {
+     "en": "Email Marketing",
+     "fr": "Email marketing"
+    },
+    {
+     "en": "Marketing Automation",
+     "fr": "Marketing automation"
+    },
+    {
+     "en": "Customer Segmentation",
+     "fr": "Segmentation client"
+    },
+    {
+     "en": "Data Migration",
+     "fr": "Reprise de données"
+    },
+    {
+     "en": "Supply Chain",
+     "fr": "Supply Chain"
+    },
+    {
+     "en": "Label printing (ZPL)",
+     "fr": "Impression d’étiquettes (ZPL)"
+    },
+    {
+     "en": "Printer and network management",
+     "fr": "Gestion des imprimantes et du réseau"
+    }
+   ]
+  },
+  {
+   "name": {
+    "en": "Design & UX",
+    "fr": "Design & Expérience Utilisateur"
+   },
+   "items": [
+    {
+     "en": "UI/UX",
+     "fr": "UI/UX"
+    },
+    {
+     "en": "Responsive Design",
+     "fr": "Responsive Design"
+    },
+    {
+     "en": "Figma",
+     "fr": "Figma"
+    },
+    {
+     "en": "Accessibility",
+     "fr": "Accessibilité"
+    }
+   ]
+  },
+  {
+   "name": {
+    "en": "Project Management",
+    "fr": "Gestion de Projets & Méthodes Agiles"
+   },
+   "items": [
+    {
+     "en": "Agile",
+     "fr": "Agile"
+    },
+    {
+     "en": "Project Management",
+     "fr": "Gestion de Projet"
+    },
+    {
+     "en": "Product Ownership",
+     "fr": "Product Ownership"
+    },
+    {
+     "en": "Functional Scoping",
+     "fr": "Cadrage fonctionnel"
+    },
+    {
+     "en": "Cross-team Coordination",
+     "fr": "Coordination inter-équipes"
+    }
+   ]
+  },
+  {
+   "name": {
+    "en": "Miscellaneous",
+    "fr": "Divers"
+   },
+   "items": [
+    {
+     "en": "WordPress",
+     "fr": "WordPress"
+    }
+   ]
+  }
+ ],
+ "core": [
+  "TypeScript",
+  "React",
+  "Next.js",
+  "Node.js",
+  "Shopify",
+  "n8n",
+  "Airtable",
+  "Klaviyo",
+  "Docker",
+  "Claude"
+ ],
+ "life": [
+  {
+   "h": {
+    "fr": "Histoire",
+    "en": "History"
+   },
+   "t": {
+    "fr": "Une passion de longue date, à l’origine de mon site sur Olbia.",
+    "en": "A long-standing passion, and the reason behind my Olbia site."
+   }
+  },
+  {
+   "h": {
+    "fr": "Écriture",
+    "en": "Writing"
+   },
+   "t": {
+    "fr": "J’écris de l’heroic fantasy et je construis mes propres univers.",
+    "en": "I write heroic fantasy and build my own worlds."
+   }
+  },
+  {
+   "h": {
+    "fr": "Jeux",
+    "en": "Games"
+   },
+   "t": {
+    "fr": "World of Warcraft, Baldur’s Gate 3, Football Manager, Pro Cycling Manager, et des jeux de société coopératifs entre amis.",
+    "en": "World of Warcraft, Baldur’s Gate 3, Football Manager, Pro Cycling Manager, and co-op board games with friends."
+   }
+  },
+  {
+   "h": {
+    "fr": "Football",
+    "en": "Football"
+   },
+   "t": {
+    "fr": "Supporter de l’OM et joueur de Mon Petit Gazon entre amis.",
+    "en": "Olympique de Marseille supporter, and I play Mon Petit Gazon with friends."
+   }
+  },
+  {
+   "h": {
+    "fr": "Cinéma",
+    "en": "Film"
+   },
+   "t": {
+    "fr": "Mes films vus sont sur Letterboxd.",
+    "en": "The films I watch are on Letterboxd."
+   },
+   "link": "https://letterboxd.com/Laurent_A/",
+   "label": "Letterboxd"
+  }
+ ],
+ "social": [
+  [
+   "LinkedIn",
+   "https://www.linkedin.com/in/laurentarcos/"
+  ],
+  [
+   "GitHub",
+   "https://github.com/LaurentArcos"
+  ]
+ ],
+ "footerSocial": [
+  [
+   "LinkedIn",
+   "https://www.linkedin.com/in/laurentarcos/"
+  ],
+  [
+   "GitHub",
+   "https://github.com/LaurentArcos"
+  ],
+  [
+   "Bluesky",
+   "https://bsky.app/profile/laurentarcos.bsky.social"
+  ],
+  [
+   "Letterboxd",
+   "https://letterboxd.com/Laurent_A/"
+  ]
+ ]
+}
