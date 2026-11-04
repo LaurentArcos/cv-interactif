@@ -5,7 +5,7 @@ import { useCv } from "./context";
 
 export function PrintCv() {
   const { t, lang } = useCv();
-  const site = "cv-interactif-nu.vercel.app";
+  const site = "cv-interactif-laurentarcos.vercel.app";
   return (
     <div className="print-cv">
       <header>

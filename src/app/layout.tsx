@@ -19,7 +19,7 @@ const display = Martian_Mono({
 });
 
 // Métadonnées de la page
-const SITE = "https://cv-interactif-nu.vercel.app";
+const SITE = "https://cv-interactif-laurentarcos.vercel.app";
 const TITLE = "Laurent Arcos - Développeur full stack & e-commerce";
 const DESCRIPTION =
   "CV de Laurent Arcos, développeur full stack et e-commerce à Toulon : Next.js, TypeScript, Shopify, n8n, Klaviyo et outils logistiques.";
