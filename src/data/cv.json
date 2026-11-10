@@ -628,6 +628,76 @@
    "link": "https://bastide-calen-gite.vercel.app"
   },
   {
+   "group": "perso",
+   "status": "live",
+   "title": {
+    "fr": "Worduel",
+    "en": "Worduel"
+   },
+   "desc": {
+    "fr": "Jeu en ligne inspiré de Wordle, en solo ou en duel temps réel. Projet de fin de formation CDA.",
+    "en": "Online game inspired by Wordle, solo or real-time duel. Final project of my developer degree."
+   },
+   "tags": [
+    "React",
+    "TypeScript",
+    "Node.js",
+    "GraphQL",
+    "Apollo",
+    "Docker",
+    "CI/CD",
+    "Tailwind",
+    "shadcn/ui"
+   ],
+   "link": "https://www.worduel.fr/"
+  },
+  {
+   "group": "perso",
+   "status": "live",
+   "title": {
+    "fr": "Assurancedespros.fr",
+    "en": "Assurancedespros.fr"
+   },
+   "desc": {
+    "fr": "Maintenance du site WordPress d’une agence Allianz. Mission freelance.",
+    "en": "WordPress site maintenance for an Allianz agency. Freelance work."
+   },
+   "tags": [
+    "WordPress"
+   ],
+   "link": "https://www.assurancedespros.fr/"
+  },
+  {
+   "group": "perso",
+   "status": "live",
+   "title": {
+    "fr": "L.A. Coffeedential",
+    "en": "L.A. Coffeedential"
+   },
+   "desc": {
+    "fr": "Site vitrine pour un coffee shop.",
+    "en": "Showcase website for a coffee shop."
+   },
+   "tags": [],
+   "link": "https://lacoffeedential.surge.sh/"
+  },
+  {
+   "group": "perso",
+   "status": "live",
+   "title": {
+    "fr": "Portfolio de graphiste",
+    "en": "Graphic designer portfolio"
+   },
+   "desc": {
+    "fr": "Site vitrine de démonstration en React pour le portfolio d’une graphiste.",
+    "en": "React demo showcase site for a graphic designer’s portfolio."
+   },
+   "tags": [
+    "React"
+   ],
+   "link": "https://margotjollyportfolio.surge.sh/"
+  },
+  {
    "group": "seagale",
    "status": "internal",
    "title": {
@@ -757,30 +827,6 @@
   },
   {
    "group": "perso",
-   "status": "live",
-   "title": {
-    "fr": "Worduel",
-    "en": "Worduel"
-   },
-   "desc": {
-    "fr": "Jeu en ligne inspiré de Wordle, en solo ou en duel temps réel. Projet de fin de formation CDA.",
-    "en": "Online game inspired by Wordle, solo or real-time duel. Final project of my developer degree."
-   },
-   "tags": [
-    "React",
-    "TypeScript",
-    "Node.js",
-    "GraphQL",
-    "Apollo",
-    "Docker",
-    "CI/CD",
-    "Tailwind",
-    "shadcn/ui"
-   ],
-   "link": "https://www.worduel.fr/"
-  },
-  {
-   "group": "perso",
    "status": "offline",
    "title": {
     "fr": "TL;DR",
@@ -813,52 +859,6 @@
     "UX Design"
    ],
    "link": "https://tribu.surge.sh/"
-  },
-  {
-   "group": "perso",
-   "status": "live",
-   "title": {
-    "fr": "Assurancedespros.fr",
-    "en": "Assurancedespros.fr"
-   },
-   "desc": {
-    "fr": "Maintenance du site WordPress d’une agence Allianz. Mission freelance.",
-    "en": "WordPress site maintenance for an Allianz agency. Freelance work."
-   },
-   "tags": [
-    "WordPress"
-   ],
-   "link": "https://www.assurancedespros.fr/"
-  },
-  {
-   "group": "perso",
-   "status": "live",
-   "title": {
-    "fr": "L.A. Coffeedential",
-    "en": "L.A. Coffeedential"
-   },
-   "desc": {
-    "fr": "Site vitrine pour un coffee shop.",
-    "en": "Showcase website for a coffee shop."
-   },
-   "tags": [],
-   "link": "https://lacoffeedential.surge.sh/"
-  },
-  {
-   "group": "perso",
-   "status": "live",
-   "title": {
-    "fr": "Portfolio de graphiste",
-    "en": "Graphic designer portfolio"
-   },
-   "desc": {
-    "fr": "Site vitrine de démonstration en React pour le portfolio d’une graphiste.",
-    "en": "React demo showcase site for a graphic designer’s portfolio."
-   },
-   "tags": [
-    "React"
-   ],
-   "link": "https://margotjollyportfolio.surge.sh/"
   }
  ],
  "learning": [
