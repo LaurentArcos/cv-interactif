@@ -610,6 +610,24 @@
    "link": "https://calade-plomberie-demo.vercel.app"
   },
   {
+   "group": "perso",
+   "status": "live",
+   "title": {
+    "fr": "La Bastide Calen (démo)",
+    "en": "La Bastide Calen (demo)"
+   },
+   "desc": {
+    "fr": "Site de démonstration pour une maison d’hôtes fictive du Var : galerie des chambres, calendrier de disponibilités et réservation en direct sans frais de plateforme.",
+    "en": "Demo website for a fictional guesthouse in the Var: room gallery, availability calendar and direct booking with no platform fees."
+   },
+   "tags": [
+    "JavaScript",
+    "Responsive Design",
+    "Vercel"
+   ],
+   "link": "https://bastide-calen-gite.vercel.app"
+  },
+  {
    "group": "seagale",
    "status": "internal",
    "title": {
