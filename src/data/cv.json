@@ -593,6 +593,23 @@
    "link": "https://olbia-hyeres.vercel.app"
   },
   {
+   "group": "perso",
+   "status": "live",
+   "title": {
+    "fr": "Calade Plomberie (démo)",
+    "en": "Calade Plomberie (demo)"
+   },
+   "desc": {
+    "fr": "Site vitrine de démonstration pour un artisan plombier fictif du Var : services, zone d’intervention, FAQ et formulaire de devis pensé pour être relié à n8n.",
+    "en": "Demo showcase website for a fictional plumber in the Var: services, service area, FAQ and a quote form designed to plug into n8n."
+   },
+   "tags": [
+    "Responsive Design",
+    "Vercel"
+   ],
+   "link": "https://calade-plomberie-demo.vercel.app"
+  },
+  {
    "group": "seagale",
    "status": "internal",
    "title": {
